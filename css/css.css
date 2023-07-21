@@ -1,0 +1,98 @@
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  /* Estilos para el encabezado */
+  header {
+    color: #00aae4;
+    padding: 10px;
+  }
+  
+  /* Estilos para el contenido principal */
+  main {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 20px;
+  }
+  
+  /* Estilos para las secciones del contenido principal */
+  section {
+    padding: 10px;
+   
+  }
+  
+  /* Estilos para el pie de página */
+  footer {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+  }
+  
+  /* Media queries para la responsividad */
+  @media (min-width: 768px) {
+    /* Cambiar el diseño del contenido principal a dos columnas */
+    main {
+      grid-template-columns: 1fr 1fr ;
+    }
+  }
+  
+  @media (min-width: 992px) {
+    /* Cambiar el diseño del contenido principal a tres columnas */
+    main {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+  }
+  
+  @media (max-width: 767px) {
+    /* Estilos para pantallas pequeñas (como teléfonos móviles) */
+    header,
+    footer, .publicidad{
+      text-align: center;
+      
+    }
+  
+    section {
+      padding: 5px
+
+    }
+    p {
+        font-size: 14px;
+        line-height: 1.4;
+        margin-bottom: 15px;
+        word-spacing: -3px;
+      }
+  }
+  #reseñas, #contacto{
+    color:  #00aae4;;
+  }
+  #resena{
+    color: #fff;
+  }
+  .ad-container {
+    max-width: 600px; /* Ajusta el ancho máximo del contenedor según tus necesidades */
+    margin: 0 auto; /* Centrar el contenedor horizontalmente */
+  }
+  
+  .ad-video {
+    width: 100%; /* Ajustar el ancho del video al 100% del contenedor */
+  }
+  
+  .redes-sociales {
+    font-size: 24px; /* Tamaño de los íconos */
+  }
+
+  .redes-sociales i {
+    margin-right: 10px; /* Espacio entre los íconos */
+    color:  #007bff; /* Color de los íconos */
+  }
+
+  
