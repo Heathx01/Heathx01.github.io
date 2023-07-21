@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=h12, initial-scale=1.0">
+    <title>Formulario de Restaurante</title>
+    <link rel="stylesheet" href="estilos-formulario.css">
+    <link rel="stylesheet" href="menu-es.css">
+</head>
+<body>
+    <header>
+        <h1 class="nombre-cafeteria">BIENVENIDO A NUESTRO SITIO WEB</h1>
+        <ul class="menu">
+            <li><a href="index.html">INICIO</a></li>
+            <li><a href="postres.html">POSTRES</a></li>
+            <li><a href="nosotros.html">SOBRE NOSOTROS</a></li>
+            <li><a href="formulario.html">OPINIONES</a></li>
+        </ul>
+    </header>
+    <br>
+    <h1 class="titulo-form">Encuesta de Satisfaccion del Cliente</h1>
+
+    <form action="#" method="post">
+        <fieldset>
+            <legend><h2>Informacion del Cliente</h2></legend>
+            <label for="nombre"><b>Nombre completo:</b></label>
+            <input type="text" placeholder="Ingrese su nombre completo" id="nombre" name="nombre"></br>
+
+            <label for="email"><b>Correo electronico:</b></label>
+            <input type="email" placeholder="Ingrese la dirrecion de correo electronico" id="email" name="email"></br>
+
+            <label for="password"><b>Contraseña:</b></label>
+            <input type="password" placeholder="Contraseña" id="password" name="password"></br>
+        </fieldset>
+
+        <fieldset>
+            <legend><h2>Experiencia del restaurante</h2></legend>
+            <br>
+            <p><b>Como calificaria la calidad del café?</b></p>
+            <br>
+            <label><input type="radio" name="calidad_comida" value="excelente">Excelente</label></br>
+            <label><input type="radio" name="calidad_comida" value="bueno">Bueno</label></br>
+            <label><input type="radio" name="calidad_comida" value="regular">Regular</label></br>
+            <label><input type="radio" name="calidad_comida" value="malo">Malo</label></br>
+
+            <p><b>Como calificaria la atencion del personal?</b></p>
+            <br>
+            <label><input type="radio" name="atencion_personal" value="excelente">Excelente</label></br>
+            <label><input type="radio" name="atencion_personal" value="bueno">Bueno</label></br>
+            <label><input type="radio" name="atencion_personal" value="regular">Regular</label></br>
+            <label><input type="radio" name="atencion_personal" value="malo">Malo</label></br>
+
+            <p><b>Seleccione las bebidas que ordenó:</b></p>
+            <br>
+            <label><input type="checkbox" name="bebida[]" value="Capuccino">Capuccino</label></br>
+            <label><input type="checkbox" name="bebida[]" value="Mocaccino">Mocaccino</label></br>
+            <label><input type="checkbox" name="bebida[]" value="Expresso">Expresso</label></br>
+            <label><input type="checkbox" name="bebida[]" value="Latte">Latte</label></br>
+            <label><input type="checkbox" name="bebida[]" value="Malteadas">Malteadas</label></br>
+            <label><input type="checkbox" name="bebida[]" value="Frappes">Frappes</label></br>
+
+            <p><b>Seleccione los postres que ordenó:</b></p>
+            <br>
+            <label><input type="checkbox" name="platillo[]" value="cocacola">Pastel de Chocolate</label></br>
+            <label><input type="checkbox" name="platillo[]" value="pepsi">Pastel de Fresa</label></br>
+            <label><input type="checkbox" name="platillo[]" value="te">Galletas</label></br>
+            <label><input type="checkbox" name="platillo[]" value="cafe">Helados</label></br>
+            <label><input type="checkbox" name="platillo[]" value="cerveza">Pie</label></br>
+        </fieldset>
+
+        <fieldset>
+            <legend><h2>Comentarios Adicionales</h2></legend>
+            <label for="comentarios" placeholder="Sugerencias u Opiniones"><b>Comentarios</b></label>
+            <textarea name="comentarios" id="comentarios" cols="50" rows="10">
+            </textarea>
+        </fieldset>
+        </br>
+        <input type="submit" value="Enviar"></br>
+    </form>
+
+    <footer>
+        <div class="pie">
+            <h4><a href="nosotros.html">Facebook: @CafeDulceAromaOfficial</a></h4> <h4><a href="nosotros.html">Instagram: @Dulce_AromaOfficial</a></h4> <h4><a href="nosotros.html">Twitter: @COFFE_DULCE-AROMA_OFFICIAL</a></h4>5
+        </div>
+    </footer>
+</body>
+</html>     

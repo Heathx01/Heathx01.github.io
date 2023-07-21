@@ -1,0 +1,99 @@
+form{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin: 20px auto;
+    max-width: 600px;
+    padding: 30px;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    border: 8px solid white;
+    background: #dfd5ff;
+}
+h2{
+    text-align: center;
+}
+label{
+    display: block;
+    margin-bottom: 10px;
+}
+input[type="text"],
+input[type="email"],
+input[type="password"],
+textarea{
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%;
+    box-sizing: border-box;
+    margin-bottom: 20px;
+}
+input[type="checkbox"],
+input[type="radio"]{
+    margin-right: 5px;
+}
+input[type="submit"]{
+    background-color: #4caf50;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px;
+    border-radius: 5px;
+    border: 4px solid white;
+    padding: 5px auto;
+}
+body{
+    margin: 0 auto;
+    padding: 0;
+}
+.titulo-form{
+    color: white;
+    text-align: center;
+    font-size: 2rem;
+}
+.cuadro{
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%;
+    box-sizing: border-box;
+    margin-bottom: 20px;
+    
+}
+fieldset{
+    margin: 0 auto;
+    padding: 15px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+footer{
+    margin: 0 auto;
+    padding: 0;
+    width: 100%;
+    height: fit-content;
+}
+
+.pie{
+    margin: 0 auto;
+    padding: 0;
+    width: 100%;
+    height: fit-content;
+    float: center;
+    text-align: center;
+    background-color: rgb(1, 1, 60);
+}
+
+.pie h4{
+    display: inline-block;
+    padding: 20px;
+    font-weight: bold;
+    color: white;
+    font-size: 15px;
+}
+
+.pie h4 a{
+    color: white;
+}
