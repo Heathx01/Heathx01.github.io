@@ -453,6 +453,70 @@ aside h3{
 }
 
 
+/* ************************* */
+/*     FOTO DEL GRUPO        */
+/* ************************* */
+
+h4 em{
+    text-align: left;
+    font-size: 2rem;
+    color: orangered;
+    margin-top: 50px;
+    margin-left: 30px;
+    padding: 0 10px;
+    float: center;
+}
+
+.integrantes{
+    text-align: justify;
+    list-style: none;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.integrantes li{
+    text-align: justify;
+    
+}
+
+p a{
+    margin-left: 30px;
+    text-align: justify;
+    font-size: 16px;
+    font-weight: bold;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.foto-equipo{
+    margin: 0 auto;
+    padding: 0;
+    margin: 10px 30px;
+    width: 600px;
+    height: 400px;
+
+}
+.foto-equipo h3{
+    text-align: center;
+    font-size: 2rem;
+    color: orangered;
+    padding: 10px 0;
+    font-weight: bold;
+}
+.foto-equipo img{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    border-radius: 3%;
+}
+
+
+
+
+
+
+
+
+
 
 
 
