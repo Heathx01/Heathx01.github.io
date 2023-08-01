@@ -30,6 +30,7 @@ header{
 .menu{
     margin: auto;
     list-style: none;
+    text-align: center;
     background-color: rgb(1, 1, 60);
     width: 100%;
     height: auto;
