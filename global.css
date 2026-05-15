@@ -211,68 +211,115 @@ footer {
     margin-bottom: 1rem;
 }
 
+/* Mobile Menu Initial State (Desktop) */
+.menu-toggle {
+    display: none;
+}
+.menu-overlay {
+    display: none;
+}
+
 @media (max-width: 768px) {
-    .subpage-header h2 { font-size: 2.5rem; }
-    .header-controls { top: 25px; right: 15px; }
+    .subpage-header h2 { font-size: 2.2rem; }
+    
+    .header-controls { 
+        top: 20px; 
+        right: 15px; 
+        transform: none;
+        gap: 0.8rem;
+    }
+
+    .btn-auth span {
+        display: none; /* Hide "Ingresar" text on small mobile */
+    }
+
+    .btn-auth {
+        padding: 0.6rem;
+        border-radius: 50%;
+    }
+
+    .nombre-cafeteria {
+        font-size: 1.4rem;
+        margin-top: 2.5rem;
+        margin-bottom: 0.5rem;
+    }
 
     /* Hamburger Menu Toggle */
     .menu-toggle {
-        display: block;
+        display: flex;
+        align-items: center;
+        justify-content: center;
         position: absolute;
-        left: 20px;
-        top: 50%;
-        transform: translateY(-50%);
-        font-size: 1.5rem;
+        left: 15px;
+        top: 20px;
+        width: 40px;
+        height: 40px;
+        background: rgba(255,255,255,0.1);
+        border-radius: 50%;
+        font-size: 1.2rem;
         color: white;
         cursor: pointer;
         z-index: 1002;
+        transition: var(--transition);
+    }
+
+    .menu-toggle:hover {
+        background: var(--secondary-color);
     }
 
     .menu {
         position: fixed;
         top: 0;
         left: -100%;
-        width: 80%;
+        width: 280px;
         height: 100vh;
         background: var(--primary-color);
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        gap: 2rem;
-        z-index: 1001;
-        box-shadow: 10px 0 30px rgba(0,0,0,0.5);
+        gap: 1.5rem;
+        z-index: 2001;
+        box-shadow: 15px 0 50px rgba(0,0,0,0.4);
+        padding: 2rem;
+        flex-wrap: nowrap; /* Prevent wrapping on mobile */
     }
 
     .menu.active {
         left: 0;
     }
 
-    .menu li a {
-        font-size: 1.2rem;
+    .menu li {
         width: 100%;
-        text-align: center;
+    }
+
+    .menu li a {
+        font-size: 1.1rem;
+        display: block;
+        width: 100%;
+        padding: 1rem;
+        background: rgba(255,255,255,0.05);
     }
 
     /* Overlay for menu */
     .menu-overlay {
-        display: none;
         position: fixed;
         top: 0;
         left: 0;
         width: 100%;
         height: 100vh;
-        background: rgba(0,0,0,0.5);
-        backdrop-filter: blur(4px);
-        z-index: 1000;
+        background: rgba(0,0,0,0.6);
+        backdrop-filter: blur(5px);
+        -webkit-backdrop-filter: blur(5px);
+        z-index: 2000;
+        display: none;
+        opacity: 0;
+        transition: opacity 0.4s ease;
     }
 
     .menu-overlay.active {
         display: block;
+        opacity: 1;
     }
-}
-
-.menu-toggle {
-    display: none;
 }
 
 /* Modal System */
