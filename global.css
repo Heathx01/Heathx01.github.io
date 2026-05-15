@@ -43,6 +43,30 @@ header {
     box-shadow: var(--shadow-sm);
 }
 
+.logo-container {
+    text-align: center;
+    margin: 0.5rem 0;
+    transition: var(--transition);
+}
+
+.logo-img {
+    height: 120px;
+    width: auto;
+    filter: drop-shadow(0 4px 8px rgba(0,0,0,0.1));
+    transition: var(--transition);
+}
+
+.logo-img:hover {
+    transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+    .logo-img {
+        height: 80px;
+        margin-top: 1rem;
+    }
+}
+
 .nombre-cafeteria {
     text-align: center;
     color: var(--secondary-color);
@@ -303,11 +327,6 @@ footer {
         border-radius: 50%;
     }
 
-    .nombre-cafeteria {
-        font-size: 1.4rem;
-        margin-top: 2.5rem;
-        margin-bottom: 0.5rem;
-    }
 
     /* Hamburger Menu Toggle */
     .menu-toggle {
