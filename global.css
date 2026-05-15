@@ -57,8 +57,9 @@ header {
     display: flex;
     justify-content: center;
     list-style: none;
-    gap: 1.5rem;
+    gap: 1rem;
     flex-wrap: wrap;
+    transition: var(--transition);
 }
 
 .menu li a {
@@ -213,6 +214,65 @@ footer {
 @media (max-width: 768px) {
     .subpage-header h2 { font-size: 2.5rem; }
     .header-controls { top: 25px; right: 15px; }
+
+    /* Hamburger Menu Toggle */
+    .menu-toggle {
+        display: block;
+        position: absolute;
+        left: 20px;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 1.5rem;
+        color: white;
+        cursor: pointer;
+        z-index: 1002;
+    }
+
+    .menu {
+        position: fixed;
+        top: 0;
+        left: -100%;
+        width: 80%;
+        height: 100vh;
+        background: var(--primary-color);
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 2rem;
+        z-index: 1001;
+        box-shadow: 10px 0 30px rgba(0,0,0,0.5);
+    }
+
+    .menu.active {
+        left: 0;
+    }
+
+    .menu li a {
+        font-size: 1.2rem;
+        width: 100%;
+        text-align: center;
+    }
+
+    /* Overlay for menu */
+    .menu-overlay {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background: rgba(0,0,0,0.5);
+        backdrop-filter: blur(4px);
+        z-index: 1000;
+    }
+
+    .menu-overlay.active {
+        display: block;
+    }
+}
+
+.menu-toggle {
+    display: none;
 }
 
 /* Modal System */

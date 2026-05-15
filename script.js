@@ -241,6 +241,11 @@ const setupObs = () => {
     qa('.product-list-item, .subpage-header, .hero-section').forEach(el => { el.classList.add('reveal-init'); obs.observe(el); });
 };
 
+const toggleMobileMenu = () => {
+    q('.menu')?.classList.toggle('active');
+    q('.menu-overlay')?.classList.toggle('active');
+};
+
 document.addEventListener('DOMContentLoaded', () => {
     ensureLoginModal();
     updateUI(); setupObs(); loadReviews();

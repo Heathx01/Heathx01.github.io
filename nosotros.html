@@ -7,6 +7,10 @@
 </head>
 <body>
     <header>
+        <div class="menu-toggle" onclick="toggleMobileMenu()">
+            <i class="fas fa-bars"></i>
+        </div>
+        <div class="menu-overlay" onclick="toggleMobileMenu()"></div>
         <div class="header-controls">
             <div class="theme-switch-wrapper"><label class="theme-switch"><input type="checkbox" id="checkbox"><div class="slider"></div></label></div>
             <button class="btn-auth" id="btn-user-login" onclick="toggleLoginModal()"><i class="fas fa-user-circle"></i><span>Ingresar</span></button>
