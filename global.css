@@ -43,28 +43,56 @@ header {
     box-shadow: var(--shadow-sm);
 }
 
-.logo-container {
-    text-align: center;
-    margin: 0.5rem 0;
+/* Premium CSS Logo */
+.logo-wrap {
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+    padding: 0.5rem;
     transition: var(--transition);
 }
 
-.logo-img {
-    height: 120px;
-    width: auto;
-    filter: drop-shadow(0 4px 8px rgba(0,0,0,0.1));
-    transition: var(--transition);
+.logo-top {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    font-weight: 700;
+    font-style: italic;
+    color: var(--secondary-color);
+    line-height: 1;
+    letter-spacing: 1px;
 }
 
-.logo-img:hover {
-    transform: scale(1.05);
+.logo-icon {
+    font-size: 1.5rem;
+    color: white;
+    margin: -5px 0;
+    opacity: 0.9;
+}
+
+.logo-bottom {
+    font-family: 'Outfit', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    color: white;
+    opacity: 0.8;
+}
+
+.logo-wrap:hover {
+    transform: translateY(-2px);
+}
+
+.logo-wrap:hover .logo-icon {
+    color: var(--secondary-color);
 }
 
 @media (max-width: 768px) {
-    .logo-img {
-        height: 80px;
-        margin-top: 1rem;
-    }
+    .logo-top { font-size: 1.4rem; }
+    .logo-icon { font-size: 1.2rem; }
+    .logo-bottom { font-size: 0.7rem; letter-spacing: 3px; }
 }
 
 .nombre-cafeteria {
