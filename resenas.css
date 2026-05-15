@@ -1,0 +1,143 @@
+/* Premium Rating Summary */
+.rating-summary-container {
+    max-width: 850px;
+    margin: 2rem auto 4rem;
+    padding: 3rem;
+    background: var(--card-bg);
+    border-radius: var(--border-radius);
+    display: flex;
+    align-items: center;
+    gap: 4rem;
+    box-shadow: var(--shadow-lg);
+    border: 1px solid var(--glass-border);
+    transition: var(--transition);
+}
+
+.rating-overview {
+    text-align: center;
+    min-width: 160px;
+}
+
+.rating-big-number {
+    font-size: 5rem;
+    font-weight: 800;
+    color: var(--primary-color);
+    line-height: 1;
+    font-family: 'Playfair Display', serif;
+}
+
+.rating-stars-static {
+    color: #ffc107;
+    font-size: 1.2rem;
+    margin-top: 0.5rem;
+}
+
+.rating-total-count {
+    display: block;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    margin-top: 0.5rem;
+}
+
+.rating-bars {
+    flex-grow: 1;
+}
+
+.bar-row {
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+    margin-bottom: 0.8rem;
+}
+
+.bar-label {
+    font-size: 0.9rem;
+    font-weight: 600;
+    width: 20px;
+    color: var(--text-color);
+}
+
+.bar-bg {
+    flex-grow: 1;
+    height: 12px;
+    background: var(--accent-color);
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid var(--glass-border);
+}
+
+.bar-fill {
+    height: 100%;
+    background: var(--primary-color);
+    border-radius: 10px;
+    transition: width 1s ease-in-out;
+}
+
+/* Review Items */
+.review-item {
+    background: var(--card-bg);
+    border-radius: var(--border-radius);
+    padding: 2rem;
+    margin-bottom: 1.5rem;
+    border: 1px solid var(--glass-border);
+    transition: var(--transition);
+}
+
+.review-item:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-md);
+}
+
+.review-avatar {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: 700;
+    font-size: 1.4rem;
+    box-shadow: var(--shadow-sm);
+    margin-right: 1.5rem;
+    flex-shrink: 0;
+}
+
+.review-date {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    margin-bottom: 0.5rem;
+    display: block;
+}
+
+.review-text {
+    color: var(--text-color);
+    font-size: 1rem;
+    line-height: 1.7;
+}
+
+/* Modal and Selectors */
+.star-rating {
+    color: #ffc107;
+    margin-bottom: 1rem;
+}
+
+.modal-content {
+    max-width: 550px;
+    width: 100%;
+    background: var(--card-bg);
+    padding: 3.5rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-lg);
+    border: 1px solid var(--glass-border);
+}
+
+@media (max-width: 768px) {
+    .rating-summary-container {
+        flex-direction: column;
+        gap: 2rem;
+        padding: 2rem;
+        text-align: center;
+    }
+    .rating-overview { min-width: 100%; }
+}

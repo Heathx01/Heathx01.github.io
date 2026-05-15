@@ -1,88 +1,206 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
+
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=h12, initial-scale=1.0">
-    <title>Formulario de Restaurante</title>
-    <link rel="stylesheet" href="estilos-formulario.css">
-    <link rel="stylesheet" href="menu-es.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tu Opinión Cuenta | Café Dulce Aroma</title>
+    <meta name="description"
+        content="Déjanos tus comentarios y sugerencias. En Café Dulce Aroma trabajamos cada día para brindarte el mejor servicio.">
+    <link rel="stylesheet" href="global.css">
+    <link rel="stylesheet" href="formulario.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 </head>
+
 <body>
     <header>
-        <h1 class="nombre-cafeteria">BIENVENIDO A NUESTRO SITIO WEB</h1>
-        <ul class="menu">
-            <li><a href="index.html">INICIO</a></li>
-            <li><a href="postres.html">POSTRES</a></li>
-            <li><a href="nosotros.html">SOBRE NOSOTROS</a></li>
-            <li><a href="formulario.html">OPINIONES</a></li>
-        </ul>
+        <div class="header-controls">
+            <div class="theme-switch-wrapper">
+                <label class="theme-switch" for="checkbox">
+                    <input type="checkbox" id="checkbox" />
+                    <div class="slider"></div>
+                </label>
+            </div>
+            <button class="btn-auth" id="btn-user-login" onclick="toggleLoginModal()">
+                <i class="fas fa-user-circle"></i>
+                <span>Ingresar</span>
+            </button>
+        </div>
+        <h1 class="nombre-cafeteria">CAFÉ DULCE AROMA</h1>
+        <nav>
+            <ul class="menu">
+                <li><a href="index.html">Menú</a></li>
+                <li><a href="nosotros.html">Nosotros</a></li>
+                <li><a href="resenas.html">Reseñas</a></li>
+                <li><a href="formulario.html">Opiniones</a></li>
+            </ul>
+        </nav>
     </header>
-    <br>
-    <h1 class="titulo-form">Encuesta de Satisfaccion del Cliente</h1>
 
-    <form action="#" method="post">
-        <fieldset>
-            <legend><h2>Informacion del Cliente</h2></legend>
-            <label for="nombre"><b>Nombre completo:</b></label>
-            <input type="text" placeholder="Ingrese su nombre completo" id="nombre" name="nombre"></br>
+    <main>
+        <section class="subpage-header">
+            <h2>Encuesta de Satisfacción</h2>
+            <p>Tu opinión nos ayuda a crecer</p>
+        </section>
 
-            <label for="email"><b>Correo electronico:</b></label>
-            <input type="email" placeholder="Ingrese la dirrecion de correo electronico" id="email" name="email"></br>
+        <div class="form-container reveal" style="max-width: 700px; margin: 0 auto 4rem;">
+            <form id="satisfaction-form" onsubmit="handleFormSubmit(event)">
+                <!-- Sección 1: Cliente -->
+                <div class="form-step active">
+                    <div class="form-step-header">
+                        <i class="fas fa-user-circle"></i>
+                        <h3>Información Personal</h3>
+                    </div>
 
-            <label for="password"><b>Contraseña:</b></label>
-            <input type="password" placeholder="Contraseña" id="password" name="password"></br>
-        </fieldset>
+                    <div class="input-group">
+                        <label for="nombre">Nombre completo</label>
+                        <input type="text" id="nombre" placeholder="Ej. Ana García" required>
+                    </div>
 
-        <fieldset>
-            <legend><h2>Experiencia del restaurante</h2></legend>
-            <br>
-            <p><b>Como calificaria la calidad del café?</b></p>
-            <br>
-            <label><input type="radio" name="calidad_comida" value="excelente">Excelente</label></br>
-            <label><input type="radio" name="calidad_comida" value="bueno">Bueno</label></br>
-            <label><input type="radio" name="calidad_comida" value="regular">Regular</label></br>
-            <label><input type="radio" name="calidad_comida" value="malo">Malo</label></br>
+                    <div class="input-group">
+                        <label for="email">Correo electrónico</label>
+                        <input type="email" id="email" placeholder="ana@ejemplo.com" required>
+                    </div>
+                </div>
 
-            <p><b>Como calificaria la atencion del personal?</b></p>
-            <br>
-            <label><input type="radio" name="atencion_personal" value="excelente">Excelente</label></br>
-            <label><input type="radio" name="atencion_personal" value="bueno">Bueno</label></br>
-            <label><input type="radio" name="atencion_personal" value="regular">Regular</label></br>
-            <label><input type="radio" name="atencion_personal" value="malo">Malo</label></br>
+                <!-- Sección 2: Calificación -->
+                <div class="form-step active">
+                    <div class="form-step-header">
+                        <i class="fas fa-star-half-alt"></i>
+                        <h3>Califica tu experiencia</h3>
+                    </div>
 
-            <p><b>Seleccione las bebidas que ordenó:</b></p>
-            <br>
-            <label><input type="checkbox" name="bebida[]" value="Capuccino">Capuccino</label></br>
-            <label><input type="checkbox" name="bebida[]" value="Mocaccino">Mocaccino</label></br>
-            <label><input type="checkbox" name="bebida[]" value="Expresso">Expresso</label></br>
-            <label><input type="checkbox" name="bebida[]" value="Latte">Latte</label></br>
-            <label><input type="checkbox" name="bebida[]" value="Malteadas">Malteadas</label></br>
-            <label><input type="checkbox" name="bebida[]" value="Frappes">Frappes</label></br>
+                    <p style="margin-bottom: 1rem; font-weight: 600;">¿Cómo calificaría la calidad del café?</p>
+                    <div class="visual-selector">
+                        <label class="visual-option">
+                            <input type="radio" name="calidad" value="excelente" required>
+                            <div class="option-content">
+                                <i class="fas fa-grin-stars"></i>
+                                <span>Excelente</span>
+                            </div>
+                        </label>
+                        <label class="visual-option">
+                            <input type="radio" name="calidad" value="bueno">
+                            <div class="option-content">
+                                <i class="fas fa-smile"></i>
+                                <span>Bueno</span>
+                            </div>
+                        </label>
+                        <label class="visual-option">
+                            <input type="radio" name="calidad" value="regular">
+                            <div class="option-content">
+                                <i class="fas fa-meh"></i>
+                                <span>Regular</span>
+                            </div>
+                        </label>
+                        <label class="visual-option">
+                            <input type="radio" name="calidad" value="malo">
+                            <div class="option-content">
+                                <i class="fas fa-frown"></i>
+                                <span>Malo</span>
+                            </div>
+                        </label>
+                    </div>
 
-            <p><b>Seleccione los postres que ordenó:</b></p>
-            <br>
-            <label><input type="checkbox" name="platillo[]" value="cocacola">Pastel de Chocolate</label></br>
-            <label><input type="checkbox" name="platillo[]" value="pepsi">Pastel de Fresa</label></br>
-            <label><input type="checkbox" name="platillo[]" value="te">Galletas</label></br>
-            <label><input type="checkbox" name="platillo[]" value="cafe">Helados</label></br>
-            <label><input type="checkbox" name="platillo[]" value="cerveza">Pie</label></br>
-        </fieldset>
+                    <p style="margin-top: 2rem; margin-bottom: 1rem; font-weight: 600;">¿Qué fue lo que más te gustó?
+                    </p>
+                    <div class="visual-selector">
+                        <label class="visual-option">
+                            <input type="checkbox" name="gusto" value="atencion">
+                            <div class="option-content">
+                                <i class="fas fa-concierge-bell"></i>
+                                <span>Atención</span>
+                            </div>
+                        </label>
+                        <label class="visual-option">
+                            <input type="checkbox" name="gusto" value="sabor">
+                            <div class="option-content">
+                                <i class="fas fa-mug-hot"></i>
+                                <span>Sabor</span>
+                            </div>
+                        </label>
+                        <label class="visual-option">
+                            <input type="checkbox" name="gusto" value="ambiente">
+                            <div class="option-content">
+                                <i class="fas fa-music"></i>
+                                <span>Ambiente</span>
+                            </div>
+                        </label>
+                        <label class="visual-option">
+                            <input type="checkbox" name="gusto" value="precios">
+                            <div class="option-content">
+                                <i class="fas fa-tag"></i>
+                                <span>Precios</span>
+                            </div>
+                        </label>
+                    </div>
+                </div>
 
-        <fieldset>
-            <legend><h2>Comentarios Adicionales</h2></legend>
-            <label for="comentarios" placeholder="Sugerencias u Opiniones"><b>Comentarios</b></label>
-            <textarea name="comentarios" id="comentarios" cols="50" rows="10">
-            </textarea>
-        </fieldset>
-        </br>
-        <input type="submit" value="Enviar"></br>
-    </form>
+                <!-- Sección 3: Comentarios -->
+                <div class="form-step active">
+                    <div class="form-step-header">
+                        <i class="fas fa-comment-dots"></i>
+                        <h3>Sugerencias y Comentarios</h3>
+                    </div>
+                    <div class="input-group">
+                        <label for="comentarios">Cuéntanos más sobre tu visita</label>
+                        <textarea id="comentarios" rows="5" placeholder="Tus palabras nos ayudan a mejorar..."></textarea>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn-primary"
+                    style="width: 100%; padding: 1.2rem; font-size: 1.1rem; margin-top: 2rem;">Enviar mi
+                    Opinión</button>
+            </form>
+        </div>
+    </main>
 
     <footer>
         <div class="pie">
-            <h4><a href="nosotros.html">Facebook: @CafeDulceAromaOfficial</a></h4> <h4><a href="nosotros.html">Instagram: @Dulce_AromaOfficial</a></h4> <h4><a href="nosotros.html">Twitter: @COFFE_DULCE-AROMA_OFFICIAL</a></h4>5
+            <a href="index.html">Menú</a>
+            <a href="nosotros.html">Nosotros</a>
+            <a href="resenas.html">Reseñas</a>
+            <a href="formulario.html">Opiniones</a>
         </div>
+        <p style="margin-top: 2rem; font-size: 0.8rem; opacity: 0.7;">&copy; 2026 Café Dulce Aroma. Todos los derechos
+            reservados.</p>
     </footer>
+
+    <!-- Firebase SDKs (Compat Version) -->
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
+
+    <!-- Firebase Configuration -->
+    <script>
+        const firebaseConfig = {
+            apiKey: "AIzaSyCJOJ1k-a3MR5SCx64wX_iFyOOv_lVP2Z8",
+            authDomain: "cafedulcearoma-90f7b.firebaseapp.com",
+            projectId: "cafedulcearoma-90f7b",
+            storageBucket: "cafedulcearoma-90f7b.firebasestorage.app",
+            messagingSenderId: "189416717037",
+            appId: "1:189416717037:web:ea845411f7003111e2aae4"
+        };
+        if (typeof firebase !== 'undefined') firebase.initializeApp(firebaseConfig);
+    </script>
+
+    <script src="script.js"></script>
+    <script>
+        function handleFormSubmit(event) {
+            event.preventDefault();
+            const btn = event.target.querySelector('button[type="submit"]');
+            btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Enviando...';
+            btn.disabled = true;
+
+            setTimeout(() => {
+                alert("¡Muchas gracias! Tu opinión ha sido recibida con éxito.");
+                event.target.reset();
+                btn.innerHTML = 'Enviar mi Opinión';
+                btn.disabled = false;
+                window.location.href = 'index.html';
+            }, 2000);
+        }
+    </script>
 </body>
-</html>     
+
+</html>
