@@ -45,7 +45,8 @@ header {
 
 /* Premium CSS Logo */
 .logo-wrap {
-    text-decoration: none;
+    text-decoration: none !important; /* Quitar subrayado azul */
+    color: inherit; /* Heredar color */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -59,14 +60,14 @@ header {
     font-size: 1.8rem;
     font-weight: 700;
     font-style: italic;
-    color: var(--secondary-color);
+    color: var(--secondary-color) !important; /* Forzar color dorado */
     line-height: 1;
     letter-spacing: 1px;
 }
 
 .logo-icon {
     font-size: 1.5rem;
-    color: white;
+    color: white !important; /* Forzar blanco */
     margin: -5px 0;
     opacity: 0.9;
 }
@@ -77,7 +78,7 @@ header {
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 4px;
-    color: white;
+    color: white !important; /* Forzar blanco */
     opacity: 0.8;
 }
 
