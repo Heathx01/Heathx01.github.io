@@ -43,68 +43,35 @@ header {
     box-shadow: var(--shadow-sm);
 }
 
-/* Premium CSS Logo */
-.logo-wrap {
-    text-decoration: none !important; /* Quitar subrayado azul */
-    color: inherit; /* Heredar color */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 2px;
-    padding: 0.5rem;
+.nombre-cafeteria {
+    text-align: center;
+    margin: 1rem 0;
+}
+
+.nombre-cafeteria a {
+    color: var(--secondary-color) !important;
+    font-family: 'Playfair Display', serif;
+    font-size: 2.2rem;
+    font-weight: 800;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    text-decoration: none !important;
+    text-shadow: 0 2px 10px rgba(0,0,0,0.2);
     transition: var(--transition);
 }
 
-.logo-top {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.8rem;
-    font-weight: 700;
-    font-style: italic;
-    color: var(--secondary-color) !important; /* Forzar color dorado */
-    line-height: 1;
-    letter-spacing: 1px;
-}
-
-.logo-icon {
-    font-size: 1.5rem;
-    color: white !important; /* Forzar blanco */
-    margin: -5px 0;
-    opacity: 0.9;
-}
-
-.logo-bottom {
-    font-family: 'Outfit', sans-serif;
-    font-size: 0.8rem;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 4px;
-    color: white !important; /* Forzar blanco */
-    opacity: 0.8;
-}
-
-.logo-wrap:hover {
-    transform: translateY(-2px);
-}
-
-.logo-wrap:hover .logo-icon {
-    color: var(--secondary-color);
+.nombre-cafeteria a:hover {
+    color: white !important;
+    text-shadow: 0 0 15px var(--secondary-color);
 }
 
 @media (max-width: 768px) {
-    .logo-top { font-size: 1.4rem; }
-    .logo-icon { font-size: 1.2rem; }
-    .logo-bottom { font-size: 0.7rem; letter-spacing: 3px; }
+    .nombre-cafeteria a {
+        font-size: 1.5rem;
+        letter-spacing: 2px;
+    }
 }
 
-.nombre-cafeteria {
-    text-align: center;
-    color: var(--secondary-color);
-    font-family: 'Playfair Display', serif;
-    font-size: 1.8rem;
-    margin-bottom: 0.8rem;
-    letter-spacing: 3px;
-    font-weight: 700;
-}
 
 .menu {
     display: flex;
