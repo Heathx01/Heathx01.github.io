@@ -3,7 +3,9 @@
 <head>
     <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nosotros | Café Dulce Aroma</title>
-    <link rel="stylesheet" href="global.css"><link rel="stylesheet" href="nosotros.css">
+    <link rel="stylesheet" href="global.css">
+    <link rel="stylesheet" href="nosotros.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 </head>
 <body>
     <header>
@@ -12,11 +14,26 @@
         </div>
         <div class="menu-overlay" onclick="toggleMobileMenu()"></div>
         <div class="header-controls">
-            <div class="theme-switch-wrapper"><label class="theme-switch"><input type="checkbox" id="checkbox"><div class="slider"></div></label></div>
-            <button class="btn-auth" id="btn-user-login" onclick="toggleLoginModal()"><i class="fas fa-user-circle"></i><span>Ingresar</span></button>
+            <div class="theme-switch-wrapper">
+                <label class="theme-switch" for="checkbox">
+                    <input type="checkbox" id="checkbox" />
+                    <div class="slider"></div>
+                </label>
+            </div>
+            <button class="btn-auth" id="btn-user-login" onclick="toggleLoginModal()">
+                <i class="fas fa-user-circle"></i>
+                <span>Ingresar</span>
+            </button>
         </div>
         <h1 class="nombre-cafeteria">CAFÉ DULCE AROMA</h1>
-        <nav><ul class="menu"><li><a href="index.html">Menú</a></li><li><a href="nosotros.html">Nosotros</a></li><li><a href="resenas.html">Reseñas</a></li><li><a href="formulario.html">Opiniones</a></li></ul></nav>
+        <nav>
+            <ul class="menu">
+                <li><a href="index.html">Menú</a></li>
+                <li><a href="nosotros.html">Nosotros</a></li>
+                <li><a href="resenas.html">Reseñas</a></li>
+                <li><a href="formulario.html">Opiniones</a></li>
+            </ul>
+        </nav>
     </header>
     <main>
         <section class="subpage-header"><h2>Nosotros</h2><p>Calidad y pasión en cada grano.</p></section>
@@ -26,12 +43,32 @@
         </section>
     </main>
     <footer><div class="pie"><a href="index.html">Menú</a><a href="nosotros.html">Nosotros</a><a href="resenas.html">Reseñas</a></div><p>&copy; 2026 Café Dulce Aroma.</p></footer>
+    <!-- Firebase SDKs (Compat Version) -->
     <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
+
+    <!-- Firebase Configuration -->
     <script>
-        const firebaseConfig = { apiKey: "AIzaSyCJOJ1k-a3MR5SCx64wX_iFyOOv_lVP2Z8", authDomain: "cafedulcearoma-90f7b.firebaseapp.com", projectId: "cafedulcearoma-90f7b", storageBucket: "cafedulcearoma-90f7b.firebasestorage.app", messagingSenderId: "189416717037", appId: "1:189416717037:web:ea845411f7003111e2aae4" };
-        if (typeof firebase !== 'undefined' && !firebase.apps.length) firebase.initializeApp(firebaseConfig);
+        const firebaseConfig = {
+            apiKey: "AIzaSyCJOJ1k-a3MR5SCx64wX_iFyOOv_lVP2Z8",
+            authDomain: "cafedulcearoma-90f7b.firebaseapp.com",
+            projectId: "cafedulcearoma-90f7b",
+            storageBucket: "cafedulcearoma-90f7b.firebasestorage.app",
+            messagingSenderId: "189416717037",
+            appId: "1:189416717037:web:ea845411f7003111e2aae4"
+        };
+
+        try {
+            if (!firebase.apps.length) {
+                firebase.initializeApp(firebaseConfig);
+                console.log("Firebase: ¡Conexión establecida!");
+            }
+        } catch (e) {
+            console.error("Firebase: Error de inicialización", e);
+        }
     </script>
+
     <script src="script.js"></script>
 </body>
 </html>
