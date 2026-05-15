@@ -44,13 +44,13 @@ if (typeof firebase !== 'undefined') {
         ensureLoginModal();
         const btn = document.getElementById('btn-user-login');
         const content = q('#loginModal .modal-content');
-        
+
         if (btn) {
             btn.style.color = user ? "var(--secondary-color)" : "";
             const btnSpan = btn.querySelector('span');
             if (btnSpan) btnSpan.innerText = user ? "Mi Perfil" : "Ingresar";
         }
-        
+
         if (content) {
             content.innerHTML = user ? `
                 <button class="modal-close" onclick="toggleLoginModal()">&times;</button>
@@ -123,15 +123,6 @@ const updateUI = () => {
         if (total) total.innerText = "$0.00";
         return;
     }
-const updateUI = () => {
-    const c = q('#cartItems'), count = q('#cartCount'), total = q('#cartTotal');
-    if (count) count.innerText = cart.length;
-    if (!c) return;
-    if (!cart.length) {
-        c.innerHTML = '<div style="text-align:center;margin-top:3rem;opacity:.5;"><i class="fas fa-shopping-basket" style="font-size:3rem;"></i><p>Vacío</p></div>';
-        if (total) total.innerText = "$0.00";
-        return;
-    }
     c.innerHTML = cart.map((i, idx) => `
         <div class="cart-item-row" style="display:flex;gap:1rem;margin-bottom:1.5rem;align-items:center;">
             <img src="${i.img}" style="width:50px;height:50px;border-radius:8px;object-fit:cover;">
@@ -164,9 +155,9 @@ const loadReviews = () => {
         snapshot.forEach((doc) => {
             const r = doc.data();
             const date = r.date ? new Date(r.date.seconds * 1000).toLocaleDateString() : 'Reciente';
-            
+
             let starsHtml = '';
-            for(let i=1; i<=5; i++) {
+            for (let i = 1; i <= 5; i++) {
                 starsHtml += i <= r.rating ? '<i class="fas fa-star"></i>' : '<i class="far fa-star"></i>';
             }
 
@@ -176,10 +167,10 @@ const loadReviews = () => {
                 <div class="review-avatar" style="background: ${r.rating >= 4 ? 'var(--secondary-color)' : 'var(--primary-color)'}">
                     ${r.name.charAt(0).toUpperCase()}
                 </div>
-                <div class="product-item-info">
-                    <div class="product-item-header">
-                        <h3>${r.name}</h3>
-                        <div class="star-rating" style="font-size: 0.8rem;">${starsHtml}</div>
+                <div class="review-body">
+                    <div class="review-header">
+                        <span class="review-name">${r.name}</span>
+                        <div class="review-rating">${starsHtml}</div>
                     </div>
                     <span class="review-date">${date}</span>
                     <p class="product-desc">"${r.text}"</p>
@@ -203,7 +194,7 @@ const submitReview = async (e) => {
     try {
         btn.disabled = true;
         btn.value = "Publicando...";
-        
+
         await firebase.firestore().collection('resenas').add({
             name,
             text,
