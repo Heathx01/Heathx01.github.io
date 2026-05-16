@@ -66,10 +66,13 @@
         </div>
         <section id="bebidas" class="menu-section active">
             <div class="product-list-item">
-                <div class="product-item-img"><img loading="lazy" src="img/capuccino 3.avif" alt="Capuccino"></div>
+                <div class="product-item-img" onclick="showProductDetails('Capuccino', 5.0, 'img/capuccino 3.avif')">
+                    <img loading="lazy" src="img/capuccino 3.avif" alt="Capuccino">
+                </div>
                 <div class="product-item-info">
                     <div class="product-item-header">
-                        <h3>Capuccino</h3><span class="product-price">$5.00</span>
+                        <h3 onclick="showProductDetails('Capuccino', 5.0, 'img/capuccino 3.avif')"
+                            style="cursor:pointer;">Capuccino</h3><span class="product-price">$5.00</span>
                     </div>
                     <p class="product-desc">Espresso con leche vaporizada y espuma cremosa.</p>
                     <button class="add-to-cart-btn"
@@ -77,32 +80,236 @@
                 </div>
             </div>
             <div class="product-list-item">
-                <div class="product-item-img"><img loading="lazy" src="img/mocca2.jpg" alt="Mocaccino"></div>
+                <div class="product-item-img" onclick="showProductDetails('Mocaccino', 6.5, 'img/mocca2.jpg')">
+                    <img loading="lazy" src="img/mocca2.jpg" alt="Mocaccino">
+                </div>
                 <div class="product-item-info">
                     <div class="product-item-header">
-                        <h3>Mocaccino</h3><span class="product-price">$6.50</span>
+                        <h3 onclick="showProductDetails('Mocaccino', 6.5, 'img/mocca2.jpg')" style="cursor:pointer;">Mocaccino</h3><span class="product-price">$6.50</span>
                     </div>
                     <p class="product-desc">Mezcla de café, leche y chocolate premium.</p>
                     <button class="add-to-cart-btn"
                         onclick="addToCart('Mocaccino', 6.5, 'img/mocca2.jpg')">Agregar</button>
                 </div>
             </div>
-        </section>
-        <section id="desayunos" class="menu-section">
             <div class="product-list-item">
-                <div class="product-item-img"><img loading="lazy" src="img/fondo1.jpg"></div>
+                <div class="product-item-img" onclick="showProductDetails('Latte Caramel', 5.75, 'https://images.unsplash.com/photo-1536939459926-301728717817?auto=format&fit=crop&w=800&q=80')">
+                    <img loading="lazy" src="https://images.unsplash.com/photo-1536939459926-301728717817?auto=format&fit=crop&w=800&q=80" alt="Latte Caramel">
+                </div>
                 <div class="product-item-info">
-                    <h3>Típico</h3><span>$8.00</span><button class="add-to-cart-btn"
-                        onclick="addToCart('Típico', 8.0, 'img/fondo1.jpg')">Agregar</button>
+                    <div class="product-item-header">
+                        <h3 onclick="showProductDetails('Latte Caramel', 5.75, 'https://images.unsplash.com/photo-1536939459926-301728717817?auto=format&fit=crop&w=800&q=80')" style="cursor:pointer;">Latte Caramel</h3><span class="product-price">$5.75</span>
+                    </div>
+                    <p class="product-desc">Latte suave con un toque de caramelo artesanal.</p>
+                    <button class="add-to-cart-btn" onclick="addToCart('Latte Caramel', 5.75, 'https://images.unsplash.com/photo-1536939459926-301728717817?auto=format&fit=crop&w=800&q=80')">Agregar</button>
+                </div>
+            </div>
+            <div class="product-list-item">
+                <div class="product-item-img" onclick="showProductDetails('Frappé Oreo', 7.00, 'https://images.unsplash.com/photo-1572490122747-3968b75cc699?auto=format&fit=crop&w=800&q=80')">
+                    <img loading="lazy" src="https://images.unsplash.com/photo-1572490122747-3968b75cc699?auto=format&fit=crop&w=800&q=80" alt="Frappé Oreo">
+                </div>
+                <div class="product-item-info">
+                    <div class="product-item-header">
+                        <h3 onclick="showProductDetails('Frappé Oreo', 7.00, 'https://images.unsplash.com/photo-1572490122747-3968b75cc699?auto=format&fit=crop&w=800&q=80')" style="cursor:pointer;">Frappé Oreo</h3><span class="product-price">$7.00</span>
+                    </div>
+                    <p class="product-desc">Bebida helada cremosa con trozos de galleta Oreo.</p>
+                    <button class="add-to-cart-btn" onclick="addToCart('Frappé Oreo', 7.00, 'https://images.unsplash.com/photo-1572490122747-3968b75cc699?auto=format&fit=crop&w=800&q=80')">Agregar</button>
+                </div>
+            </div>
+            <div class="product-list-item">
+                <div class="product-item-img" onclick="showProductDetails('Té Verde Matcha', 4.50, 'https://images.unsplash.com/photo-1515823064-d6e0c04616a7?auto=format&fit=crop&w=800&q=80')">
+                    <img loading="lazy" src="https://images.unsplash.com/photo-1515823064-d6e0c04616a7?auto=format&fit=crop&w=800&q=80" alt="Té Verde Matcha">
+                </div>
+                <div class="product-item-info">
+                    <div class="product-item-header">
+                        <h3 onclick="showProductDetails('Té Verde Matcha', 4.50, 'https://images.unsplash.com/photo-1515823064-d6e0c04616a7?auto=format&fit=crop&w=800&q=80')" style="cursor:pointer;">Té Verde Matcha</h3><span class="product-price">$4.50</span>
+                    </div>
+                    <p class="product-desc">Matcha orgánico con leche de almendras.</p>
+                    <button class="add-to-cart-btn" onclick="addToCart('Té Verde Matcha', 4.50, 'https://images.unsplash.com/photo-1515823064-d6e0c04616a7?auto=format&fit=crop&w=800&q=80')">Agregar</button>
+                </div>
+            </div>
+            <div class="product-list-item">
+                <div class="product-item-img" onclick="showProductDetails('Espresso Doppio', 3.00, 'https://images.unsplash.com/photo-1510591509098-f4fdc6d0ff04?auto=format&fit=crop&w=800&q=80')">
+                    <img loading="lazy" src="https://images.unsplash.com/photo-1510591509098-f4fdc6d0ff04?auto=format&fit=crop&w=800&q=80" alt="Espresso Doppio">
+                </div>
+                <div class="product-item-info">
+                    <div class="product-item-header">
+                        <h3 onclick="showProductDetails('Espresso Doppio', 3.00, 'https://images.unsplash.com/photo-1510591509098-f4fdc6d0ff04?auto=format&fit=crop&w=800&q=80')" style="cursor:pointer;">Espresso Doppio</h3><span class="product-price">$3.00</span>
+                    </div>
+                    <p class="product-desc">Doble carga de intensidad pura.</p>
+                    <button class="add-to-cart-btn" onclick="addToCart('Espresso Doppio', 3.00, 'https://images.unsplash.com/photo-1510591509098-f4fdc6d0ff04?auto=format&fit=crop&w=800&q=80')">Agregar</button>
                 </div>
             </div>
         </section>
+
+        <section id="desayunos" class="menu-section">
+            <div class="product-list-item">
+                <div class="product-item-img" onclick="showProductDetails('Típico', 8.0, 'img/fondo1.jpg')">
+                    <img loading="lazy" src="img/fondo1.jpg">
+                </div>
+                <div class="product-item-info">
+                    <h3 onclick="showProductDetails('Típico', 8.0, 'img/fondo1.jpg')" style="cursor:pointer;">Típico</h3><span class="product-price">$8.00</span>
+                    <p class="product-desc">Frijoles, huevo, plátano frito y crema.</p>
+                    <button class="add-to-cart-btn" onclick="addToCart('Típico', 8.0, 'img/fondo1.jpg')">Agregar</button>
+                </div>
+            </div>
+            <div class="product-list-item">
+                <div class="product-item-img" onclick="showProductDetails('Pancakes Clásicos', 7.50, 'https://images.unsplash.com/photo-1528207776546-365bb710ee93?auto=format&fit=crop&w=800&q=80')">
+                    <img loading="lazy" src="https://images.unsplash.com/photo-1528207776546-365bb710ee93?auto=format&fit=crop&w=800&q=80">
+                </div>
+                <div class="product-item-info">
+                    <h3 onclick="showProductDetails('Pancakes Clásicos', 7.50, 'https://images.unsplash.com/photo-1528207776546-365bb710ee93?auto=format&fit=crop&w=800&q=80')" style="cursor:pointer;">Pancakes Clásicos</h3><span class="product-price">$7.50</span>
+                    <p class="product-desc">Torre de pancakes esponjosos con miel de maple.</p>
+                    <button class="add-to-cart-btn" onclick="addToCart('Pancakes Clásicos', 7.50, 'https://images.unsplash.com/photo-1528207776546-365bb710ee93?auto=format&fit=crop&w=800&q=80')">Agregar</button>
+                </div>
+            </div>
+            <div class="product-list-item">
+                <div class="product-item-img" onclick="showProductDetails('Tostadas Francesas', 8.50, 'https://images.unsplash.com/photo-1484723091739-30a097e8f929?auto=format&fit=crop&w=800&q=80')">
+                    <img loading="lazy" src="https://images.unsplash.com/photo-1484723091739-30a097e8f929?auto=format&fit=crop&w=800&q=80">
+                </div>
+                <div class="product-item-info">
+                    <h3 onclick="showProductDetails('Tostadas Francesas', 8.50, 'https://images.unsplash.com/photo-1484723091739-30a097e8f929?auto=format&fit=crop&w=800&q=80')" style="cursor:pointer;">Tostadas Francesas</h3><span class="product-price">$8.50</span>
+                    <p class="product-desc">Brioche con canela, frutas de temporada y miel.</p>
+                    <button class="add-to-cart-btn" onclick="addToCart('Tostadas Francesas', 8.50, 'https://images.unsplash.com/photo-1484723091739-30a097e8f929?auto=format&fit=crop&w=800&q=80')">Agregar</button>
+                </div>
+            </div>
+            <div class="product-list-item">
+                <div class="product-item-img" onclick="showProductDetails('Bagel de Salmón', 10.50, 'https://images.unsplash.com/photo-1533089860892-a7c6f0a88666?auto=format&fit=crop&w=800&q=80')">
+                    <img loading="lazy" src="https://images.unsplash.com/photo-1533089860892-a7c6f0a88666?auto=format&fit=crop&w=800&q=80">
+                </div>
+                <div class="product-item-info">
+                    <h3 onclick="showProductDetails('Bagel de Salmón', 10.50, 'https://images.unsplash.com/photo-1533089860892-a7c6f0a88666?auto=format&fit=crop&w=800&q=80')" style="cursor:pointer;">Bagel de Salmón</h3><span class="product-price">$10.50</span>
+                    <p class="product-desc">Queso crema, salmón ahumado y alcaparras.</p>
+                    <button class="add-to-cart-btn" onclick="addToCart('Bagel de Salmón', 10.50, 'https://images.unsplash.com/photo-1533089860892-a7c6f0a88666?auto=format&fit=crop&w=800&q=80')">Agregar</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="almuerzos" class="menu-section">
+            <div class="product-list-item">
+                <div class="product-item-img" onclick="showProductDetails('Sandwich de Pavo', 9.50, 'https://images.unsplash.com/photo-1525351484163-7529414344d8?auto=format&fit=crop&w=800&q=80')">
+                    <img loading="lazy" src="https://images.unsplash.com/photo-1525351484163-7529414344d8?auto=format&fit=crop&w=800&q=80">
+                </div>
+                <div class="product-item-info">
+                    <h3 onclick="showProductDetails('Sandwich de Pavo', 9.50, 'https://images.unsplash.com/photo-1525351484163-7529414344d8?auto=format&fit=crop&w=800&q=80')" style="cursor:pointer;">Sandwich de Pavo</h3><span class="product-price">$9.50</span>
+                    <p class="product-desc">Pavo ahumado, queso suizo y vegetales frescos.</p>
+                    <button class="add-to-cart-btn" onclick="addToCart('Sandwich de Pavo', 9.50, 'https://images.unsplash.com/photo-1525351484163-7529414344d8?auto=format&fit=crop&w=800&q=80')">Agregar</button>
+                </div>
+            </div>
+            <div class="product-list-item">
+                <div class="product-item-img" onclick="showProductDetails('Ensalada César', 10.00, 'https://images.unsplash.com/photo-1550304943-4f24f54ddde9?auto=format&fit=crop&w=800&q=80')">
+                    <img loading="lazy" src="https://images.unsplash.com/photo-1550304943-4f24f54ddde9?auto=format&fit=crop&w=800&q=80">
+                </div>
+                <div class="product-item-info">
+                    <h3 onclick="showProductDetails('Ensalada César', 10.00, 'https://images.unsplash.com/photo-1550304943-4f24f54ddde9?auto=format&fit=crop&w=800&q=80')" style="cursor:pointer;">Ensalada César</h3><span class="product-price">$10.00</span>
+                    <p class="product-desc">Lechuga romana, croutones y aderezo césar.</p>
+                    <button class="add-to-cart-btn" onclick="addToCart('Ensalada César', 10.00, 'https://images.unsplash.com/photo-1550304943-4f24f54ddde9?auto=format&fit=crop&w=800&q=80')">Agregar</button>
+                </div>
+            </div>
+            <div class="product-list-item">
+                <div class="product-item-img" onclick="showProductDetails('Bowl Saludable', 11.00, 'https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=800&q=80')">
+                    <img loading="lazy" src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=800&q=80">
+                </div>
+                <div class="product-item-info">
+                    <h3 onclick="showProductDetails('Bowl Saludable', 11.00, 'https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=800&q=80')" style="cursor:pointer;">Bowl Saludable</h3><span class="product-price">$11.00</span>
+                    <p class="product-desc">Quinoa, aguacate, garbanzos y kale.</p>
+                    <button class="add-to-cart-btn" onclick="addToCart('Bowl Saludable', 11.00, 'https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=800&q=80')">Agregar</button>
+                </div>
+            </div>
+            <div class="product-list-item">
+                <div class="product-item-img" onclick="showProductDetails('Tacos al Pastor', 9.00, 'https://images.unsplash.com/photo-1551504734-5ee1c4a1479b?auto=format&fit=crop&w=800&q=80')">
+                    <img loading="lazy" src="https://images.unsplash.com/photo-1551504734-5ee1c4a1479b?auto=format&fit=crop&w=800&q=80">
+                </div>
+                <div class="product-item-info">
+                    <h3 onclick="showProductDetails('Tacos al Pastor', 9.00, 'https://images.unsplash.com/photo-1551504734-5ee1c4a1479b?auto=format&fit=crop&w=800&q=80')" style="cursor:pointer;">Tacos al Pastor</h3><span class="product-price">$9.00</span>
+                    <p class="product-desc">Tres tacos con piña, cilantro y cebolla.</p>
+                    <button class="add-to-cart-btn" onclick="addToCart('Tacos al Pastor', 9.00, 'https://images.unsplash.com/photo-1551504734-5ee1c4a1479b?auto=format&fit=crop&w=800&q=80')">Agregar</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="cenas" class="menu-section">
+            <div class="product-list-item">
+                <div class="product-item-img" onclick="showProductDetails('Pizza Artesanal', 12.00, 'https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=800&q=80')">
+                    <img loading="lazy" src="https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=800&q=80">
+                </div>
+                <div class="product-item-info">
+                    <h3 onclick="showProductDetails('Pizza Artesanal', 12.00, 'https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=800&q=80')" style="cursor:pointer;">Pizza Artesanal</h3><span class="product-price">$12.00</span>
+                    <p class="product-desc">Masa madre, mozzarella y albahaca fresca.</p>
+                    <button class="add-to-cart-btn" onclick="addToCart('Pizza Artesanal', 12.00, 'https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=800&q=80')">Agregar</button>
+                </div>
+            </div>
+            <div class="product-list-item">
+                <div class="product-item-img" onclick="showProductDetails('Burger Gourmet', 13.50, 'https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=800&q=80')">
+                    <img loading="lazy" src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=800&q=80">
+                </div>
+                <div class="product-item-info">
+                    <h3 onclick="showProductDetails('Burger Gourmet', 13.50, 'https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=800&q=80')" style="cursor:pointer;">Burger Gourmet</h3><span class="product-price">$13.50</span>
+                    <p class="product-desc">Carne angus, queso cheddar y tocino crocante.</p>
+                    <button class="add-to-cart-btn" onclick="addToCart('Burger Gourmet', 13.50, 'https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=800&q=80')">Agregar</button>
+                </div>
+            </div>
+            <div class="product-list-item">
+                <div class="product-item-img" onclick="showProductDetails('Risotto de Hongos', 14.00, 'https://images.unsplash.com/photo-1476124369491-e7addf5db371?auto=format&fit=crop&w=800&q=80')">
+                    <img loading="lazy" src="https://images.unsplash.com/photo-1476124369491-e7addf5db371?auto=format&fit=crop&w=800&q=80">
+                </div>
+                <div class="product-item-info">
+                    <h3 onclick="showProductDetails('Risotto de Hongos', 14.00, 'https://images.unsplash.com/photo-1476124369491-e7addf5db371?auto=format&fit=crop&w=800&q=80')" style="cursor:pointer;">Risotto de Hongos</h3><span class="product-price">$14.00</span>
+                    <p class="product-desc">Cremoso arroz arborio con setas frescas.</p>
+                    <button class="add-to-cart-btn" onclick="addToCart('Risotto de Hongos', 14.00, 'https://images.unsplash.com/photo-1476124369491-e7addf5db371?auto=format&fit=crop&w=800&q=80')">Agregar</button>
+                </div>
+            </div>
+        </section>
+
         <section id="postres" class="menu-section">
             <div class="product-list-item">
-                <div class="product-item-img"><img loading="lazy" src="img/browni.jpg"></div>
+                <div class="product-item-img" onclick="showProductDetails('Brownie', 4.5, 'img/browni.jpg')">
+                    <img loading="lazy" src="img/browni.jpg">
+                </div>
                 <div class="product-item-info">
-                    <h3>Brownie</h3><span>$4.50</span><button class="add-to-cart-btn"
-                        onclick="addToCart('Brownie', 4.5, 'img/browni.jpg')">Agregar</button>
+                    <h3 onclick="showProductDetails('Brownie', 4.5, 'img/browni.jpg')" style="cursor:pointer;">Brownie</h3><span class="product-price">$4.50</span>
+                    <p class="product-desc">Bizcocho de chocolate intenso con nueces.</p>
+                    <button class="add-to-cart-btn" onclick="addToCart('Brownie', 4.5, 'img/browni.jpg')">Agregar</button>
+                </div>
+            </div>
+            <div class="product-list-item">
+                <div class="product-item-img" onclick="showProductDetails('Cheesecake', 6.00, 'https://images.unsplash.com/photo-1533134242443-d4fd215305ad?auto=format&fit=crop&w=800&q=80')">
+                    <img loading="lazy" src="https://images.unsplash.com/photo-1533134242443-d4fd215305ad?auto=format&fit=crop&w=800&q=80">
+                </div>
+                <div class="product-item-info">
+                    <h3 onclick="showProductDetails('Cheesecake', 6.00, 'https://images.unsplash.com/photo-1533134242443-d4fd215305ad?auto=format&fit=crop&w=800&q=80')" style="cursor:pointer;">Cheesecake</h3><span class="product-price">$6.00</span>
+                    <p class="product-desc">Tarta de queso cremosa con frutos rojos.</p>
+                    <button class="add-to-cart-btn" onclick="addToCart('Cheesecake', 6.00, 'https://images.unsplash.com/photo-1533134242443-d4fd215305ad?auto=format&fit=crop&w=800&q=80')">Agregar</button>
+                </div>
+            </div>
+            <div class="product-list-item">
+                <div class="product-item-img" onclick="showProductDetails('Tiramisú', 6.50, 'https://images.unsplash.com/photo-1571877227200-a0d98ea607e9?auto=format&fit=crop&w=800&q=80')">
+                    <img loading="lazy" src="https://images.unsplash.com/photo-1571877227200-a0d98ea607e9?auto=format&fit=crop&w=800&q=80">
+                </div>
+                <div class="product-item-info">
+                    <h3 onclick="showProductDetails('Tiramisú', 6.50, 'https://images.unsplash.com/photo-1571877227200-a0d98ea607e9?auto=format&fit=crop&w=800&q=80')" style="cursor:pointer;">Tiramisú</h3><span class="product-price">$6.50</span>
+                    <p class="product-desc">Postre italiano con café y mascarpone.</p>
+                    <button class="add-to-cart-btn" onclick="addToCart('Tiramisú', 6.50, 'https://images.unsplash.com/photo-1571877227200-a0d98ea607e9?auto=format&fit=crop&w=800&q=80')">Agregar</button>
+                </div>
+            </div>
+            <div class="product-list-item">
+                <div class="product-item-img" onclick="showProductDetails('Macarons', 8.00, 'https://images.unsplash.com/photo-1558326567-98ae2c402b4d?auto=format&fit=crop&w=800&q=80')">
+                    <img loading="lazy" src="https://images.unsplash.com/photo-1558326567-98ae2c402b4d?auto=format&fit=crop&w=800&q=80">
+                </div>
+                <div class="product-item-info">
+                    <h3 onclick="showProductDetails('Macarons', 8.00, 'https://images.unsplash.com/photo-1558326567-98ae2c402b4d?auto=format&fit=crop&w=800&q=80')" style="cursor:pointer;">Macarons</h3><span class="product-price">$8.00</span>
+                    <p class="product-desc">Seis delicias francesas de sabores variados.</p>
+                    <button class="add-to-cart-btn" onclick="addToCart('Macarons', 8.00, 'https://images.unsplash.com/photo-1558326567-98ae2c402b4d?auto=format&fit=crop&w=800&q=80')">Agregar</button>
+                </div>
+            </div>
+            <div class="product-list-item">
+                <div class="product-item-img" onclick="showProductDetails('Pie de Manzana', 5.50, 'https://images.unsplash.com/photo-1568571780765-9276ac4125a2?auto=format&fit=crop&w=800&q=80')">
+                    <img loading="lazy" src="https://images.unsplash.com/photo-1568571780765-9276ac4125a2?auto=format&fit=crop&w=800&q=80">
+                </div>
+                <div class="product-item-info">
+                    <h3 onclick="showProductDetails('Pie de Manzana', 5.50, 'https://images.unsplash.com/photo-1568571780765-9276ac4125a2?auto=format&fit=crop&w=800&q=80')" style="cursor:pointer;">Pie de Manzana</h3><span class="product-price">$5.50</span>
+                    <p class="product-desc">Receta clásica servida tibia con canela.</p>
+                    <button class="add-to-cart-btn" onclick="addToCart('Pie de Manzana', 5.50, 'https://images.unsplash.com/photo-1568571780765-9276ac4125a2?auto=format&fit=crop&w=800&q=80')">Agregar</button>
                 </div>
             </div>
         </section>
@@ -151,6 +358,16 @@
             </form>
         </div>
     </div>
+
+    <!-- Product Modal -->
+    <div id="productModal" class="modal-overlay">
+        <div id="productModalContent" class="modal-content product-modal-content">
+            <!-- Dynamically filled by script.js -->
+        </div>
+    </div>
+
+    <!-- Toast Container -->
+    <div id="toast-container"></div>
 
     <!-- Login Modal (Managed by script.js) -->
 

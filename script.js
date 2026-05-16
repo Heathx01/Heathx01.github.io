@@ -115,32 +115,276 @@ let cart = JSON.parse(localStorage.getItem('cafe_cart') || '[]');
 const save = () => localStorage.setItem('cafe_cart', JSON.stringify(cart));
 
 const updateUI = () => {
-    const c = q('#cartItems'), count = q('#cartCount'), total = q('#cartTotal');
+    const c = q('#cartItems'), count = q('#cartCount'), total = q('#cartTotal'), btnCheckout = q('#btn-checkout-start');
     if (count) count.innerText = cart.length;
     if (!c) return;
+
     if (!cart.length) {
-        c.innerHTML = '<div style="text-align:center;margin-top:3rem;opacity:.5;"><i class="fas fa-shopping-basket" style="font-size:3rem;"></i><p>Vacío</p></div>';
+        c.innerHTML = `
+            <div style="text-align:center;margin-top:3rem;opacity:.5;">
+                <i class="fas fa-shopping-basket" style="font-size:3rem; margin-bottom:1rem; display:block;"></i>
+                <p>Tu cesta está vacía</p>
+            </div>`;
         if (total) total.innerText = "$0.00";
+        if (btnCheckout) {
+            btnCheckout.innerText = "Empezar a pedir";
+            btnCheckout.onclick = () => toggleCart(); // Simplemente cierra el carrito para que elija algo
+        }
         return;
     }
+
     c.innerHTML = cart.map((i, idx) => `
-        <div class="cart-item-row" style="display:flex;gap:1rem;margin-bottom:1.5rem;align-items:center;">
-            <img src="${i.img}" style="width:50px;height:50px;border-radius:8px;object-fit:cover;">
-            <div style="flex:1;"><h4 style="font-size:.9rem;margin:0;">${i.name}</h4><span style="color:var(--secondary-color);">$${i.price.toFixed(2)}</span></div>
-            <button onclick="rm(${idx})" style="background:none;border:none;cursor:pointer;"><i class="fas fa-times"></i></button>
+        <div class="cart-item-row" style="display:flex; gap:1rem; margin-bottom:1.5rem; align-items:center; animation: slideIn 0.3s ease;">
+            <img src="${i.img}" style="width:60px; height:60px; border-radius:12px; object-fit:cover; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">
+            <div style="flex:1;">
+                <h4 style="font-size:.9rem; margin:0; color:var(--text-color);">${i.name}</h4>
+                <span style="color:var(--secondary-color); font-weight:600;">$${i.price.toFixed(2)}</span>
+            </div>
+            <button onclick="rm(${idx})" style="background:rgba(255,0,0,0.1); color:#ff4444; border:none; width:30px; height:30px; border-radius:50%; cursor:pointer; display:flex; align-items:center; justify-content:center; transition: all 0.2s;">
+                <i class="fas fa-times"></i>
+            </button>
         </div>`).join('');
+
     if (total) total.innerText = `$${cart.reduce((a, b) => a + b.price, 0).toFixed(2)}`;
+    if (btnCheckout) {
+        btnCheckout.innerText = "Hacer Pedido";
+        btnCheckout.onclick = () => showCheckout();
+    }
+};
+
+window.rm = (idx) => { 
+    cart.splice(idx, 1); 
+    save(); 
+    updateUI(); 
+};
+
+const showCheckout = () => {
+    if (cart.length === 0) {
+        toggleCart();
+        return;
+    }
+    // Redirigir a la nueva página de pago
+    window.location.href = 'pago.html';
+};
+
+const toggleCart = () => q('#cartSidebar')?.classList.toggle('active');
+
+/**
+ * Product Details & Toasts
+ */
+const productsData = {
+    'Capuccino': {
+        desc: 'Espresso con leche vaporizada y espuma cremosa, decorado con un toque de canela.',
+        ingredients: ['Espresso Arábica', 'Leche entera/deslactosada', 'Canela'],
+        allergens: ['Lácteos'],
+        suggested: 'Brownie'
+    },
+    'Mocaccino': {
+        desc: 'Deliciosa mezcla de espresso, chocolate premium y leche vaporizada.',
+        ingredients: ['Espresso Arábica', 'Cacao 70%', 'Leche vaporizada'],
+        allergens: ['Lácteos', 'Trazas de frutos secos'],
+        suggested: 'Tiramisú'
+    },
+    'Latte Caramel': {
+        desc: 'Café latte suave con jarabe de caramelo artesanal y un toque de crema batida.',
+        ingredients: ['Espresso', 'Leche vaporizada', 'Jarabe de caramelo'],
+        allergens: ['Lácteos'],
+        suggested: 'Cheesecake'
+    },
+    'Té Verde Matcha': {
+        desc: 'Bebida milenaria de té verde japonés premium con leche cremosa.',
+        ingredients: ['Matcha ceremonial', 'Leche de almendras', 'Miel orgánica'],
+        allergens: ['Frutos secos (almendra)'],
+        suggested: 'Macarons'
+    },
+    'Espresso Doppio': {
+        desc: 'Dos cargas de espresso puro con una crema dorada e intensa.',
+        ingredients: ['Café Arábica de altura'],
+        allergens: [],
+        suggested: 'Brownie'
+    },
+    'Frappé Oreo': {
+        desc: 'Bebida helada ultra cremosa mezclada con galletas Oreo reales y topping de chocolate.',
+        ingredients: ['Base cremosa', 'Galletas Oreo', 'Crema batida', 'Cacao'],
+        allergens: ['Lácteos', 'Gluten', 'Soya'],
+        suggested: 'Brownie'
+    },
+    'Típico': {
+        desc: 'Desayuno tradicional con frijoles, plátano, queso, crema y huevo al gusto.',
+        ingredients: ['Frijoles rojos', 'Plátano frito', 'Queso fresco', 'Crema'],
+        allergens: ['Lácteos', 'Huevo'],
+        suggested: 'Capuccino'
+    },
+    'Pancakes Clásicos': {
+        desc: 'Torre de tres pancakes esponjosos servidos con mantequilla y miel de maple pura.',
+        ingredients: ['Mezcla artesanal', 'Mantequilla', 'Miel de maple'],
+        allergens: ['Gluten', 'Huevo', 'Lácteos'],
+        suggested: 'Latte Caramel'
+    },
+    'Tostadas Francesas': {
+        desc: 'Pan brioche empapado en crema de vainilla y canela, sellado a la perfección.',
+        ingredients: ['Pan Brioche', 'Canela', 'Frutos del bosque'],
+        allergens: ['Gluten', 'Lácteos', 'Huevo'],
+        suggested: 'Espresso Doppio'
+    },
+    'Bagel de Salmón': {
+        desc: 'Bagel tostado con queso crema, láminas de salmón ahumado y alcaparras.',
+        ingredients: ['Bagel artesanal', 'Salmón ahumado', 'Queso crema'],
+        allergens: ['Gluten', 'Lácteos', 'Pescado'],
+        suggested: 'Té Verde Matcha'
+    },
+    'Sandwich de Pavo': {
+        desc: 'Pan artesanal tostado con finas lascas de pavo ahumado, queso suizo, lechuga y tomate.',
+        ingredients: ['Pan de masa madre', 'Pavo ahumado', 'Queso suizo', 'Vegetales'],
+        allergens: ['Gluten', 'Lácteos'],
+        suggested: 'Té Helado'
+    },
+    'Ensalada César': {
+        desc: 'Lechuga romana fresca, croutones crujientes, queso parmesano y nuestro aderezo césar especial.',
+        ingredients: ['Lechuga romana', 'Parmesano', 'Croutones', 'Aderezo César'],
+        allergens: ['Lácteos', 'Gluten', 'Huevo', 'Pescado (en aderezo)'],
+        suggested: 'Sandwich de Pavo'
+    },
+    'Bowl Saludable': {
+        desc: 'Una explosión de nutrientes con quinoa, vegetales frescos y aderezo cítrico.',
+        ingredients: ['Quinoa', 'Aguacate', 'Garbanzos', 'Kale'],
+        allergens: [],
+        suggested: 'Té Verde Matcha'
+    },
+    'Tacos al Pastor': {
+        desc: 'Tres tacos de cerdo marinado con piña, servidos en tortilla de maíz recién hecha.',
+        ingredients: ['Cerdo marinado', 'Piña', 'Tortilla de maíz'],
+        allergens: [],
+        suggested: 'Frappé Oreo'
+    },
+    'Pizza Artesanal': {
+        desc: 'Pizza individual horneada con masa delgada, salsa de tomate natural, mozzarella y albahaca.',
+        ingredients: ['Masa madre', 'Pomodoro', 'Mozzarella fresca', 'Albahaca'],
+        allergens: ['Gluten', 'Lácteos'],
+        suggested: 'Mocaccino'
+    },
+    'Burger Gourmet': {
+        desc: 'Hamburguesa de carne angus con queso fundido y tocino en pan brioche artesanal.',
+        ingredients: ['Carne Angus', 'Pan Brioche', 'Queso Cheddar'],
+        allergens: ['Gluten', 'Lácteos'],
+        suggested: 'Mocaccino'
+    },
+    'Risotto de Hongos': {
+        desc: 'Arroz arborio cocinado lentamente con una selección de hongos silvestres y parmesano.',
+        ingredients: ['Arroz Arborio', 'Hongos', 'Parmesano', 'Vino blanco'],
+        allergens: ['Lácteos'],
+        suggested: 'Pizza Artesanal'
+    },
+    'Brownie': {
+        desc: 'Bizcocho de chocolate intenso con nueces, melcochudo por dentro.',
+        ingredients: ['Chocolate amargo', 'Nueces', 'Mantequilla', 'Harina'],
+        allergens: ['Lácteos', 'Gluten', 'Frutos secos'],
+        suggested: 'Mocaccino'
+    },
+    'Cheesecake': {
+        desc: 'Tarta de queso estilo New York sobre base de galleta, bañada en coulis de frutos rojos.',
+        ingredients: ['Queso crema', 'Galleta', 'Frutos rojos'],
+        allergens: ['Lácteos', 'Gluten', 'Huevo'],
+        suggested: 'Latte Caramel'
+    },
+    'Tiramisú': {
+        desc: 'Clásico postre italiano con capas de bizcocho soletilla empapadas en espresso y crema de mascarpone.',
+        ingredients: ['Mascarpone', 'Café Espresso', 'Bizcocho', 'Cacao'],
+        allergens: ['Lácteos', 'Gluten', 'Huevo'],
+        suggested: 'Capuccino'
+    },
+    'Macarons': {
+        desc: 'Selección de seis macarons franceses de colores y sabores exquisitos.',
+        ingredients: ['Harina de almendra', 'Clara de huevo', 'Ganache'],
+        allergens: ['Frutos secos (almendra)', 'Huevo', 'Lácteos'],
+        suggested: 'Té Verde Matcha'
+    },
+    'Pie de Manzana': {
+        desc: 'Tradicional pastel de manzana con costra crujiente y relleno especiado.',
+        ingredients: ['Manzana verde', 'Canela', 'Mantequilla', 'Harina'],
+        allergens: ['Gluten', 'Lácteos'],
+        suggested: 'Espresso Doppio'
+    }
+};
+
+const showProductDetails = (name, price, img) => {
+    const data = productsData[name] || { desc: 'Un clásico de nuestra casa.', ingredients: [], allergens: [], suggested: '' };
+    const modal = q('#productModal');
+    const content = q('#productModalContent');
+    
+    if (modal && content) {
+        content.innerHTML = `
+            <button class="modal-close" onclick="toggleModal('productModal')">&times;</button>
+            <div class="product-detail-grid">
+                <div class="product-detail-img">
+                    <img src="${img}" alt="${name}">
+                </div>
+                <div class="product-detail-info">
+                    <h2 style="font-family:'Playfair Display', serif;">${name}</h2>
+                    <span class="product-price" style="display:block; margin: 0.5rem 0 1.5rem; font-size: 1.5rem; color: var(--secondary-color); font-weight: bold;">$${price.toFixed(2)}</span>
+                    <p style="color: var(--text-muted); margin-bottom: 2rem; line-height: 1.6;">${data.desc}</p>
+                    
+                    <div style="margin-bottom: 1.5rem;">
+                        <h4 style="font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 0.5rem;">Ingredientes Clave:</h4>
+                        <p style="font-size: 0.95rem; color: var(--text-color);">${data.ingredients.join(', ')}</p>
+                    </div>
+                    
+                    <div style="margin-bottom: 1.5rem;">
+                        <h4 style="font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 0.5rem;">Alérgenos:</h4>
+                        <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+                            ${data.allergens.map(a => `<span style="background: rgba(196, 138, 78, 0.1); color: var(--secondary-color); padding: 0.3rem 0.8rem; border-radius: 50px; font-size: 0.8rem; font-weight: 600;">${a}</span>`).join('')}
+                        </div>
+                    </div>
+                    
+                    ${data.suggested ? `
+                    <div style="background: var(--accent-color); padding: 1rem; border-radius: 12px; margin-bottom: 2rem; border-left: 4px solid var(--secondary-color);">
+                        <p style="font-size: 0.9rem; margin: 0;">✨ <strong>Recomendación:</strong> Pruébalo con nuestro ${data.suggested}</p>
+                    </div>` : ''}
+                    
+                    <button class="submit-btn" onclick="addToCart('${name}', ${price}, '${img}'); toggleModal('productModal');" style="margin-top: 0;">
+                        Agregar al Carrito
+                    </button>
+                </div>
+            </div>
+        `;
+        modal.style.display = 'flex';
+    }
+};
+
+const showToast = (msg) => {
+    let container = q('#toast-container');
+    if (!container) {
+        container = document.createElement('div');
+        container.id = 'toast-container';
+        document.body.appendChild(container);
+    }
+    
+    const toast = document.createElement('div');
+    toast.className = 'toast reveal-init';
+    toast.innerHTML = `
+        <div class="toast-content">
+            <i class="fas fa-check-circle"></i>
+            <span>${msg}</span>
+        </div>
+        <button onclick="toggleCart(); this.parentElement.parentElement.remove();">VER</button>
+    `;
+    
+    container.appendChild(toast);
+    setTimeout(() => toast.classList.add('reveal'), 10);
+    
+    setTimeout(() => {
+        toast.classList.remove('reveal');
+        setTimeout(() => toast.remove(), 600);
+    }, 4000);
 };
 
 const addToCart = (n, p, i) => {
     cart.push({ name: n, price: p, img: i });
     save(); updateUI();
+    showToast(`¡${n} añadido!`);
     const btn = q('.cart-floating-btn');
     if (btn) { btn.style.animation = 'none'; void btn.offsetWidth; btn.style.animation = 'pulse 0.5s'; }
 };
-
-const rm = (idx) => { cart.splice(idx, 1); save(); updateUI(); };
-const toggleCart = () => q('#cartSidebar')?.classList.toggle('active');
 
 /**
  * Real-time Reviews System (Firestore)

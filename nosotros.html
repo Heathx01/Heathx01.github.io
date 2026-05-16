@@ -6,6 +6,8 @@
     <link rel="stylesheet" href="global.css?v=1.5">
     <link rel="stylesheet" href="nosotros.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
 </head>
 <body>
     <header>
@@ -38,8 +40,70 @@
     <main>
         <section class="subpage-header"><h2>Nosotros</h2><p>Calidad y pasión en cada grano.</p></section>
         <section class="blog-container">
-            <div class="blog-card"><img src="img/fachada interior 2.avif"><h3>Ambiente Único</h3><p>Disfruta de nuestros postres y cafés en un espacio especial.</p></div>
-            <div class="blog-card"><img src="img/cafeteria1.avif"><h3>10 Años de Pasión</h3><p>Más de una década brindando el mejor servicio a nuestra comunidad.</p></div>
+            <div class="blog-card">
+                <div class="container-img"><img src="img/fachada interior 2.avif"></div>
+                <div class="content-blog">
+                    <h3>Ambiente Único</h3>
+                    <p>Disfruta de nuestros postres y cafés en un espacio especial diseñado para tu comodidad.</p>
+                </div>
+            </div>
+            <div class="blog-card">
+                <div class="container-img"><img src="img/cafeteria1.avif"></div>
+                <div class="content-blog">
+                    <h3>10 Años de Pasión</h3>
+                    <p>Más de una década brindando el mejor servicio y los granos más selectos a nuestra comunidad.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="contact-section">
+            <div class="contact-grid">
+                <div class="contact-info reveal">
+                    <h2 class="section-title">Visítanos</h2>
+                    <p>Te esperamos con el aroma del mejor café artesanal.</p>
+                    <div class="info-items">
+                        <div class="info-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <h4>Ubicación</h4>
+                                <p>Av. del Aroma 123, Ciudad del Café</p>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-clock"></i>
+                            <div>
+                                <h4>Horario</h4>
+                                <p>Lun - Sáb: 7:00 AM - 9:00 PM</p>
+                                <p>Dom: 8:00 AM - 8:00 PM</p>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-phone"></i>
+                            <div>
+                                <h4>Teléfono</h4>
+                                <p>+1 234 567 890</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <form class="contact-form">
+                        <h3>Envíos un Mensaje</h3>
+                        <div class="input-group">
+                            <input type="text" placeholder="Nombre completo" required>
+                        </div>
+                        <div class="input-group">
+                            <input type="email" placeholder="Correo electrónico" required>
+                        </div>
+                        <div class="input-group">
+                            <textarea placeholder="¿En qué podemos ayudarte?" rows="4" required></textarea>
+                        </div>
+                        <button type="submit" class="btn-primary">Enviar Mensaje</button>
+                    </form>
+                </div>
+                <div class="map-container reveal">
+                    <div id="map"></div>
+                </div>
+            </div>
         </section>
     </main>
     <footer><div class="pie"><a href="index.html">Menú</a><a href="nosotros.html">Nosotros</a><a href="resenas.html">Reseñas</a></div><p>&copy; 2026 Café Dulce Aroma.</p></footer>
@@ -69,6 +133,29 @@
         }
     </script>
 
+    <!-- Leaflet JS -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Inicializar mapa
+            const map = L.map('map').setView([13.6893, -89.1872], 15); // Coordenadas ejemplo (San Salvador)
+
+            L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
+                attribution: '&copy; OpenStreetMap contributors &copy; CARTO'
+            }).addTo(map);
+
+            const customIcon = L.icon({
+                iconUrl: 'https://cdn-icons-png.flaticon.com/512/9356/9356230.png', // Icono de café
+                iconSize: [40, 40],
+                iconAnchor: [20, 40],
+                popupAnchor: [0, -40]
+            });
+
+            L.marker([13.6893, -89.1872], {icon: customIcon}).addTo(map)
+                .bindPopup('<b>Café Dulce Aroma</b><br>El aroma que enamora.')
+                .openPopup();
+        });
+    </script>
     <script src="script.js"></script>
 </body>
 </html>

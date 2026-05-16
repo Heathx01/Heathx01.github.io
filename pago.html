@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Finalizar Pedido | Café Dulce Aroma</title>
+    <link rel="stylesheet" href="global.css">
+    <link rel="stylesheet" href="pago.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="nombre-cafeteria">
+            <a href="index.html">DULCE AROMA</a>
+        </div>
+    </header>
+
+    <main class="checkout-container">
+        <div class="checkout-grid">
+            <!-- Formulario de Pago -->
+            <section class="checkout-form-section">
+                <div class="checkout-card">
+                    <h2><i class="fas fa-map-marker-alt"></i> Detalles de Entrega</h2>
+                    <form id="payment-form">
+                        <div class="input-row">
+                            <div class="input-group">
+                                <label>Nombre Completo</label>
+                                <input type="text" placeholder="Ej. Juan Pérez" required>
+                            </div>
+                        </div>
+                        <div class="input-row">
+                            <div class="input-group">
+                                <label>Dirección</label>
+                                <input type="text" placeholder="Calle, número, colonia" required>
+                            </div>
+                        </div>
+                        <div class="input-row split">
+                            <div class="input-group">
+                                <label>Teléfono</label>
+                                <input type="tel" placeholder="7777-7777" required>
+                            </div>
+                            <div class="input-group">
+                                <label>Referencia</label>
+                                <input type="text" placeholder="Ej. Frente al parque">
+                            </div>
+                        </div>
+
+                        <h2 style="margin-top: 2.5rem;"><i class="fas fa-credit-card"></i> Método de Pago</h2>
+                        <div class="payment-methods">
+                            <label class="payment-option active">
+                                <input type="radio" name="pay-method" value="card" checked>
+                                <i class="fas fa-credit-card"></i>
+                                <span>Tarjeta</span>
+                            </label>
+                            <label class="payment-option">
+                                <input type="radio" name="pay-method" value="cash">
+                                <i class="fas fa-money-bill-wave"></i>
+                                <span>Efectivo</span>
+                            </label>
+                        </div>
+
+                        <div id="card-details">
+                            <div class="input-group">
+                                <label>Número de Tarjeta</label>
+                                <input type="text" placeholder="0000 0000 0000 0000" maxlength="19">
+                            </div>
+                            <div class="input-row split">
+                                <div class="input-group">
+                                    <label>Expiración</label>
+                                    <input type="text" placeholder="MM/YY" maxlength="5">
+                                </div>
+                                <div class="input-group">
+                                    <label>CVC</label>
+                                    <input type="password" placeholder="***" maxlength="3">
+                                </div>
+                            </div>
+                        </div>
+
+                        <button type="submit" class="btn-confirm-order">Confirmar Pedido</button>
+                    </form>
+                </div>
+            </section>
+
+            <!-- Resumen del Pedido -->
+            <aside class="order-summary-section">
+                <div class="checkout-card sticky-card">
+                    <h2>Tu Resumen</h2>
+                    <div id="checkout-items" class="checkout-items-list">
+                        <!-- Se llena con JS -->
+                    </div>
+                    <div class="summary-totals">
+                        <div class="total-row">
+                            <span>Subtotal</span>
+                            <span id="subtotal-val">$0.00</span>
+                        </div>
+                        <div class="total-row">
+                            <span>Envío</span>
+                            <span style="color: #27ae60; font-weight: 600;">GRATIS</span>
+                        </div>
+                        <hr>
+                        <div class="total-row final-total">
+                            <span>Total</span>
+                            <span id="total-val">$0.00</span>
+                        </div>
+                    </div>
+                </div>
+            </aside>
+        </div>
+    </main>
+
+    <!-- Modal de Éxito -->
+    <div id="successModal" class="modal-overlay" style="display:none; z-index: 9999;">
+        <div class="modal-content success-card">
+            <div class="success-icon">
+                <i class="fas fa-check"></i>
+            </div>
+            <h2>¡Pedido Recibido!</h2>
+            <p>Tu café estará en camino en unos minutos. Te hemos enviado un correo con los detalles.</p>
+            <button onclick="window.location.href='index.html'" class="submit-btn">Volver al Inicio</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        // Lógica específica para la página de pago
+        document.addEventListener('DOMContentLoaded', () => {
+            const summaryList = document.getElementById('checkout-items');
+            const subtotalEl = document.getElementById('subtotal-val');
+            const totalEl = document.getElementById('total-val');
+            const form = document.getElementById('payment-form');
+            
+            const renderSummary = () => {
+                if (cart.length === 0) {
+                    window.location.href = 'index.html';
+                    return;
+                }
+                
+                summaryList.innerHTML = cart.map(item => `
+                    <div class="summary-item">
+                        <img src="${item.img}" alt="${item.name}">
+                        <div class="item-info">
+                            <h4>${item.name}</h4>
+                            <span>$${item.price.toFixed(2)}</span>
+                        </div>
+                    </div>
+                `).join('');
+                
+                const total = cart.reduce((a, b) => a + b.price, 0);
+                subtotalEl.innerText = `$${total.toFixed(2)}`;
+                totalEl.innerText = `$${total.toFixed(2)}`;
+            };
+
+            renderSummary();
+
+            // Toggle métodos de pago
+            const options = document.querySelectorAll('.payment-option');
+            const cardDetails = document.getElementById('card-details');
+            
+            options.forEach(opt => {
+                opt.addEventListener('click', () => {
+                    options.forEach(o => o.classList.remove('active'));
+                    opt.classList.add('active');
+                    cardDetails.style.display = opt.querySelector('input').value === 'card' ? 'block' : 'none';
+                });
+            });
+
+            // Procesar "pago"
+            form.addEventListener('submit', (e) => {
+                e.preventDefault();
+                const btn = form.querySelector('.btn-confirm-order');
+                btn.disabled = true;
+                btn.innerHTML = '<i class="fas fa-circle-notch fa-spin"></i> Procesando...';
+                
+                setTimeout(() => {
+                    cart = [];
+                    save();
+                    document.getElementById('successModal').style.display = 'flex';
+                }, 2000);
+            });
+        });
+    </script>
+</body>
+</html>
