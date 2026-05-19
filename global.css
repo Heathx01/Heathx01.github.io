@@ -264,22 +264,31 @@ footer {
     text-align: center;
 }
 
-.pie {
-    display: flex;
-    justify-content: center;
-    gap: 2rem;
-    flex-wrap: wrap;
-    margin-bottom: 2rem;
+.footer-heading {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.3rem;
+    margin-bottom: 1.2rem;
+    font-weight: normal;
+    color: #fdfaf5;
 }
 
-.pie a {
-    color: var(--secondary-color);
-    text-decoration: none;
-    font-size: 0.9rem;
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.social-links a {
+    color: var(--accent-color);
+    font-size: 1.5rem;
     transition: var(--transition);
 }
 
-.pie a:hover { color: white; }
+.social-links a:hover {
+    color: var(--secondary-color);
+    transform: translateY(-3px);
+}
 
 /* Subpage Header */
 .subpage-header {

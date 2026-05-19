@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,6 +9,7 @@
     <link rel="stylesheet" href="pago.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 </head>
+
 <body>
     <header>
         <div class="nombre-cafeteria">
@@ -128,13 +130,13 @@
             const subtotalEl = document.getElementById('subtotal-val');
             const totalEl = document.getElementById('total-val');
             const form = document.getElementById('payment-form');
-            
+
             const renderSummary = () => {
                 if (cart.length === 0) {
                     window.location.href = 'index.html';
                     return;
                 }
-                
+
                 summaryList.innerHTML = cart.map(item => `
                     <div class="summary-item">
                         <img src="${item.img}" alt="${item.name}">
@@ -144,7 +146,7 @@
                         </div>
                     </div>
                 `).join('');
-                
+
                 const total = cart.reduce((a, b) => a + b.price, 0);
                 subtotalEl.innerText = `$${total.toFixed(2)}`;
                 totalEl.innerText = `$${total.toFixed(2)}`;
@@ -155,7 +157,7 @@
             // Toggle métodos de pago
             const options = document.querySelectorAll('.payment-option');
             const cardDetails = document.getElementById('card-details');
-            
+
             options.forEach(opt => {
                 opt.addEventListener('click', () => {
                     options.forEach(o => o.classList.remove('active'));
@@ -170,7 +172,7 @@
                 const btn = form.querySelector('.btn-confirm-order');
                 btn.disabled = true;
                 btn.innerHTML = '<i class="fas fa-circle-notch fa-spin"></i> Procesando...';
-                
+
                 setTimeout(() => {
                     cart = [];
                     save();
@@ -180,4 +182,5 @@
         });
     </script>
 </body>
+
 </html>
