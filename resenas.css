@@ -141,3 +141,64 @@
     }
     .rating-overview { min-width: 100%; }
 }
+
+.bar-fill-5 { width: 85%; }
+.bar-fill-4 { width: 10%; }
+.bar-fill-3 { width: 3%; }
+.bar-fill-2 { width: 1%; }
+.bar-fill-1 { width: 1%; }
+
+.review-btn-wrapper {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+#reviewModal h2 {
+    font-family: 'Playfair Display', serif;
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+}
+
+#reviewModal label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+}
+
+#reviewModal input[type="text"],
+#reviewModal textarea {
+    width: 100%;
+    padding: 0.8rem;
+    margin-bottom: 1.5rem;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+}
+
+.star-selector {
+    font-size: 2rem;
+    color: #ffc107;
+    cursor: pointer;
+    margin-bottom: 1.5rem;
+    display: flex;
+    gap: 0.5rem;
+}
+
+#reviewModal .btn-secondary {
+    width: 100%;
+    border: none;
+    margin-top: 1rem;
+    font-size: 0.9rem;
+    text-transform: none;
+}
+
+.loading-reviews {
+    text-align: center;
+    padding: 3rem;
+    grid-column: 1/-1;
+    opacity: 0.5;
+}
+
+.loading-reviews i {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}

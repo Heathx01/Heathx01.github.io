@@ -562,3 +562,22 @@ footer {
 .btn-google:hover { background: var(--accent-color); border-color: var(--secondary-color); }
 
 .modal-close:hover { color: var(--secondary-color); }
+
+.footer-copyright {
+    font-size: 0.9rem;
+    opacity: 0.8;
+    margin: 0;
+}
+
+/* Profile Modal Styles */
+.profile-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+.profile-logout-btn {
+    background: var(--secondary-color) !important;
+}
+.profile-back-btn {
+    border: none !important;
+}

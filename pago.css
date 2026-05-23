@@ -223,3 +223,16 @@ h2 i {
         order: -1;
     }
 }
+
+.payment-section-title {
+    margin-top: 2.5rem;
+}
+
+.shipping-free {
+    color: #27ae60;
+    font-weight: 600;
+}
+
+#successModal.modal-overlay {
+    z-index: 9999;
+}

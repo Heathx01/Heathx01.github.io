@@ -55,9 +55,9 @@ if (typeof firebase !== 'undefined') {
             content.innerHTML = user ? `
                 <button class="modal-close" onclick="toggleLoginModal()">&times;</button>
                 <div class="modal-header"><i class="fas fa-user-check"></i><h2>Mi Perfil</h2><p>Sesión iniciada:</p><strong>${user.email}</strong></div>
-                <div style="display:flex; flex-direction:column; gap:1rem;">
-                    <button class="submit-btn" onclick="handleLogout()" style="background:var(--secondary-color);">Cerrar Sesión</button>
-                    <button class="btn-google" onclick="toggleLoginModal()" style="border:none;">Volver</button>
+                <div class="profile-actions">
+                    <button class="submit-btn profile-logout-btn" onclick="handleLogout()">Cerrar Sesión</button>
+                    <button class="btn-google profile-back-btn" onclick="toggleLoginModal()">Volver</button>
                 </div>` : `
                 <button class="modal-close" onclick="toggleLoginModal()">&times;</button>
                 <div class="modal-header"><i class="fas fa-coffee"></i><h2>Bienvenido</h2><p>Inicia sesión para continuar</p></div>
@@ -121,8 +121,8 @@ const updateUI = () => {
 
     if (!cart.length) {
         c.innerHTML = `
-            <div style="text-align:center;margin-top:3rem;opacity:.5;">
-                <i class="fas fa-shopping-basket" style="font-size:3rem; margin-bottom:1rem; display:block;"></i>
+            <div class="cart-empty">
+                <i class="fas fa-shopping-basket"></i>
                 <p>Tu cesta está vacía</p>
             </div>`;
         if (total) total.innerText = "$0.00";
@@ -134,13 +134,13 @@ const updateUI = () => {
     }
 
     c.innerHTML = cart.map((i, idx) => `
-        <div class="cart-item-row" style="display:flex; gap:1rem; margin-bottom:1.5rem; align-items:center; animation: slideIn 0.3s ease;">
-            <img src="${i.img}" style="width:60px; height:60px; border-radius:12px; object-fit:cover; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">
-            <div style="flex:1;">
-                <h4 style="font-size:.9rem; margin:0; color:var(--text-color);">${i.name}</h4>
-                <span style="color:var(--secondary-color); font-weight:600;">$${i.price.toFixed(2)}</span>
+        <div class="cart-item-row">
+            <img src="${i.img}">
+            <div class="cart-item-info">
+                <h4>${i.name}</h4>
+                <span>$${i.price.toFixed(2)}</span>
             </div>
-            <button onclick="rm(${idx})" style="background:rgba(255,0,0,0.1); color:#ff4444; border:none; width:30px; height:30px; border-radius:50%; cursor:pointer; display:flex; align-items:center; justify-content:center; transition: all 0.2s;">
+            <button onclick="rm(${idx})" class="cart-item-remove-btn">
                 <i class="fas fa-times"></i>
             </button>
         </div>`).join('');
@@ -320,28 +320,28 @@ const showProductDetails = (name, price, img) => {
                     <img src="${img}" alt="${name}">
                 </div>
                 <div class="product-detail-info">
-                    <h2 style="font-family:'Playfair Display', serif;">${name}</h2>
-                    <span class="product-price" style="display:block; margin: 0.5rem 0 1.5rem; font-size: 1.5rem; color: var(--secondary-color); font-weight: bold;">$${price.toFixed(2)}</span>
-                    <p style="color: var(--text-muted); margin-bottom: 2rem; line-height: 1.6;">${data.desc}</p>
+                    <h2>${name}</h2>
+                    <span class="product-price">$${price.toFixed(2)}</span>
+                    <p class="product-desc-text">${data.desc}</p>
                     
-                    <div style="margin-bottom: 1.5rem;">
-                        <h4 style="font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 0.5rem;">Ingredientes Clave:</h4>
-                        <p style="font-size: 0.95rem; color: var(--text-color);">${data.ingredients.join(', ')}</p>
+                    <div class="product-detail-section">
+                        <h4>Ingredientes Clave:</h4>
+                        <p>${data.ingredients.join(', ')}</p>
                     </div>
                     
-                    <div style="margin-bottom: 1.5rem;">
-                        <h4 style="font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 0.5rem;">Alérgenos:</h4>
-                        <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
-                            ${data.allergens.map(a => `<span style="background: rgba(196, 138, 78, 0.1); color: var(--secondary-color); padding: 0.3rem 0.8rem; border-radius: 50px; font-size: 0.8rem; font-weight: 600;">${a}</span>`).join('')}
+                    <div class="product-detail-section">
+                        <h4>Alérgenos:</h4>
+                        <div class="allergen-list">
+                            ${data.allergens.map(a => `<span class="allergen-badge">${a}</span>`).join('')}
                         </div>
                     </div>
                     
                     ${data.suggested ? `
-                    <div style="background: var(--accent-color); padding: 1rem; border-radius: 12px; margin-bottom: 2rem; border-left: 4px solid var(--secondary-color);">
-                        <p style="font-size: 0.9rem; margin: 0;">✨ <strong>Recomendación:</strong> Pruébalo con nuestro ${data.suggested}</p>
+                    <div class="suggested-box">
+                        <p>✨ <strong>Recomendación:</strong> Pruébalo con nuestro ${data.suggested}</p>
                     </div>` : ''}
                     
-                    <button class="submit-btn" onclick="addToCart('${name}', ${price}, '${img}'); toggleModal('productModal');" style="margin-top: 0;">
+                    <button class="submit-btn" onclick="addToCart('${name}', ${price}, '${img}'); toggleModal('productModal');">
                         Agregar al Carrito
                     </button>
                 </div>

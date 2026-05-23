@@ -175,3 +175,17 @@ input:focus, textarea:focus {
         font-size: 1.8rem;
     }
 }
+
+main.formulario-main {
+    background: var(--accent-color);
+    padding-bottom: 2rem;
+}
+
+.question-text {
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.question-text.spaced {
+    margin-top: 2rem;
+}

@@ -44,8 +44,7 @@
                 <span>Ingresar</span>
             </button>
         </div>
-        <h1 class="nombre-cafeteria"><a href="index.html" style="color: inherit; text-decoration: none;">CAFÉ DULCE
-                AROMA</a></h1>
+        <h1 class="nombre-cafeteria"><a href="index.html">CAFÉ DULCE AROMA</a></h1>
         <nav>
             <ul class="menu">
                 <li><a href="index.html">Menú</a></li>
@@ -79,62 +78,59 @@
                 <div class="bar-row">
                     <span>5</span>
                     <div class="bar-bg">
-                        <div class="bar-fill" style="width: 85%;"></div>
+                        <div class="bar-fill bar-fill-5"></div>
                     </div>
                 </div>
                 <div class="bar-row">
                     <span>4</span>
                     <div class="bar-bg">
-                        <div class="bar-fill" style="width: 10%;"></div>
+                        <div class="bar-fill bar-fill-4"></div>
                     </div>
                 </div>
                 <div class="bar-row">
                     <span>3</span>
                     <div class="bar-bg">
-                        <div class="bar-fill" style="width: 3%;"></div>
+                        <div class="bar-fill bar-fill-3"></div>
                     </div>
                 </div>
                 <div class="bar-row">
                     <span>2</span>
                     <div class="bar-bg">
-                        <div class="bar-fill" style="width: 1%;"></div>
+                        <div class="bar-fill bar-fill-2"></div>
                     </div>
                 </div>
                 <div class="bar-row">
                     <span>1</span>
                     <div class="bar-bg">
-                        <div class="bar-fill" style="width: 1%;"></div>
+                        <div class="bar-fill bar-fill-1"></div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <div style="text-align: center; margin-bottom: 3rem;">
+        <div class="review-btn-wrapper">
             <button class="btn-primary" onclick="openReviewModal()" id="btn-write-review">Escribir una reseña</button>
         </div>
 
         <section class="testimonials-container" id="reviews-list">
             <!-- Dynamic Reviews will be injected here -->
-            <div style="text-align: center; padding: 3rem; grid-column: 1/-1; opacity: 0.5;">
-                <i class="fas fa-spinner fa-spin" style="font-size: 2rem; margin-bottom: 1rem;"></i>
+            <div class="loading-reviews">
+                <i class="fas fa-spinner fa-spin"></i>
                 <p>Cargando experiencias...</p>
             </div>
         </section>
 
         <!-- New Review Modal -->
-        <div id="reviewModal" class="modal-overlay" style="display:none;">
+        <div id="reviewModal" class="modal-overlay">
             <div class="form-container modal-content">
                 <button class="modal-close" onclick="closeReviewModal()">&times;</button>
-                <h2 style="font-family:'Playfair Display', serif; color:var(--primary-color); margin-bottom:1.5rem;">
-                    Calificar Experiencia</h2>
+                <h2>Calificar Experiencia</h2>
                 <form onsubmit="submitReview(event)">
-                    <label style="display:block; margin-bottom:0.5rem; font-weight:700;">Tu nombre</label>
-                    <input type="text" id="rev-name" required placeholder="¿Cómo te llamas?"
-                        style="width:100%; padding:0.8rem; margin-bottom:1.5rem; border-radius:10px; border:1px solid #ddd;">
+                    <label>Tu nombre</label>
+                    <input type="text" id="rev-name" required placeholder="¿Cómo te llamas?">
 
-                    <label style="display:block; margin-bottom:0.5rem; font-weight:700;">Tu valoración</label>
-                    <div class="star-selector" id="star-selector"
-                        style="font-size:2rem; color:#ffc107; cursor:pointer; margin-bottom:1.5rem; display:flex; gap:0.5rem;">
+                    <label>Tu valoración</label>
+                    <div class="star-selector" id="star-selector">
                         <i class="far fa-star" data-rating="1"></i>
                         <i class="far fa-star" data-rating="2"></i>
                         <i class="far fa-star" data-rating="3"></i>
@@ -142,13 +138,11 @@
                         <i class="far fa-star" data-rating="5"></i>
                     </div>
 
-                    <label style="display:block; margin-bottom:0.5rem; font-weight:700;">Tu reseña</label>
-                    <textarea id="rev-text" rows="4" placeholder="Cuéntanos qué te pareció..." required
-                        style="width:100%; padding:0.8rem; margin-bottom:1.5rem; border-radius:10px; border:1px solid #ddd;"></textarea>
+                    <label>Tu reseña</label>
+                    <textarea id="rev-text" rows="4" placeholder="Cuéntanos qué te pareció..." required></textarea>
 
                     <input type="submit" value="Publicar Reseña" class="submit-btn">
-                    <button type="button" onclick="closeReviewModal()" class="btn-secondary"
-                        style="width: 100%; border: none; margin-top: 1rem; font-size: 0.9rem; text-transform: none;">Cancelar</button>
+                    <button type="button" onclick="closeReviewModal()" class="btn-secondary">Cancelar</button>
                 </form>
             </div>
         </div>
@@ -161,7 +155,7 @@
             <a href="#" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
             <a href="#" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
         </div>
-        <p style="font-size: 0.9rem; opacity: 0.8; margin: 0;">&copy; 2026 Café Dulce Aroma. Todos los derechos reservados.<br>Diseñado por Gustavo Rodriguez</p>
+        <p class="footer-copyright">&copy; 2026 Café Dulce Aroma. Todos los derechos reservados.<br>Diseñado por Gustavo Rodriguez</p>
     </footer>
 
     <!-- Firebase SDKs (Compat Version) -->
