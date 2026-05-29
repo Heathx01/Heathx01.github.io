@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <!-- Google Tag Manager -->
     <script>(function (w, d, s, l, i) {
@@ -11,14 +12,17 @@
                     'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
         })(window, document, 'script', 'dataLayer', 'GTM-TMBDK997');</script>
     <!-- End Google Tag Manager -->
-    <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nosotros | Café Dulce Aroma</title>
     <link rel="stylesheet" href="global.css?v=1.5">
     <link rel="stylesheet" href="nosotros.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <!-- Leaflet CSS -->
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
 </head>
+
 <body>
     <!-- Google Tag Manager (noscript) -->
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TMBDK997" height="0" width="0"
@@ -52,7 +56,10 @@
         </nav>
     </header>
     <main>
-        <section class="subpage-header"><h2>Nosotros</h2><p>Calidad y pasión en cada grano.</p></section>
+        <section class="subpage-header">
+            <h2>Nosotros</h2>
+            <p>Calidad y pasión en cada grano.</p>
+        </section>
         <section class="blog-container">
             <div class="blog-card">
                 <div class="container-img"><img src="img/fachada interior 2.avif"></div>
@@ -66,6 +73,32 @@
                 <div class="content-blog">
                     <h3>10 Años de Pasión</h3>
                     <p>Más de una década brindando el mejor servicio y los granos más selectos a nuestra comunidad.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección de Misión y Visión -->
+        <section class="mision-vision-section">
+            <div class="mision-vision-container">
+                <div class="mision-vision-card reveal">
+                    <div class="card-icon">
+                        <i class="fas fa-bullseye"></i>
+                    </div>
+                    <h3>Misión</h3>
+                    <p>Ofrecer una experiencia única a través de un café de alta calidad, seleccionando con pasión los
+                        mejores granos para brindar un sabor excepcional en cada taza. Nos dedicamos a crear momentos de
+                        conexión, calidez y confort para nuestros clientes, impulsando el bienestar de nuestra comunidad
+                        y el respeto por nuestra tradición cafetalera.</p>
+                </div>
+                <div class="mision-vision-card reveal">
+                    <div class="card-icon">
+                        <i class="fas fa-eye"></i>
+                    </div>
+                    <h3>Visión</h3>
+                    <p>Ser reconocidos como el punto de encuentro y la marca de café preferida por nuestra autenticidad,
+                        calidad e innovación en el servicio. Aspiramos a expandir nuestra cultura cafetalera, inspirando
+                        un estilo de vida consciente, sostenible y apasionado por el buen café en cada rincón donde
+                        estemos presentes.</p>
                 </div>
             </div>
         </section>
@@ -99,7 +132,7 @@
                             </div>
                         </div>
                     </div>
-                    
+
                     <form class="contact-form">
                         <h3>Envíos un Mensaje</h3>
                         <div class="input-group">
@@ -127,7 +160,8 @@
             <a href="#" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
             <a href="#" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
         </div>
-        <p class="footer-copyright">&copy; 2026 Café Dulce Aroma. Todos los derechos reservados.<br>Diseñado por Gustavo Rodriguez</p>
+        <p class="footer-copyright">&copy; 2026 Café Dulce Aroma. Todos los derechos reservados.<br>Diseñado por Gustavo
+            Rodriguez</p>
     </footer>
     <!-- Firebase SDKs (Compat Version) -->
     <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
@@ -156,9 +190,10 @@
     </script>
 
     <!-- Leaflet JS -->
-    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+        integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             // Inicializar mapa
             const map = L.map('map').setView([13.6893, -89.1872], 15); // Coordenadas ejemplo (San Salvador)
 
@@ -173,11 +208,19 @@
                 popupAnchor: [0, -40]
             });
 
-            L.marker([13.6893, -89.1872], {icon: customIcon}).addTo(map)
+            L.marker([13.6893, -89.1872], { icon: customIcon }).addTo(map)
                 .bindPopup('<b>Café Dulce Aroma</b><br>El aroma que enamora.')
                 .openPopup();
         });
     </script>
     <script src="script.js"></script>
+
+    <!-- Botón de WhatsApp Flotante -->
+    <a href="https://wa.me/50582076344" class="whatsapp-float" target="_blank" rel="noopener noreferrer"
+        aria-label="Contactar por WhatsApp">
+        <div class="whatsapp-tooltip">¡Escríbenos por WhatsApp!</div>
+        <i class="fab fa-whatsapp"></i>
+    </a>
 </body>
+
 </html>
