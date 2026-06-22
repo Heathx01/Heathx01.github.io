@@ -23,7 +23,7 @@
 
 <body>
     <!-- Google Tag Manager (noscript) -->
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TMBDK997" height="0" width="0"
+    <noscript><iframe src="img/postyre de mazana.jpg" height="0" width="0"
             style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
     <header>
@@ -78,350 +78,559 @@
             <button class="tab-btn" onclick="showCategory('postres')">Postres</button>
         </div>
         <section id="bebidas" class="menu-section active">
-            <div class="product-list-item">
-                <div class="product-item-img" onclick="showProductDetails('Capuccino', 5.0, 'img/capuccino 3.avif')">
-                    <img loading="lazy" src="img/capuccino 3.avif" alt="Capuccino">
+            <div class="product-list-item" data-product="Capuccino">
+                <div class="product-item-img" onclick="showProductDetails('Capuccino', 5.0, 'imagenes/capuccino.jpg')">
+                    <img loading="lazy" src="imagenes/capuccino.jpg" alt="Capuccino">
                 </div>
                 <div class="product-item-info">
                     <div class="product-item-header">
-                        <h3 onclick="showProductDetails('Capuccino', 5.0, 'img/capuccino 3.avif')">Capuccino</h3><span
-                            class="product-price">$5.00</span>
+                        <h3 onclick="showProductDetails('Capuccino', 5.0, 'imagenes/capuccino.jpg')">
+                            Capuccino</h3>
+                        <span class="product-price">$5.00</span>
                     </div>
                     <p class="product-desc">Espresso con leche vaporizada y espuma cremosa.</p>
+                    <div class="product-meta">
+                        <span class="product-category-tag"><i class="fas fa-tag"></i> Bebidas</span>
+                        <span class="product-stock-tag" data-stock-for="Capuccino"><i class="fas fa-check-circle"></i>
+                            Disponible</span>
+                    </div>
                     <button class="add-to-cart-btn"
-                        onclick="addToCart('Capuccino', 5.0, 'img/capuccino 3.avif')">Agregar</button>
+                        onclick="addToCart('Capuccino', 5.0, 'imagenes/capuccino.jpg')">Agregar</button>
                 </div>
             </div>
-            <div class="product-list-item">
-                <div class="product-item-img" onclick="showProductDetails('Mocaccino', 6.5, 'img/mocca2.jpg')">
-                    <img loading="lazy" src="img/mocca2.jpg" alt="Mocaccino">
+            <div class="product-list-item" data-product="Mocaccino">
+                <div class="product-item-img" onclick="showProductDetails('Mocaccino', 6.5, 'imagenes/mocaccino.jpg')">
+                    <img loading="lazy" src="imagenes/mocaccino.jpg" alt="Mocaccino">
                 </div>
                 <div class="product-item-info">
                     <div class="product-item-header">
-                        <h3 onclick="showProductDetails('Mocaccino', 6.5, 'img/mocca2.jpg')">
-                            Mocaccino</h3><span class="product-price">$6.50</span>
+                        <h3 onclick="showProductDetails('Mocaccino', 6.5, 'imagenes/mocaccino.jpg')">
+                            Mocaccino</h3>
+                        <span class="product-price">$6.50</span>
                     </div>
                     <p class="product-desc">Mezcla de café, leche y chocolate premium.</p>
+                    <div class="product-meta">
+                        <span class="product-category-tag"><i class="fas fa-tag"></i> Bebidas</span>
+                        <span class="product-stock-tag" data-stock-for="Mocaccino"><i class="fas fa-check-circle"></i>
+                            Disponible</span>
+                    </div>
                     <button class="add-to-cart-btn"
-                        onclick="addToCart('Mocaccino', 6.5, 'img/mocca2.jpg')">Agregar</button>
+                        onclick="addToCart('Mocaccino', 6.5, 'imagenes/mocaccino.jpg')">Agregar</button>
                 </div>
             </div>
-            <div class="product-list-item">
+            <div class="product-list-item" data-product="Latte Caramel">
                 <div class="product-item-img"
-                    onclick="showProductDetails('Latte Caramel', 5.75, 'https://images.unsplash.com/photo-1536939459926-301728717817?auto=format&fit=crop&w=800&q=80')">
-                    <img loading="lazy"
-                        src="https://images.unsplash.com/photo-1536939459926-301728717817?auto=format&fit=crop&w=800&q=80"
-                        alt="Latte Caramel">
+                    onclick="showProductDetails('Latte Caramel', 5.75, 'imagenes/latte caramel.webp')">
+                    <img loading="lazy" src="imagenes/latte caramel.webp" alt="Latte Caramel">
                 </div>
                 <div class="product-item-info">
                     <div class="product-item-header">
-                        <h3
-                            onclick="showProductDetails('Latte Caramel', 5.75, 'https://images.unsplash.com/photo-1536939459926-301728717817?auto=format&fit=crop&w=800&q=80')">
-                            Latte Caramel</h3><span class="product-price">$5.75</span>
+                        <h3 onclick="showProductDetails('Latte Caramel', 5.75, 'imagenes/latte caramel.webp')">
+                            Latte Caramel</h3>
+                        <span class="product-price">$5.75</span>
                     </div>
                     <p class="product-desc">Latte suave con un toque de caramelo artesanal.</p>
+                    <div class="product-meta">
+                        <span class="product-category-tag"><i class="fas fa-tag"></i> Bebidas</span>
+                        <span class="product-stock-tag" data-stock-for="Latte Caramel"><i
+                                class="fas fa-check-circle"></i> Disponible</span>
+                    </div>
                     <button class="add-to-cart-btn"
-                        onclick="addToCart('Latte Caramel', 5.75, 'https://images.unsplash.com/photo-1536939459926-301728717817?auto=format&fit=crop&w=800&q=80')">Agregar</button>
+                        onclick="addToCart('Latte Caramel', 5.75, 'imagenes/latte caramel.webp')">Agregar</button>
                 </div>
             </div>
-            <div class="product-list-item">
+            <div class="product-list-item" data-product="Frappé Oreo">
                 <div class="product-item-img"
-                    onclick="showProductDetails('Frappé Oreo', 7.00, 'https://images.unsplash.com/photo-1572490122747-3968b75cc699?auto=format&fit=crop&w=800&q=80')">
-                    <img loading="lazy"
-                        src="https://images.unsplash.com/photo-1572490122747-3968b75cc699?auto=format&fit=crop&w=800&q=80"
-                        alt="Frappé Oreo">
+                    onclick="showProductDetails('Frappé Oreo', 7.00, 'imagenes/frappe oreo.jpg')">
+                    <img loading="lazy" src="imagenes/frappe oreo.jpg" alt="Frappé Oreo">
                 </div>
                 <div class="product-item-info">
                     <div class="product-item-header">
-                        <h3
-                            onclick="showProductDetails('Frappé Oreo', 7.00, 'https://images.unsplash.com/photo-1572490122747-3968b75cc699?auto=format&fit=crop&w=800&q=80')">
-                            Frappé Oreo</h3><span class="product-price">$7.00</span>
+                        <h3 onclick="showProductDetails('Frappé Oreo', 7.00, 'imagenes/frappe oreo.jpg')">
+                            Frappé Oreo</h3>
+                        <span class="product-price">$7.00</span>
                     </div>
                     <p class="product-desc">Bebida helada cremosa con trozos de galleta Oreo.</p>
+                    <div class="product-meta">
+                        <span class="product-category-tag"><i class="fas fa-tag"></i> Bebidas</span>
+                        <span class="product-stock-tag" data-stock-for="Frappé Oreo"><i class="fas fa-check-circle"></i>
+                            Disponible</span>
+                    </div>
                     <button class="add-to-cart-btn"
-                        onclick="addToCart('Frappé Oreo', 7.00, 'https://images.unsplash.com/photo-1572490122747-3968b75cc699?auto=format&fit=crop&w=800&q=80')">Agregar</button>
+                        onclick="addToCart('Frappé Oreo', 7.00, 'imagenes/frappe oreo.jpg')">Agregar</button>
                 </div>
             </div>
-            <div class="product-list-item">
+            <div class="product-list-item" data-product="Té Verde Matcha">
                 <div class="product-item-img"
-                    onclick="showProductDetails('Té Verde Matcha', 4.50, 'https://images.unsplash.com/photo-1515823064-d6e0c04616a7?auto=format&fit=crop&w=800&q=80')">
-                    <img loading="lazy"
-                        src="https://images.unsplash.com/photo-1515823064-d6e0c04616a7?auto=format&fit=crop&w=800&q=80"
-                        alt="Té Verde Matcha">
+                    onclick="showProductDetails('Té Verde Matcha', 4.50, 'imagenes/te-matcha.jpeg')">
+                    <img loading="lazy" src="imagenes/te-matcha.jpeg" alt="Té Verde Matcha">
                 </div>
                 <div class="product-item-info">
                     <div class="product-item-header">
-                        <h3
-                            onclick="showProductDetails('Té Verde Matcha', 4.50, 'https://images.unsplash.com/photo-1515823064-d6e0c04616a7?auto=format&fit=crop&w=800&q=80')">
-                            Té Verde Matcha</h3><span class="product-price">$4.50</span>
+                        <h3 onclick="showProductDetails('Té Verde Matcha', 4.50, 'imagenes/te-matcha.jpeg')">
+                            Té Verde Matcha</h3>
+                        <span class="product-price">$4.50</span>
                     </div>
                     <p class="product-desc">Matcha orgánico con leche de almendras.</p>
+                    <div class="product-meta">
+                        <span class="product-category-tag"><i class="fas fa-tag"></i> Bebidas</span>
+                        <span class="product-stock-tag" data-stock-for="Té Verde Matcha"><i
+                                class="fas fa-check-circle"></i> Disponible</span>
+                    </div>
                     <button class="add-to-cart-btn"
-                        onclick="addToCart('Té Verde Matcha', 4.50, 'https://images.unsplash.com/photo-1515823064-d6e0c04616a7?auto=format&fit=crop&w=800&q=80')">Agregar</button>
+                        onclick="addToCart('Té Verde Matcha', 4.50, 'imagenes/te-matcha.jpeg')">Agregar</button>
                 </div>
             </div>
-            <div class="product-list-item">
+            <div class="product-list-item" data-product="Espresso Doppio">
                 <div class="product-item-img"
-                    onclick="showProductDetails('Espresso Doppio', 3.00, 'https://images.unsplash.com/photo-1510591509098-f4fdc6d0ff04?auto=format&fit=crop&w=800&q=80')">
-                    <img loading="lazy"
-                        src="https://images.unsplash.com/photo-1510591509098-f4fdc6d0ff04?auto=format&fit=crop&w=800&q=80"
-                        alt="Espresso Doppio">
+                    onclick="showProductDetails('Espresso Doppio', 3.00, 'imagenes/espresso doppio.jpg')">
+                    <img loading="lazy" src="imagenes/espresso doppio.jpg" alt="Espresso Doppio">
                 </div>
                 <div class="product-item-info">
                     <div class="product-item-header">
-                        <h3
-                            onclick="showProductDetails('Espresso Doppio', 3.00, 'https://images.unsplash.com/photo-1510591509098-f4fdc6d0ff04?auto=format&fit=crop&w=800&q=80')">
-                            Espresso Doppio</h3><span class="product-price">$3.00</span>
+                        <h3 onclick="showProductDetails('Espresso Doppio', 3.00, 'imagenes/espresso doppio.jpg')">
+                            Espresso Doppio</h3>
+                        <span class="product-price">$3.00</span>
                     </div>
                     <p class="product-desc">Doble carga de intensidad pura.</p>
+                    <div class="product-meta">
+                        <span class="product-category-tag"><i class="fas fa-tag"></i> Bebidas</span>
+                        <span class="product-stock-tag" data-stock-for="Espresso Doppio"><i
+                                class="fas fa-check-circle"></i> Disponible</span>
+                    </div>
                     <button class="add-to-cart-btn"
-                        onclick="addToCart('Espresso Doppio', 3.00, 'https://images.unsplash.com/photo-1510591509098-f4fdc6d0ff04?auto=format&fit=crop&w=800&q=80')">Agregar</button>
+                        onclick="addToCart('Espresso Doppio', 3.00, 'imagenes/espresso doppio.jpg')">Agregar</button>
                 </div>
             </div>
         </section>
 
         <section id="desayunos" class="menu-section">
-            <div class="product-list-item">
-                <div class="product-item-img" onclick="showProductDetails('Típico', 8.0, 'img/fondo1.jpg')">
-                    <img loading="lazy" src="img/fondo1.jpg">
+            <div class="product-list-item" data-product="Típico">
+                <div class="product-item-img"
+                    onclick="showProductDetails('Típico', 8.0, 'imagenes/desayuno tipico.jpg')">
+                    <img loading="lazy" src="imagenes/desayuno tipico.jpg" alt="Típico">
                 </div>
                 <div class="product-item-info">
-                    <h3 onclick="showProductDetails('Típico', 8.0, 'img/fondo1.jpg')">Típico
-                    </h3><span class="product-price">$8.00</span>
+                    <div class="product-item-header">
+                        <h3 onclick="showProductDetails('Típico', 8.0, 'imagenes/desayuno tipico.jpg')">
+                            Típico</h3>
+                        <span class="product-price">$8.00</span>
+                    </div>
                     <p class="product-desc">Frijoles, huevo, plátano frito y crema.</p>
+                    <div class="product-meta">
+                        <span class="product-category-tag"><i class="fas fa-tag"></i> Desayunos</span>
+                        <span class="product-stock-tag" data-stock-for="Típico"><i class="fas fa-check-circle"></i>
+                            Disponible</span>
+                    </div>
                     <button class="add-to-cart-btn"
-                        onclick="addToCart('Típico', 8.0, 'img/fondo1.jpg')">Agregar</button>
+                        onclick="addToCart('Típico', 8.0, 'imagenes/desayuno tipico.jpg')">Agregar</button>
                 </div>
             </div>
-            <div class="product-list-item">
+            <div class="product-list-item" data-product="Pancakes Clásicos">
                 <div class="product-item-img"
-                    onclick="showProductDetails('Pancakes Clásicos', 7.50, 'https://images.unsplash.com/photo-1528207776546-365bb710ee93?auto=format&fit=crop&w=800&q=80')">
-                    <img loading="lazy"
-                        src="https://images.unsplash.com/photo-1528207776546-365bb710ee93?auto=format&fit=crop&w=800&q=80">
+                    onclick="showProductDetails('Pancakes Clásicos', 7.50, 'imagenes/pancackes.jpg')">
+                    <img loading="lazy" src="imagenes/pancackes.jpg" alt="Pancakes Clásicos">
                 </div>
                 <div class="product-item-info">
-                    <h3
-                        onclick="showProductDetails('Pancakes Clásicos', 7.50, 'https://images.unsplash.com/photo-1528207776546-365bb710ee93?auto=format&fit=crop&w=800&q=80')">
-                        Pancakes Clásicos</h3><span class="product-price">$7.50</span>
+                    <div class="product-item-header">
+                        <h3 onclick="showProductDetails('Pancakes Clásicos', 7.50, 'imagenes/pancackes.jpg')">
+                            Pancakes Clásicos</h3>
+                        <span class="product-price">$7.50</span>
+                    </div>
                     <p class="product-desc">Torre de pancakes esponjosos con miel de maple.</p>
+                    <div class="product-meta">
+                        <span class="product-category-tag"><i class="fas fa-tag"></i> Desayunos</span>
+                        <span class="product-stock-tag" data-stock-for="Pancakes Clásicos"><i
+                                class="fas fa-check-circle"></i> Disponible</span>
+                    </div>
                     <button class="add-to-cart-btn"
-                        onclick="addToCart('Pancakes Clásicos', 7.50, 'https://images.unsplash.com/photo-1528207776546-365bb710ee93?auto=format&fit=crop&w=800&q=80')">Agregar</button>
+                        onclick="addToCart('Pancakes Clásicos', 7.50, 'imagenes/pancackes.jpg')">Agregar</button>
                 </div>
             </div>
-            <div class="product-list-item">
+            <div class="product-list-item" data-product="Tostadas Francesas">
                 <div class="product-item-img"
-                    onclick="showProductDetails('Tostadas Francesas', 8.50, 'https://images.unsplash.com/photo-1484723091739-30a097e8f929?auto=format&fit=crop&w=800&q=80')">
-                    <img loading="lazy"
-                        src="https://images.unsplash.com/photo-1484723091739-30a097e8f929?auto=format&fit=crop&w=800&q=80">
+                    onclick="showProductDetails('Tostadas Francesas', 8.50, 'imagenes/tostadas francesas.avif')">
+                    <img loading="lazy" src="imagenes/tostadas francesas.avif" alt="Tostadas Francesas">
                 </div>
                 <div class="product-item-info">
-                    <h3
-                        onclick="showProductDetails('Tostadas Francesas', 8.50, 'https://images.unsplash.com/photo-1484723091739-30a097e8f929?auto=format&fit=crop&w=800&q=80')">
-                        Tostadas Francesas</h3><span class="product-price">$8.50</span>
+                    <div class="product-item-header">
+                        <h3
+                            onclick="showProductDetails('Tostadas Francesas', 8.50, 'imagenes/tostadas francesas.avif')">
+                            Tostadas Francesas</h3>
+                        <span class="product-price">$8.50</span>
+                    </div>
                     <p class="product-desc">Brioche con canela, frutas de temporada y miel.</p>
+                    <div class="product-meta">
+                        <span class="product-category-tag"><i class="fas fa-tag"></i> Desayunos</span>
+                        <span class="product-stock-tag" data-stock-for="Tostadas Francesas"><i
+                                class="fas fa-check-circle"></i> Disponible</span>
+                    </div>
                     <button class="add-to-cart-btn"
-                        onclick="addToCart('Tostadas Francesas', 8.50, 'https://images.unsplash.com/photo-1484723091739-30a097e8f929?auto=format&fit=crop&w=800&q=80')">Agregar</button>
+                        onclick="addToCart('Tostadas Francesas', 8.50, 'imagenes/tostadas francesas.avif')">Agregar</button>
                 </div>
             </div>
-            <div class="product-list-item">
+            <div class="product-list-item" data-product="Bagel de Salmón">
                 <div class="product-item-img"
-                    onclick="showProductDetails('Bagel de Salmón', 10.50, 'https://images.unsplash.com/photo-1533089860892-a7c6f0a88666?auto=format&fit=crop&w=800&q=80')">
-                    <img loading="lazy"
-                        src="https://images.unsplash.com/photo-1533089860892-a7c6f0a88666?auto=format&fit=crop&w=800&q=80">
+                    onclick="showProductDetails('Bagel de Salmón', 10.50, 'imagenes/bagel salmon.jfif')">
+                    <img loading="lazy" src="imagenes/bagel salmon.jfif" alt="Bagel de Salmón">
                 </div>
                 <div class="product-item-info">
-                    <h3
-                        onclick="showProductDetails('Bagel de Salmón', 10.50, 'https://images.unsplash.com/photo-1533089860892-a7c6f0a88666?auto=format&fit=crop&w=800&q=80')">
-                        Bagel de Salmón</h3><span class="product-price">$10.50</span>
+                    <div class="product-item-header">
+                        <h3 onclick="showProductDetails('Bagel de Salmón', 10.50, 'imagenes/bagel salmon.jfif')">
+                            Bagel de Salmón</h3>
+                        <span class="product-price">$10.50</span>
+                    </div>
                     <p class="product-desc">Queso crema, salmón ahumado y alcaparras.</p>
+                    <div class="product-meta">
+                        <span class="product-category-tag"><i class="fas fa-tag"></i> Desayunos</span>
+                        <span class="product-stock-tag" data-stock-for="Bagel de Salmón"><i
+                                class="fas fa-check-circle"></i> Disponible</span>
+                    </div>
                     <button class="add-to-cart-btn"
-                        onclick="addToCart('Bagel de Salmón', 10.50, 'https://images.unsplash.com/photo-1533089860892-a7c6f0a88666?auto=format&fit=crop&w=800&q=80')">Agregar</button>
+                        onclick="addToCart('Bagel de Salmón', 10.50, 'imagenes/bagel salmon.jfif')">Agregar</button>
+                </div>
+            </div>
+            <div class="product-list-item" data-product="Huevos Benedictinos">
+                <div class="product-item-img"
+                    onclick="showProductDetails('Huevos Benedictinos', 9.75, 'imagenes/huevos benedictinos.jpg')">
+                    <img loading="lazy" src="imagenes/huevos benedictinos.jpg" alt="Huevos Benedictinos">
+                </div>
+                <div class="product-item-info">
+                    <div class="product-item-header">
+                        <h3
+                            onclick="showProductDetails('Huevos Benedictinos', 9.75, 'imagenes/huevos benedictinos.jpg')">
+                            Huevos Benedictinos</h3>
+                        <span class="product-price">$9.75</span>
+                    </div>
+                    <p class="product-desc">Huevos pochados sobre pan muffin con salsa holandesa.</p>
+                    <div class="product-meta">
+                        <span class="product-category-tag"><i class="fas fa-tag"></i> Desayunos</span>
+                        <span class="product-stock-tag" data-stock-for="Huevos Benedictinos"><i
+                                class="fas fa-check-circle"></i> Disponible</span>
+                    </div>
+                    <button class="add-to-cart-btn"
+                        onclick="addToCart('Huevos Benedictinos', 9.75, 'imagenes/huevos benedictinos.jpg')">Agregar</button>
                 </div>
             </div>
         </section>
 
         <section id="almuerzos" class="menu-section">
-            <div class="product-list-item">
+            <div class="product-list-item" data-product="Sandwich de Pavo">
                 <div class="product-item-img"
-                    onclick="showProductDetails('Sandwich de Pavo', 9.50, 'https://images.unsplash.com/photo-1525351484163-7529414344d8?auto=format&fit=crop&w=800&q=80')">
-                    <img loading="lazy"
-                        src="https://images.unsplash.com/photo-1525351484163-7529414344d8?auto=format&fit=crop&w=800&q=80">
+                    onclick="showProductDetails('Sandwich de Pavo', 9.50, 'imagenes/sandwich de pavo.jpg')">
+                    <img loading="lazy" src="imagenes/sandwich de pavo.jpg" alt="Sandwich de Pavo">
                 </div>
                 <div class="product-item-info">
-                    <h3
-                        onclick="showProductDetails('Sandwich de Pavo', 9.50, 'https://images.unsplash.com/photo-1525351484163-7529414344d8?auto=format&fit=crop&w=800&q=80')">
-                        Sandwich de Pavo</h3><span class="product-price">$9.50</span>
+                    <div class="product-item-header">
+                        <h3 onclick="showProductDetails('Sandwich de Pavo', 9.50, 'imagenes/sandwich de pavo.jpg')">
+                            Sandwich de Pavo</h3>
+                        <span class="product-price">$9.50</span>
+                    </div>
                     <p class="product-desc">Pavo ahumado, queso suizo y vegetales frescos.</p>
+                    <div class="product-meta">
+                        <span class="product-category-tag"><i class="fas fa-tag"></i> Almuerzos</span>
+                        <span class="product-stock-tag" data-stock-for="Sandwich de Pavo"><i
+                                class="fas fa-check-circle"></i> Disponible</span>
+                    </div>
                     <button class="add-to-cart-btn"
-                        onclick="addToCart('Sandwich de Pavo', 9.50, 'https://images.unsplash.com/photo-1525351484163-7529414344d8?auto=format&fit=crop&w=800&q=80')">Agregar</button>
+                        onclick="addToCart('Sandwich de Pavo', 9.50, 'imagenes/sandwich de pavo.jpg')">Agregar</button>
                 </div>
             </div>
-            <div class="product-list-item">
+            <div class="product-list-item" data-product="Ensalada César">
                 <div class="product-item-img"
-                    onclick="showProductDetails('Ensalada César', 10.00, 'https://images.unsplash.com/photo-1550304943-4f24f54ddde9?auto=format&fit=crop&w=800&q=80')">
-                    <img loading="lazy"
-                        src="https://images.unsplash.com/photo-1550304943-4f24f54ddde9?auto=format&fit=crop&w=800&q=80">
+                    onclick="showProductDetails('Ensalada César', 10.00, 'imagenes/ensalada cesar.jpg')">
+                    <img loading="lazy" src="imagenes/ensalada cesar.jpg" alt="Ensalada César">
                 </div>
                 <div class="product-item-info">
-                    <h3
-                        onclick="showProductDetails('Ensalada César', 10.00, 'https://images.unsplash.com/photo-1550304943-4f24f54ddde9?auto=format&fit=crop&w=800&q=80')">
-                        Ensalada César</h3><span class="product-price">$10.00</span>
+                    <div class="product-item-header">
+                        <h3 onclick="showProductDetails('Ensalada César', 10.00, 'imagenes/ensalada cesar.jpg')">
+                            Ensalada César</h3>
+                        <span class="product-price">$10.00</span>
+                    </div>
                     <p class="product-desc">Lechuga romana, croutones y aderezo césar.</p>
+                    <div class="product-meta">
+                        <span class="product-category-tag"><i class="fas fa-tag"></i> Almuerzos</span>
+                        <span class="product-stock-tag" data-stock-for="Ensalada César"><i
+                                class="fas fa-check-circle"></i> Disponible</span>
+                    </div>
                     <button class="add-to-cart-btn"
-                        onclick="addToCart('Ensalada César', 10.00, 'https://images.unsplash.com/photo-1550304943-4f24f54ddde9?auto=format&fit=crop&w=800&q=80')">Agregar</button>
+                        onclick="addToCart('Ensalada César', 10.00, 'imagenes/ensalada cesar.jpg')">Agregar</button>
                 </div>
             </div>
-            <div class="product-list-item">
+            <div class="product-list-item" data-product="Bowl Saludable">
                 <div class="product-item-img"
-                    onclick="showProductDetails('Bowl Saludable', 11.00, 'https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=800&q=80')">
-                    <img loading="lazy"
-                        src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=800&q=80">
+                    onclick="showProductDetails('Bowl Saludable', 11.00, 'imagenes/bowl saludable.webp')">
+                    <img loading="lazy" src="imagenes/bowl saludable.webp" alt="Bowl Saludable">
                 </div>
                 <div class="product-item-info">
-                    <h3
-                        onclick="showProductDetails('Bowl Saludable', 11.00, 'https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=800&q=80')">
-                        Bowl Saludable</h3><span class="product-price">$11.00</span>
+                    <div class="product-item-header">
+                        <h3 onclick="showProductDetails('Bowl Saludable', 11.00, 'imagenes/bowl saludable.webp')">
+                            Bowl Saludable</h3>
+                        <span class="product-price">$11.00</span>
+                    </div>
                     <p class="product-desc">Quinoa, aguacate, garbanzos y kale.</p>
+                    <div class="product-meta">
+                        <span class="product-category-tag"><i class="fas fa-tag"></i> Almuerzos</span>
+                        <span class="product-stock-tag" data-stock-for="Bowl Saludable"><i
+                                class="fas fa-check-circle"></i> Disponible</span>
+                    </div>
                     <button class="add-to-cart-btn"
-                        onclick="addToCart('Bowl Saludable', 11.00, 'https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=800&q=80')">Agregar</button>
+                        onclick="addToCart('Bowl Saludable', 11.00, 'imagenes/bowl saludable.webp')">Agregar</button>
                 </div>
             </div>
-            <div class="product-list-item">
+            <div class="product-list-item" data-product="Tacos al Pastor">
                 <div class="product-item-img"
-                    onclick="showProductDetails('Tacos al Pastor', 9.00, 'https://images.unsplash.com/photo-1551504734-5ee1c4a1479b?auto=format&fit=crop&w=800&q=80')">
-                    <img loading="lazy"
-                        src="https://images.unsplash.com/photo-1551504734-5ee1c4a1479b?auto=format&fit=crop&w=800&q=80">
+                    onclick="showProductDetails('Tacos al Pastor', 9.00, 'imagenes/tacos al pastor.jpg')">
+                    <img loading="lazy" src="imagenes/tacos al pastor.jpg" alt="Tacos al Pastor">
                 </div>
                 <div class="product-item-info">
-                    <h3
-                        onclick="showProductDetails('Tacos al Pastor', 9.00, 'https://images.unsplash.com/photo-1551504734-5ee1c4a1479b?auto=format&fit=crop&w=800&q=80')">
-                        Tacos al Pastor</h3><span class="product-price">$9.00</span>
+                    <div class="product-item-header">
+                        <h3 onclick="showProductDetails('Tacos al Pastor', 9.00, 'imagenes/tacos al pastor.jpg')">
+                            Tacos al Pastor</h3>
+                        <span class="product-price">$9.00</span>
+                    </div>
                     <p class="product-desc">Tres tacos con piña, cilantro y cebolla.</p>
+                    <div class="product-meta">
+                        <span class="product-category-tag"><i class="fas fa-tag"></i> Almuerzos</span>
+                        <span class="product-stock-tag" data-stock-for="Tacos al Pastor"><i
+                                class="fas fa-check-circle"></i> Disponible</span>
+                    </div>
                     <button class="add-to-cart-btn"
-                        onclick="addToCart('Tacos al Pastor', 9.00, 'https://images.unsplash.com/photo-1551504734-5ee1c4a1479b?auto=format&fit=crop&w=800&q=80')">Agregar</button>
+                        onclick="addToCart('Tacos al Pastor', 9.00, 'imagenes/tacos al pastor.jpg')">Agregar</button>
+                </div>
+            </div>
+            <div class="product-list-item" data-product="Wrap de Pollo Crispy">
+                <div class="product-item-img"
+                    onclick="showProductDetails('Wrap de Pollo Crispy', 9.75, 'imagenes/wrap de pollo.webp')">
+                    <img loading="lazy" src="imagenes/wrap de pollo.webp" alt="Wrap de Pollo Crispy">
+                </div>
+                <div class="product-item-info">
+                    <div class="product-item-header">
+                        <h3 onclick="showProductDetails('Wrap de Pollo Crispy', 9.75, 'imagenes/wrap de pollo.webp')">
+                            Wrap de Pollo Crispy</h3>
+                        <span class="product-price">$9.75</span>
+                    </div>
+                    <p class="product-desc">Tortilla de trigo rellena de pollo crujiente, queso y aderezo chipotle.</p>
+                    <div class="product-meta">
+                        <span class="product-category-tag"><i class="fas fa-tag"></i> Almuerzos</span>
+                        <span class="product-stock-tag" data-stock-for="Wrap de Pollo Crispy"><i
+                                class="fas fa-check-circle"></i> Disponible</span>
+                    </div>
+                    <button class="add-to-cart-btn"
+                        onclick="addToCart('Wrap de Pollo Crispy', 9.75, 'imagenes/wrap de pollo.webp')">Agregar</button>
                 </div>
             </div>
         </section>
 
         <section id="cenas" class="menu-section">
-            <div class="product-list-item">
+            <div class="product-list-item" data-product="Pizza Artesanal">
                 <div class="product-item-img"
-                    onclick="showProductDetails('Pizza Artesanal', 12.00, 'https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=800&q=80')">
-                    <img loading="lazy"
-                        src="https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=800&q=80">
+                    onclick="showProductDetails('Pizza Artesanal', 12.00, 'imagenes/pizza artesanal.jpeg')">
+                    <img loading="lazy" src="imagenes/pizza artesanal.jpeg" alt="Pizza Artesanal">
                 </div>
                 <div class="product-item-info">
-                    <h3
-                        onclick="showProductDetails('Pizza Artesanal', 12.00, 'https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=800&q=80')">
-                        Pizza Artesanal</h3><span class="product-price">$12.00</span>
+                    <div class="product-item-header">
+                        <h3 onclick="showProductDetails('Pizza Artesanal', 12.00, 'imagenes/pizza artesanal.jpeg')">
+                            Pizza Artesanal</h3>
+                        <span class="product-price">$12.00</span>
+                    </div>
                     <p class="product-desc">Masa madre, mozzarella y albahaca fresca.</p>
+                    <div class="product-meta">
+                        <span class="product-category-tag"><i class="fas fa-tag"></i> Cenas</span>
+                        <span class="product-stock-tag" data-stock-for="Pizza Artesanal"><i
+                                class="fas fa-check-circle"></i> Disponible</span>
+                    </div>
                     <button class="add-to-cart-btn"
-                        onclick="addToCart('Pizza Artesanal', 12.00, 'https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=800&q=80')">Agregar</button>
+                        onclick="addToCart('Pizza Artesanal', 12.00, 'imagenes/pizza artesanal.jpeg')">Agregar</button>
                 </div>
             </div>
-            <div class="product-list-item">
+            <div class="product-list-item" data-product="Burger Gourmet">
                 <div class="product-item-img"
-                    onclick="showProductDetails('Burger Gourmet', 13.50, 'https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=800&q=80')">
-                    <img loading="lazy"
-                        src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=800&q=80">
+                    onclick="showProductDetails('Burger Gourmet', 13.50, 'imagenes/burguer gourmet.webp')">
+                    <img loading="lazy" src="imagenes/burguer gourmet.webp" alt="Burger Gourmet">
                 </div>
                 <div class="product-item-info">
-                    <h3
-                        onclick="showProductDetails('Burger Gourmet', 13.50, 'https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=800&q=80')">
-                        Burger Gourmet</h3><span class="product-price">$13.50</span>
+                    <div class="product-item-header">
+                        <h3 onclick="showProductDetails('Burger Gourmet', 13.50, 'imagenes/burguer gourmet.webp')">
+                            Burger Gourmet</h3>
+                        <span class="product-price">$13.50</span>
+                    </div>
                     <p class="product-desc">Carne angus, queso cheddar y tocino crocante.</p>
+                    <div class="product-meta">
+                        <span class="product-category-tag"><i class="fas fa-tag"></i> Cenas</span>
+                        <span class="product-stock-tag" data-stock-for="Burger Gourmet"><i
+                                class="fas fa-check-circle"></i> Disponible</span>
+                    </div>
                     <button class="add-to-cart-btn"
-                        onclick="addToCart('Burger Gourmet', 13.50, 'https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=800&q=80')">Agregar</button>
+                        onclick="addToCart('Burger Gourmet', 13.50, 'imagenes/burguer gourmet.webp')">Agregar</button>
                 </div>
             </div>
-            <div class="product-list-item">
+            <div class="product-list-item" data-product="Risotto de Hongos">
                 <div class="product-item-img"
-                    onclick="showProductDetails('Risotto de Hongos', 14.00, 'https://images.unsplash.com/photo-1476124369491-e7addf5db371?auto=format&fit=crop&w=800&q=80')">
-                    <img loading="lazy"
-                        src="https://images.unsplash.com/photo-1476124369491-e7addf5db371?auto=format&fit=crop&w=800&q=80">
+                    onclick="showProductDetails('Risotto de Hongos', 14.00, 'imagenes/risotto.webp')">
+                    <img loading="lazy" src="imagenes/risotto.webp" alt="Risotto de Hongos">
                 </div>
                 <div class="product-item-info">
-                    <h3
-                        onclick="showProductDetails('Risotto de Hongos', 14.00, 'https://images.unsplash.com/photo-1476124369491-e7addf5db371?auto=format&fit=crop&w=800&q=80')">
-                        Risotto de Hongos</h3><span class="product-price">$14.00</span>
+                    <div class="product-item-header">
+                        <h3 onclick="showProductDetails('Risotto de Hongos', 14.00, 'imagenes/risotto.webp')">
+                            Risotto de Hongos</h3>
+                        <span class="product-price">$14.00</span>
+                    </div>
                     <p class="product-desc">Cremoso arroz arborio con setas frescas.</p>
+                    <div class="product-meta">
+                        <span class="product-category-tag"><i class="fas fa-tag"></i> Cenas</span>
+                        <span class="product-stock-tag" data-stock-for="Risotto de Hongos"><i
+                                class="fas fa-check-circle"></i> Disponible</span>
+                    </div>
                     <button class="add-to-cart-btn"
-                        onclick="addToCart('Risotto de Hongos', 14.00, 'https://images.unsplash.com/photo-1476124369491-e7addf5db371?auto=format&fit=crop&w=800&q=80')">Agregar</button>
+                        onclick="addToCart('Risotto de Hongos', 14.00, 'imagenes/risotto.webp')">Agregar</button>
+                </div>
+            </div>
+            <div class="product-list-item" data-product="Pasta Carbonara">
+                <div class="product-item-img"
+                    onclick="showProductDetails('Pasta Carbonara', 12.50, 'imagenes/pasta carbonara.jpg')">
+                    <img loading="lazy" src="imagenes/pasta carbonara.jpg" alt="Pasta Carbonara">
+                </div>
+                <div class="product-item-info">
+                    <div class="product-item-header">
+                        <h3 onclick="showProductDetails('Pasta Carbonara', 12.50, 'imagenes/pasta carbonara.jpg')">
+                            Pasta Carbonara</h3>
+                        <span class="product-price">$12.50</span>
+                    </div>
+                    <p class="product-desc">Fettuccine con salsa cremosa de tocino, yema de huevo y parmesano.</p>
+                    <div class="product-meta">
+                        <span class="product-category-tag"><i class="fas fa-tag"></i> Cenas</span>
+                        <span class="product-stock-tag" data-stock-for="Pasta Carbonara"><i
+                                class="fas fa-check-circle"></i> Disponible</span>
+                    </div>
+                    <button class="add-to-cart-btn"
+                        onclick="addToCart('Pasta Carbonara', 12.50, 'imagenes/pasta carbonara.jpg')">Agregar</button>
+                </div>
+            </div>
+            <div class="product-list-item" data-product="Salmón a la Plancha">
+                <div class="product-item-img"
+                    onclick="showProductDetails('Salmón a la Plancha', 16.00, 'imagenes/salmon.jpg')">
+                    <img loading="lazy" src="imagenes/salmon.jpg" alt="Salmón a la Plancha">
+                </div>
+                <div class="product-item-info">
+                    <div class="product-item-header">
+                        <h3 onclick="showProductDetails('Salmón a la Plancha', 16.00, 'imagenes/salmon.jpg')">
+                            Salmón a la Plancha</h3>
+                        <span class="product-price">$16.00</span>
+                    </div>
+                    <p class="product-desc">Filete de salmón fresco acompañado de vegetales salteados.</p>
+                    <div class="product-meta">
+                        <span class="product-category-tag"><i class="fas fa-tag"></i> Cenas</span>
+                        <span class="product-stock-tag" data-stock-for="Salmón a la Plancha"><i
+                                class="fas fa-check-circle"></i> Disponible</span>
+                    </div>
+                    <button class="add-to-cart-btn"
+                        onclick="addToCart('Salmón a la Plancha', 16.00, 'imagenes/salmon.jpg')">Agregar</button>
                 </div>
             </div>
         </section>
 
         <section id="postres" class="menu-section">
-            <div class="product-list-item">
-                <div class="product-item-img" onclick="showProductDetails('Brownie', 4.5, 'img/browni.jpg')">
-                    <img loading="lazy" src="img/browni.jpg">
+            <div class="product-list-item" data-product="Brownie">
+                <div class="product-item-img" onclick="showProductDetails('Brownie', 4.5, 'imagenes/brownie.jfif')">
+                    <img loading="lazy" src="imagenes/brownie.jfif" alt="Brownie">
                 </div>
                 <div class="product-item-info">
-                    <h3 onclick="showProductDetails('Brownie', 4.5, 'img/browni.jpg')">Brownie
-                    </h3><span class="product-price">$4.50</span>
+                    <div class="product-item-header">
+                        <h3 onclick="showProductDetails('Brownie', 4.5, 'imagenes/brownie.jfif')">
+                            Brownie</h3>
+                        <span class="product-price">$4.50</span>
+                    </div>
                     <p class="product-desc">Bizcocho de chocolate intenso con nueces.</p>
+                    <div class="product-meta">
+                        <span class="product-category-tag"><i class="fas fa-tag"></i> Postres</span>
+                        <span class="product-stock-tag" data-stock-for="Brownie"><i class="fas fa-check-circle"></i>
+                            Disponible</span>
+                    </div>
                     <button class="add-to-cart-btn"
-                        onclick="addToCart('Brownie', 4.5, 'img/browni.jpg')">Agregar</button>
+                        onclick="addToCart('Brownie', 4.5, 'imagenes/brownie.jfif')">Agregar</button>
                 </div>
             </div>
-            <div class="product-list-item">
+            <div class="product-list-item" data-product="Cheesecake">
                 <div class="product-item-img"
-                    onclick="showProductDetails('Cheesecake', 6.00, 'https://images.unsplash.com/photo-1533134242443-d4fd215305ad?auto=format&fit=crop&w=800&q=80')">
-                    <img loading="lazy"
-                        src="https://images.unsplash.com/photo-1533134242443-d4fd215305ad?auto=format&fit=crop&w=800&q=80">
+                    onclick="showProductDetails('Cheesecake', 6.00, 'imagenes/cheesecacke.jpg')">
+                    <img loading="lazy" src="imagenes/cheesecacke.jpg" alt="Cheesecake">
                 </div>
                 <div class="product-item-info">
-                    <h3
-                        onclick="showProductDetails('Cheesecake', 6.00, 'https://images.unsplash.com/photo-1533134242443-d4fd215305ad?auto=format&fit=crop&w=800&q=80')">
-                        Cheesecake</h3><span class="product-price">$6.00</span>
+                    <div class="product-item-header">
+                        <h3 onclick="showProductDetails('Cheesecake', 6.00, 'imagenes/cheesecacke.jpg')">
+                            Cheesecake</h3>
+                        <span class="product-price">$6.00</span>
+                    </div>
                     <p class="product-desc">Tarta de queso cremosa con frutos rojos.</p>
+                    <div class="product-meta">
+                        <span class="product-category-tag"><i class="fas fa-tag"></i> Postres</span>
+                        <span class="product-stock-tag" data-stock-for="Cheesecake"><i class="fas fa-check-circle"></i>
+                            Disponible</span>
+                    </div>
                     <button class="add-to-cart-btn"
-                        onclick="addToCart('Cheesecake', 6.00, 'https://images.unsplash.com/photo-1533134242443-d4fd215305ad?auto=format&fit=crop&w=800&q=80')">Agregar</button>
+                        onclick="addToCart('Cheesecake', 6.00, 'imagenes/cheesecacke.jpg')">Agregar</button>
                 </div>
             </div>
-            <div class="product-list-item">
-                <div class="product-item-img"
-                    onclick="showProductDetails('Tiramisú', 6.50, 'https://images.unsplash.com/photo-1571877227200-a0d98ea607e9?auto=format&fit=crop&w=800&q=80')">
-                    <img loading="lazy"
-                        src="https://images.unsplash.com/photo-1571877227200-a0d98ea607e9?auto=format&fit=crop&w=800&q=80">
+            <div class="product-list-item" data-product="Tiramisú">
+                <div class="product-item-img" onclick="showProductDetails('Tiramisú', 6.50, 'imagenes/tiramisu.webp')">
+                    <img loading="lazy" src="imagenes/tiramisu.webp" alt="Tiramisú">
                 </div>
                 <div class="product-item-info">
-                    <h3
-                        onclick="showProductDetails('Tiramisú', 6.50, 'https://images.unsplash.com/photo-1571877227200-a0d98ea607e9?auto=format&fit=crop&w=800&q=80')">
-                        Tiramisú</h3><span class="product-price">$6.50</span>
+                    <div class="product-item-header">
+                        <h3 onclick="showProductDetails('Tiramisú', 6.50, 'imagenes/tiramisu.webp')">
+                            Tiramisú</h3>
+                        <span class="product-price">$6.50</span>
+                    </div>
                     <p class="product-desc">Postre italiano con café y mascarpone.</p>
+                    <div class="product-meta">
+                        <span class="product-category-tag"><i class="fas fa-tag"></i> Postres</span>
+                        <span class="product-stock-tag" data-stock-for="Tiramisú"><i class="fas fa-check-circle"></i>
+                            Disponible</span>
+                    </div>
                     <button class="add-to-cart-btn"
-                        onclick="addToCart('Tiramisú', 6.50, 'https://images.unsplash.com/photo-1571877227200-a0d98ea607e9?auto=format&fit=crop&w=800&q=80')">Agregar</button>
+                        onclick="addToCart('Tiramisú', 6.50, 'imagenes/tiramisu.webp')">Agregar</button>
                 </div>
             </div>
-            <div class="product-list-item">
-                <div class="product-item-img"
-                    onclick="showProductDetails('Macarons', 8.00, 'https://images.unsplash.com/photo-1558326567-98ae2c402b4d?auto=format&fit=crop&w=800&q=80')">
-                    <img loading="lazy"
-                        src="https://images.unsplash.com/photo-1558326567-98ae2c402b4d?auto=format&fit=crop&w=800&q=80">
+            <div class="product-list-item" data-product="Macarons">
+                <div class="product-item-img" onclick="showProductDetails('Macarons', 8.00, 'imagenes/macarons.jpeg')">
+                    <img loading="lazy" src="imagenes/macarons.jpeg" alt="Macarons">
                 </div>
                 <div class="product-item-info">
-                    <h3
-                        onclick="showProductDetails('Macarons', 8.00, 'https://images.unsplash.com/photo-1558326567-98ae2c402b4d?auto=format&fit=crop&w=800&q=80')">
-                        Macarons</h3><span class="product-price">$8.00</span>
+                    <div class="product-item-header">
+                        <h3 onclick="showProductDetails('Macarons', 8.00, 'imagenes/macarons.jpeg')">
+                            Macarons</h3>
+                        <span class="product-price">$8.00</span>
+                    </div>
                     <p class="product-desc">Seis delicias francesas de sabores variados.</p>
+                    <div class="product-meta">
+                        <span class="product-category-tag"><i class="fas fa-tag"></i> Postres</span>
+                        <span class="product-stock-tag" data-stock-for="Macarons"><i class="fas fa-check-circle"></i>
+                            Disponible</span>
+                    </div>
                     <button class="add-to-cart-btn"
-                        onclick="addToCart('Macarons', 8.00, 'https://images.unsplash.com/photo-1558326567-98ae2c402b4d?auto=format&fit=crop&w=800&q=80')">Agregar</button>
+                        onclick="addToCart('Macarons', 8.00, 'imagenes/macarons.jpeg')">Agregar</button>
                 </div>
             </div>
-            <div class="product-list-item">
+            <div class="product-list-item" data-product="Pie de Manzana">
                 <div class="product-item-img"
-                    onclick="showProductDetails('Pie de Manzana', 5.50, 'https://images.unsplash.com/photo-1568571780765-9276ac4125a2?auto=format&fit=crop&w=800&q=80')">
-                    <img loading="lazy"
-                        src="https://images.unsplash.com/photo-1568571780765-9276ac4125a2?auto=format&fit=crop&w=800&q=80">
+                    onclick="showProductDetails('Pie de Manzana', 5.50, 'imagenes/pie de manzana.avif')">
+                    <img loading="lazy" src="imagenes/pie de manzana.avif" alt="Pie de Manzana">
                 </div>
                 <div class="product-item-info">
-                    <h3
-                        onclick="showProductDetails('Pie de Manzana', 5.50, 'https://images.unsplash.com/photo-1568571780765-9276ac4125a2?auto=format&fit=crop&w=800&q=80')">
-                        Pie de Manzana</h3><span class="product-price">$5.50</span>
+                    <div class="product-item-header">
+                        <h3 onclick="showProductDetails('Pie de Manzana', 5.50, 'imagenes/pie de manzana.avif')">
+                            Pie de Manzana</h3>
+                        <span class="product-price">$5.50</span>
+                    </div>
                     <p class="product-desc">Receta clásica servida tibia con canela.</p>
+                    <div class="product-meta">
+                        <span class="product-category-tag"><i class="fas fa-tag"></i> Postres</span>
+                        <span class="product-stock-tag" data-stock-for="Pie de Manzana"><i
+                                class="fas fa-check-circle"></i> Disponible</span>
+                    </div>
                     <button class="add-to-cart-btn"
-                        onclick="addToCart('Pie de Manzana', 5.50, 'https://images.unsplash.com/photo-1568571780765-9276ac4125a2?auto=format&fit=crop&w=800&q=80')">Agregar</button>
+                        onclick="addToCart('Pie de Manzana', 5.50, 'imagenes/pie de manzana.avif')">Agregar</button>
                 </div>
             </div>
         </section>
