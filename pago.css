@@ -184,6 +184,46 @@ h2 i {
     transform: translateY(-3px);
 }
 
+.btn-cancel-checkout {
+    width: 100%;
+    background: rgba(220, 53, 69, 0.08);
+    color: #dc3545;
+    border: 2px solid #dc3545;
+    padding: 18px;
+    border-radius: 15px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: var(--transition);
+    box-shadow: 0 10px 20px rgba(220, 53, 69, 0.05);
+}
+
+.btn-cancel-checkout:hover {
+    background: #dc3545;
+    color: white;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(220, 53, 69, 0.2);
+}
+
+.checkout-buttons-container {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+    width: 100%;
+}
+
+.checkout-buttons-container button {
+    flex: 1;
+    margin-top: 0 !important;
+}
+
+@media (max-width: 600px) {
+    .checkout-buttons-container {
+        flex-direction: column-reverse;
+        gap: 10px;
+    }
+}
+
 /* Success Card */
 .success-card {
     text-align: center;

@@ -116,6 +116,7 @@ const save = () => localStorage.setItem('cafe_cart', JSON.stringify(cart));
 
 const updateUI = () => {
     const c = q('#cartItems'), count = q('#cartCount'), total = q('#cartTotal'), btnCheckout = q('#btn-checkout-start');
+    const btnCancel = q('#btn-cancel-cart');
     if (count) count.innerText = cart.length;
     if (!c) return;
 
@@ -130,6 +131,7 @@ const updateUI = () => {
             btnCheckout.innerText = "Empezar a pedir";
             btnCheckout.onclick = () => toggleCart(); // Simplemente cierra el carrito para que elija algo
         }
+        if (btnCancel) btnCancel.style.display = 'none';
         return;
     }
 
@@ -150,6 +152,7 @@ const updateUI = () => {
         btnCheckout.innerText = "Hacer Pedido";
         btnCheckout.onclick = () => showCheckout();
     }
+    if (btnCancel) btnCancel.style.display = 'block';
 };
 
 window.rm = (idx) => { 
@@ -171,7 +174,44 @@ const showCheckout = () => {
     window.location.href = 'pago.html';
 };
 
-const toggleCart = () => q('#cartSidebar')?.classList.toggle('active');
+const toggleCart = () => {
+    const sidebar = q('#cartSidebar');
+    if (sidebar) {
+        sidebar.classList.toggle('active');
+        const waFloat = q('.whatsapp-float');
+        if (waFloat) {
+            if (sidebar.classList.contains('active')) {
+                waFloat.style.display = 'none';
+            } else {
+                waFloat.style.display = '';
+            }
+        }
+    }
+};
+
+const cancelOrder = (redirect = false) => {
+    if (cart.length === 0) {
+        if (redirect) window.location.href = 'index.html';
+        return;
+    }
+    if (confirm("¿Estás seguro de que deseas cancelar tu pedido? Se vaciará el carrito.")) {
+        // Return stock for all items
+        cart.forEach(item => {
+            incrementInventoryStock(item.name);
+        });
+        cart = [];
+        save();
+        if (typeof updateUI === 'function') updateUI();
+        if (redirect) {
+            window.location.href = 'index.html';
+        } else {
+            toggleCart();
+            showToast("Pedido cancelado");
+        }
+    }
+};
+window.cancelOrder = cancelOrder;
+window.toggleCart = toggleCart;
 
 /**
  * Product Details & Toasts

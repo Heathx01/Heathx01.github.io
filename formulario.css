@@ -5,7 +5,8 @@
     padding: 3rem;
     background: var(--card-bg);
     border-radius: var(--border-radius);
-    box-shadow: 0 30px 60px -12px rgba(0, 0, 0, 0.2); /* Sombra más dramática */
+    box-shadow: 0 30px 60px -12px rgba(0, 0, 0, 0.2);
+    /* Sombra más dramática */
     border: 1px solid var(--glass-border);
     transition: var(--transition);
     position: relative;
@@ -13,12 +14,14 @@
 }
 
 .form-step {
-    background: #fffcf9; /* Crema muy suave pero distinto del blanco puro */
+    background: #fffcf9;
+    /* Crema muy suave pero distinto del blanco puro */
     padding: 2.5rem;
     border-radius: var(--border-radius);
     margin-bottom: 2.5rem;
-    border: 1px solid rgba(75, 54, 33, 0.1); /* Borde sutil para definir mejor el área */
-    box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+    border: 1px solid rgba(75, 54, 33, 0.1);
+    /* Borde sutil para definir mejor el área */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
     transition: var(--transition);
 }
 
@@ -71,28 +74,31 @@
 
 .option-content i {
     font-size: 2.2rem;
-    color: var(--primary-color); /* Iconos más visibles */
+    color: var(--primary-color);
+    /* Iconos más visibles */
     opacity: 0.7;
     transition: var(--transition);
 }
 
 .option-content span {
     font-size: 0.9rem;
-    font-weight: 800; /* Más negrita para resaltar */
-    color: var(--primary-color); /* Color más oscuro para mejor contraste */
+    font-weight: 800;
+    /* Más negrita para resaltar */
+    color: var(--primary-color);
+    /* Color más oscuro para mejor contraste */
     text-transform: uppercase;
     letter-spacing: 1.2px;
 }
 
-.visual-option input:checked + .option-content {
+.visual-option input:checked+.option-content {
     border-color: var(--secondary-color);
     background: var(--secondary-color);
     transform: translateY(-8px);
     box-shadow: var(--shadow-md);
 }
 
-.visual-option input:checked + .option-content i,
-.visual-option input:checked + .option-content span {
+.visual-option input:checked+.option-content i,
+.visual-option input:checked+.option-content span {
     color: white;
 }
 
@@ -108,9 +114,11 @@
 .input-group label {
     display: block;
     margin-bottom: 0.8rem;
-    font-weight: 700; /* Más peso para mejor visibilidad */
+    font-weight: 700;
+    /* Más peso para mejor visibilidad */
     font-size: 0.95rem;
-    color: var(--primary-color); /* Usar el color primario oscuro para contraste máximo */
+    color: var(--primary-color);
+    /* Usar el color primario oscuro para contraste máximo */
 }
 
 input[type="text"],
@@ -125,15 +133,18 @@ textarea {
     color: var(--text-color);
     transition: var(--transition);
     font-size: 1rem;
-    box-shadow: inset 0 2px 4px rgba(0,0,0,0.02);
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.02);
 }
 
-input::placeholder, textarea::placeholder {
+input::placeholder,
+textarea::placeholder {
     color: var(--text-muted);
-    opacity: 0.8; /* Aumentar opacidad para legibilidad */
+    opacity: 0.8;
+    /* Aumentar opacidad para legibilidad */
 }
 
-input:focus, textarea:focus {
+input:focus,
+textarea:focus {
     outline: none;
     border-color: var(--secondary-color);
     box-shadow: 0 0 0 4px rgba(196, 138, 78, 0.15);
@@ -155,7 +166,7 @@ input:focus, textarea:focus {
         margin-bottom: 1.5rem;
         border-radius: 12px;
         background: white;
-        border: 1px solid rgba(0,0,0,0.05);
+        border: 1px solid rgba(0, 0, 0, 0.05);
     }
 
     .form-step-header h3 {

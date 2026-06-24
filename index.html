@@ -21,12 +21,12 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 
     <script type="text/javascript">
-    (function(c,l,a,r,i,t,y){
-        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-    })(window, document, "clarity", "script", "xb8qtvyewq");
-</script>
+        (function (c, l, a, r, i, t, y) {
+            c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
+            t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
+            y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
+        })(window, document, "clarity", "script", "xb8qtvyewq");
+    </script>
 </head>
 
 <body>
@@ -667,7 +667,10 @@
                 <span>Total:</span>
                 <span id="cartTotal">$0.00</span>
             </div>
-            <button class="checkout-btn" id="btn-checkout-start" onclick="showCheckout()">Finalizar Pedido</button>
+            <div class="cart-buttons-container" style="display: flex; gap: 1rem; width: 100%;">
+                <button class="cancel-btn" id="btn-cancel-cart" onclick="cancelOrder()" style="display: none;">Cancelar</button>
+                <button class="checkout-btn" id="btn-checkout-start" onclick="showCheckout()">Finalizar Pedido</button>
+            </div>
         </div>
     </div>
 
