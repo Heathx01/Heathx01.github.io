@@ -64,49 +64,185 @@
         </nav>
     </header>
     <main>
-        <section class="subpage-header">
-            <h2>Nosotros</h2>
-            <p>Calidad y pasión en cada grano.</p>
-        </section>
-        <section class="blog-container">
-            <div class="blog-card">
-                <div class="container-img"><img src="img/fachada interior 2.avif"></div>
-                <div class="content-blog">
-                    <h3>Ambiente Único</h3>
-                    <p>Disfruta de nuestros postres y cafés en un espacio especial diseñado para tu comodidad.</p>
-                </div>
-            </div>
-            <div class="blog-card">
-                <div class="container-img"><img src="img/cafeteria1.avif"></div>
-                <div class="content-blog">
-                    <h3>10 Años de Pasión</h3>
-                    <p>Más de una década brindando el mejor servicio y los granos más selectos a nuestra comunidad.</p>
-                </div>
+        <section class="menu-header">
+            <span class="section-badge"><i class="fas fa-history"></i> Conócenos</span>
+            <h2>Nuestra Esencia</h2>
+            <p class="section-desc">Descubre el viaje de nuestro grano, nuestros valores y el espacio que creamos para ti.</p>
+            <div class="header-divider">
+                <span class="divider-line"></span>
+                <i class="fas fa-heart divider-icon"></i>
+                <span class="divider-line"></span>
             </div>
         </section>
 
-        <!-- Sección de Misión y Visión -->
-        <section class="mision-vision-section">
-            <div class="mision-vision-container">
-                <div class="mision-vision-card reveal">
-                    <div class="card-icon">
-                        <i class="fas fa-bullseye"></i>
+        <section class="interactive-dashboard" id="nosotros-dashboard">
+            <div class="dashboard-container">
+                <!-- Panel de Información -->
+                <div class="dashboard-info-panel">
+                    <div class="dashboard-slider">
+                        <!-- Slide 0: Historia -->
+                        <div class="slide-info active" data-slide="0">
+                            <span class="slide-badge">📜 Orígenes</span>
+                            <h2>Una década compartiendo aroma y calidez</h2>
+                            <p>Café Dulce Aroma nació en 2016 como un pequeño sueño familiar. Queríamos un rincón donde el café no fuera solo una bebida rápida, sino una pausa necesaria en el día. Seleccionamos granos premium de fincas sostenibles locales, tostándolos artesanalmente en pequeños lotes para garantizar la frescura absoluta.</p>
+                            <div class="timeline-stats-grid">
+                                <div class="stat-box">
+                                    <span class="stat-num">2016</span>
+                                    <span class="stat-label">Fundación</span>
+                                </div>
+                                <div class="stat-box">
+                                    <span class="stat-num">10+</span>
+                                    <span class="stat-label">Años de Pasión</span>
+                                </div>
+                                <div class="stat-box">
+                                    <span class="stat-num">50K+</span>
+                                    <span class="stat-label">Tazas Servidas</span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Slide 1: Valores -->
+                        <div class="slide-info" data-slide="1">
+                            <span class="slide-badge">🎯 Propósito</span>
+                            <h2>Conexión, tradición y comercio justo</h2>
+                            <p>Nuestra misión es ofrecer una experiencia única seleccionando los mejores granos para brindar un sabor excepcional. Nos esforzamos por crear momentos de conexión cálidos y confortables, apoyando el bienestar de nuestra comunidad y el comercio justo con nuestros productores.</p>
+                            <div class="values-grid">
+                                <div class="value-item"><i class="fas fa-hand-holding-heart"></i><span>Comercio Justo</span></div>
+                                <div class="value-item"><i class="fas fa-seedling"></i><span>Eco Amigable</span></div>
+                                <div class="value-item"><i class="fas fa-users"></i><span>Comunidad</span></div>
+                            </div>
+                        </div>
+                        <!-- Slide 2: Proceso -->
+                        <div class="slide-info" data-slide="2">
+                            <span class="slide-badge">🌱 Calidad</span>
+                            <h2>El arte detrás de cada sorbo</h2>
+                            <p>El secreto está en el proceso. Solo compramos granos clasificados como café de especialidad (80+ puntos SCA). Cuidamos celosamente el perfil del tueste para resaltar las notas naturales de chocolate, caramelo y frutas cítricas, moliendo el grano al instante antes de cada infusión.</p>
+                            <div class="process-stepper">
+                                <div class="p-step active"><span>1</span><p>Finca</p></div>
+                                <div class="p-step active"><span>2</span><p>Tueste</p></div>
+                                <div class="p-step active"><span>3</span><p>Taza</p></div>
+                            </div>
+                        </div>
+                        <!-- Slide 3: Ambiente -->
+                        <div class="slide-info" data-slide="3">
+                            <span class="slide-badge">🛋️ Espacio</span>
+                            <h2>Tu segundo hogar para crear y compartir</h2>
+                            <p>Diseñamos cada espacio pensando en ti. Con una iluminación cálida, conexión de alta velocidad y sillones ultra cómodos, Café Dulce Aroma es el lugar ideal tanto para inspirarte en tus proyectos laborales como para conversar con amigos o disfrutar un libro.</p>
+                            <div class="amenities-grid">
+                                <div class="amenity-item"><i class="fas fa-wifi"></i><span>WiFi Fibra</span></div>
+                                <div class="amenity-item"><i class="fas fa-plug"></i><span>Enchufes</span></div>
+                                <div class="amenity-item"><i class="fas fa-music"></i><span>Chill Music</span></div>
+                            </div>
+                        </div>
                     </div>
-                    <h3>Misión</h3>
-                    <p>Ofrecer una experiencia única a través de un café de alta calidad, seleccionando con pasión los
-                        mejores granos para brindar un sabor excepcional en cada taza. Nos dedicamos a crear momentos de
-                        conexión, calidez y confort para nuestros clientes, impulsando el bienestar de nuestra comunidad
-                        y el respeto por nuestra tradición cafetalera.</p>
+                    <!-- Paginación -->
+                    <div class="dashboard-pagination">
+                        <span class="pag-dot active" data-slide="0"></span>
+                        <span class="pag-dot" data-slide="1"></span>
+                        <span class="pag-dot" data-slide="2"></span>
+                        <span class="pag-dot" data-slide="3"></span>
+                    </div>
                 </div>
-                <div class="mision-vision-card reveal">
-                    <div class="card-icon">
-                        <i class="fas fa-eye"></i>
+
+                <!-- Panel Visual del Dashboard (Mock Tablet o Visualizer) -->
+                <div class="dashboard-visual-panel">
+                    <div class="tablet-mockup">
+                        <div class="tablet-bezel"></div>
+                        <div class="tablet-screen">
+                            <!-- Visual Slide 0: Historia -->
+                            <div class="visual-slide active" data-slide="0">
+                                <div class="polaroid-stack">
+                                    <div class="polaroid p1">
+                                        <img src="img/fachada interior 2.avif" alt="Cafetería fachada">
+                                        <p>Nuestra fachada - 2016</p>
+                                    </div>
+                                    <div class="polaroid p2">
+                                        <img src="img/cafeteria1.avif" alt="Café servido">
+                                        <p>Pasión por el grano</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Visual Slide 1: Valores -->
+                            <div class="visual-slide" data-slide="1">
+                                <div class="values-chart">
+                                    <div class="chart-center">
+                                        <i class="fas fa-heart"></i>
+                                        <span>Valores</span>
+                                    </div>
+                                    <div class="chart-node n1"><i class="fas fa-users"></i><span>Gente</span></div>
+                                    <div class="chart-node n2"><i class="fas fa-leaf"></i><span>Tierra</span></div>
+                                    <div class="chart-node n3"><i class="fas fa-mug-hot"></i><span>Calidad</span></div>
+                                </div>
+                            </div>
+                            <!-- Visual Slide 2: Proceso -->
+                            <div class="visual-slide" data-slide="2">
+                                <div class="roaster-visualizer">
+                                    <div class="flame-container">
+                                        <div class="flame"></div>
+                                    </div>
+                                    <div class="roaster-drum">
+                                        <i class="fas fa-sync fa-spin"></i>
+                                        <span>Tostadora Pro</span>
+                                    </div>
+                                    <div class="bean-flow">
+                                        <span class="bean b1">🌱</span>
+                                        <span class="bean b2">🫘</span>
+                                        <span class="bean b3">☕</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Visual Slide 3: Ambiente -->
+                            <div class="visual-slide" data-slide="3">
+                                <div class="ambient-player">
+                                    <div class="player-cover">
+                                        <i class="fas fa-coffee"></i>
+                                    </div>
+                                    <div class="player-controls">
+                                        <p class="track-title">Café Chill & Lofi</p>
+                                        <p class="track-artist">En Vivo desde la Cafetería</p>
+                                        <div class="play-bar">
+                                            <div class="play-progress"></div>
+                                        </div>
+                                        <div class="control-buttons">
+                                            <i class="fas fa-step-backward"></i>
+                                            <i class="fas fa-play"></i>
+                                            <i class="fas fa-step-forward"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <h3>Visión</h3>
-                    <p>Ser reconocidos como el punto de encuentro y la marca de café preferida por nuestra autenticidad,
-                        calidad e innovación en el servicio. Aspiramos a expandir nuestra cultura cafetalera, inspirando
-                        un estilo de vida consciente, sostenible y apasionado por el buen café en cada rincón donde
-                        estemos presentes.</p>
+                    <!-- Floating Cards Track -->
+                    <div class="floating-cards-track">
+                        <div class="floating-card active" data-slide="0">
+                            <div class="card-icon"><i class="fas fa-history"></i></div>
+                            <div class="card-text">
+                                <h4>Historia</h4>
+                                <p>Orígenes 2016</p>
+                            </div>
+                        </div>
+                        <div class="floating-card" data-slide="1">
+                            <div class="card-icon"><i class="fas fa-bullseye"></i></div>
+                            <div class="card-text">
+                                <h4>Propósito</h4>
+                                <p>Nuestros valores</p>
+                            </div>
+                        </div>
+                        <div class="floating-card" data-slide="2">
+                            <div class="card-icon"><i class="fas fa-seedling"></i></div>
+                            <div class="card-text">
+                                <h4>El Proceso</h4>
+                                <p>Grano a la taza</p>
+                            </div>
+                        </div>
+                        <div class="floating-card" data-slide="3">
+                            <div class="card-icon"><i class="fas fa-couch"></i></div>
+                            <div class="card-text">
+                                <h4>El Espacio</h4>
+                                <p>Ambiente único</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>

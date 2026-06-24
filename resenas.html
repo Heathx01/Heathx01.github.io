@@ -64,53 +64,208 @@
     </header>
 
     <main>
-        <section class="subpage-header">
-            <h2>Reseñas de Clientes</h2>
-            <p>Tu experiencia es nuestra mayor recompensa</p>
+        <section class="menu-header">
+            <span class="section-badge"><i class="fas fa-star"></i> Testimonios</span>
+            <h2>Voces de Aroma</h2>
+            <p class="section-desc">Tu experiencia es nuestra mayor recompensa. Descubre métricas y opiniones de nuestra comunidad.</p>
+            <div class="header-divider">
+                <span class="divider-line"></span>
+                <i class="fas fa-coffee divider-icon"></i>
+                <span class="divider-line"></span>
+            </div>
         </section>
 
-        <!-- Google Play Store Style Rating Summary -->
-        <section class="rating-summary-container reveal">
-            <div class="rating-overview">
-                <div class="rating-big-number">4.8</div>
-                <div class="star-rating">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                </div>
-                <p>128 calificaciones</p>
-            </div>
-            <div class="rating-bars">
-                <div class="bar-row">
-                    <span>5</span>
-                    <div class="bar-bg">
-                        <div class="bar-fill bar-fill-5"></div>
+        <section class="interactive-dashboard" id="resenas-dashboard">
+            <div class="dashboard-container">
+                <!-- Panel de Información -->
+                <div class="dashboard-info-panel">
+                    <div class="dashboard-slider">
+                        <!-- Slide 0: Métricas -->
+                        <div class="slide-info active" data-slide="0">
+                            <span class="slide-badge">📊 Calificación General</span>
+                            <h2>Nuestra comunidad nos respalda</h2>
+                            <p>Con un promedio de 4.8 sobre 5.0 estrellas, Café Dulce Aroma se posiciona como el espacio favorito para los amantes del buen café y repostería artesanal en la ciudad. ¡Gracias por hacernos parte de tus días!</p>
+                            <div class="reviews-stats-summary">
+                                <div class="r-big-rating">
+                                    <span class="rating-num">4.8</span>
+                                    <div class="stars">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                    <span class="total-reviews">128 opiniones reales</span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Slide 1: Experiencias Destacadas -->
+                        <div class="slide-info" data-slide="1">
+                            <span class="slide-badge">💬 Voces Reales</span>
+                            <h2>Lo que opinan nuestros clientes</h2>
+                            <p>Nuestros visitantes valoran no solo la calidad de nuestra taza, sino el servicio cálido que nos caracteriza y la atmósfera perfecta para conectar.</p>
+                            <div class="quote-slider-widget">
+                                <div class="quote-text">
+                                    <i class="fas fa-quote-left"></i>
+                                    <span>"El mejor capuccino que he probado. El ambiente es super lofi, ideal para programar o leer. ¡Recomendado 100%!"</span>
+                                </div>
+                                <span class="quote-author">— Carlos Ortiz, Desarrollador</span>
+                            </div>
+                        </div>
+                        <!-- Slide 2: Atributos Más Valorados -->
+                        <div class="slide-info" data-slide="2">
+                            <span class="slide-badge">✨ Fortalezas</span>
+                            <h2>Atributos que marcan la diferencia</h2>
+                            <p>Analizamos las reseñas recibidas para potenciar lo que más te gusta. Estos son los aspectos mejor calificados por nuestra comunidad.</p>
+                            <div class="meters-widget">
+                                <div class="meter-row">
+                                    <span>☕ Sabor del Café</span>
+                                    <div class="meter-bar"><div class="meter-fill" data-value="98%" style="width: 98%;"></div></div>
+                                    <span class="meter-pct">98%</span>
+                                </div>
+                                <div class="meter-row">
+                                    <span>🍰 Repostería</span>
+                                    <div class="meter-bar"><div class="meter-fill" data-value="95%" style="width: 95%;"></div></div>
+                                    <span class="meter-pct">95%</span>
+                                </div>
+                                <div class="meter-row">
+                                    <span>⚡ Velocidad WiFi</span>
+                                    <div class="meter-bar"><div class="meter-fill" data-value="92%" style="width: 92%;"></div></div>
+                                    <span class="meter-pct">92%</span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Slide 3: Tu Turno -->
+                        <div class="slide-info" data-slide="3">
+                            <span class="slide-badge">✍️ Tu Turno</span>
+                            <h2>¿Qué te pareció tu última visita?</h2>
+                            <p>Tu opinión nos permite mejorar constantemente. Comparte tus impresiones de sabor, atención o espacio con nosotros y la comunidad.</p>
+                            <div class="cta-review-wrapper">
+                                <button class="btn-primary" onclick="openReviewModal()"><i class="fas fa-pen"></i> Escribir Reseña</button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Paginación -->
+                    <div class="dashboard-pagination">
+                        <span class="pag-dot active" data-slide="0"></span>
+                        <span class="pag-dot" data-slide="1"></span>
+                        <span class="pag-dot" data-slide="2"></span>
+                        <span class="pag-dot" data-slide="3"></span>
                     </div>
                 </div>
-                <div class="bar-row">
-                    <span>4</span>
-                    <div class="bar-bg">
-                        <div class="bar-fill bar-fill-4"></div>
+
+                <!-- Panel Visual del Dashboard (Mock Tablet) -->
+                <div class="dashboard-visual-panel">
+                    <div class="tablet-mockup">
+                        <div class="tablet-bezel"></div>
+                        <div class="tablet-screen">
+                            <!-- Visual Slide 0: Métricas Rating Bars -->
+                            <div class="visual-slide active" data-slide="0">
+                                <div class="bars-widget-visual">
+                                    <div class="bar-row">
+                                        <span class="star-lbl">5 <i class="fas fa-star"></i></span>
+                                        <div class="bar-bg"><div class="bar-fill-pct" style="width: 82%;"></div></div>
+                                        <span class="bar-pct-val">82%</span>
+                                    </div>
+                                    <div class="bar-row">
+                                        <span class="star-lbl">4 <i class="fas fa-star"></i></span>
+                                        <div class="bar-bg"><div class="bar-fill-pct" style="width: 12%;"></div></div>
+                                        <span class="bar-pct-val">12%</span>
+                                    </div>
+                                    <div class="bar-row">
+                                        <span class="star-lbl">3 <i class="fas fa-star"></i></span>
+                                        <div class="bar-bg"><div class="bar-fill-pct" style="width: 4%;"></div></div>
+                                        <span class="bar-pct-val">4%</span>
+                                    </div>
+                                    <div class="bar-row">
+                                        <span class="star-lbl">2 <i class="fas fa-star"></i></span>
+                                        <div class="bar-bg"><div class="bar-fill-pct" style="width: 1%;"></div></div>
+                                        <span class="bar-pct-val">1%</span>
+                                    </div>
+                                    <div class="bar-row">
+                                        <span class="star-lbl">1 <i class="fas fa-star"></i></span>
+                                        <div class="bar-bg"><div class="bar-fill-pct" style="width: 1%;"></div></div>
+                                        <span class="bar-pct-val">1%</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Visual Slide 1: Avatares Clientes -->
+                            <div class="visual-slide" data-slide="1">
+                                <div class="avatars-bubble-container">
+                                    <div class="avatar-bubble av1 active">
+                                        <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&fit=crop" alt="User 1">
+                                        <div class="bubble-speech">"Café de altura insuperable."</div>
+                                    </div>
+                                    <div class="avatar-bubble av2">
+                                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&fit=crop" alt="User 2">
+                                        <div class="bubble-speech">"Los postres son deliciosos!"</div>
+                                    </div>
+                                    <div class="avatar-bubble av3">
+                                        <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&fit=crop" alt="User 3">
+                                        <div class="bubble-speech">"El internet vuela."</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Visual Slide 2: Atributos Radar/Pentágono visual -->
+                            <div class="visual-slide" data-slide="2">
+                                <div class="radar-mockup-visual">
+                                    <div class="radar-polygon">
+                                        <div class="radar-line"></div>
+                                        <div class="radar-line-inner"></div>
+                                        <div class="radar-point pt1" style="top: 10%; left: 50%;"><span>☕ Sabor</span></div>
+                                        <div class="radar-point pt2" style="top: 40%; right: 10%;"><span>⚡ WiFi</span></div>
+                                        <div class="radar-point pt3" style="bottom: 10%; right: 30%;"><span>🍰 Dulces</span></div>
+                                        <div class="radar-point pt4" style="bottom: 10%; left: 30%;"><span>🤝 Trato</span></div>
+                                        <div class="radar-point pt5" style="top: 40%; left: 10%;"><span>🍃 Clima</span></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Visual Slide 3: Selector de Estrellas Digital -->
+                            <div class="visual-slide" data-slide="3">
+                                <div class="digital-selector-card">
+                                    <h4>Calificar con Estrellas</h4>
+                                    <div class="digital-stars">
+                                        <i class="fas fa-star glow"></i>
+                                        <i class="fas fa-star glow"></i>
+                                        <i class="fas fa-star glow"></i>
+                                        <i class="fas fa-star glow"></i>
+                                        <i class="fas fa-star glow"></i>
+                                    </div>
+                                    <p class="selector-msg">¡Excelente servicio!</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                </div>
-                <div class="bar-row">
-                    <span>3</span>
-                    <div class="bar-bg">
-                        <div class="bar-fill bar-fill-3"></div>
-                    </div>
-                </div>
-                <div class="bar-row">
-                    <span>2</span>
-                    <div class="bar-bg">
-                        <div class="bar-fill bar-fill-2"></div>
-                    </div>
-                </div>
-                <div class="bar-row">
-                    <span>1</span>
-                    <div class="bar-bg">
-                        <div class="bar-fill bar-fill-1"></div>
+                    <!-- Floating Cards Track -->
+                    <div class="floating-cards-track">
+                        <div class="floating-card active" data-slide="0">
+                            <div class="card-icon"><i class="fas fa-chart-line"></i></div>
+                            <div class="card-text">
+                                <h4>Métricas</h4>
+                                <p>Estadísticas</p>
+                            </div>
+                        </div>
+                        <div class="floating-card" data-slide="1">
+                            <div class="card-icon"><i class="fas fa-comments"></i></div>
+                            <div class="card-text">
+                                <h4>Voces</h4>
+                                <p>Experiencias</p>
+                            </div>
+                        </div>
+                        <div class="floating-card" data-slide="2">
+                            <div class="card-icon"><i class="fas fa-thumbs-up"></i></div>
+                            <div class="card-text">
+                                <h4>Destacado</h4>
+                                <p>Nuestras claves</p>
+                            </div>
+                        </div>
+                        <div class="floating-card" data-slide="3">
+                            <div class="card-icon"><i class="fas fa-pen-fancy"></i></div>
+                            <div class="card-text">
+                                <h4>Opinar</h4>
+                                <p>Deja tu reseña</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

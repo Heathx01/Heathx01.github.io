@@ -817,7 +817,7 @@ document.addEventListener('DOMContentLoaded', () => {
  */
 function initHeroSlider() {
     const slidesInfo = qa('.slide-info');
-    const phoneSlides = qa('.phone-slide');
+    const phoneSlides = qa('.phone-slide, .visual-slide');
     const floatingCards = qa('.floating-card');
     const dots = qa('.pag-dot');
     
@@ -833,10 +833,10 @@ function initHeroSlider() {
         floatingCards.forEach(el => el.classList.remove('active'));
         dots.forEach(el => el.classList.remove('active'));
 
-        slidesInfo[index].classList.add('active');
-        phoneSlides[index].classList.add('active');
-        floatingCards[index].classList.add('active');
-        dots[index].classList.add('active');
+        if (slidesInfo[index]) slidesInfo[index].classList.add('active');
+        if (phoneSlides[index]) phoneSlides[index].classList.add('active');
+        if (floatingCards[index]) floatingCards[index].classList.add('active');
+        if (dots[index]) dots[index].classList.add('active');
 
         // Restart cup liquid animation on slide 2
         if (index === 2) {
@@ -846,6 +846,16 @@ function initHeroSlider() {
                 liquid.offsetHeight; // trigger reflow
                 liquid.style.animation = null;
             }
+        }
+
+        // Animate progress/meter bars on active slide if present
+        const activeSlide = slidesInfo[index];
+        if (activeSlide) {
+            const fills = activeSlide.querySelectorAll('.meter-fill');
+            fills.forEach(fill => {
+                const pct = fill.getAttribute('data-pct') || '0%';
+                fill.style.width = pct;
+            });
         }
 
         // Scroll active card into view on mobile
@@ -891,5 +901,7 @@ function initHeroSlider() {
         });
     });
 
+    // Run first slide animation triggers
+    showSlide(0);
     startSlideShow();
 }
