@@ -240,16 +240,45 @@
                 </div>
             </div>
         </section>
-        <section class="subpage-header">
+        <section class="menu-header">
+            <span class="section-badge"><i class="fas fa-seedling"></i> Sabor & Tradición</span>
             <h2>Nuestro Menú</h2>
-            <p>Selecciona tus favoritos</p>
+            <p class="section-desc">Selecciona tus favoritos y disfruta de ingredientes frescos y de la más alta calidad.</p>
+            <div class="header-divider">
+                <span class="divider-line"></span>
+                <i class="fas fa-coffee divider-icon"></i>
+                <span class="divider-line"></span>
+            </div>
         </section>
-        <div class="menu-tabs" id="category-tabs">
-            <button class="tab-btn active" onclick="showCategory('bebidas')">Bebidas</button>
-            <button class="tab-btn" onclick="showCategory('desayunos')">Desayunos</button>
-            <button class="tab-btn" onclick="showCategory('almuerzos')">Almuerzos</button>
-            <button class="tab-btn" onclick="showCategory('cenas')">Cenas</button>
-            <button class="tab-btn" onclick="showCategory('postres')">Postres</button>
+        <div class="menu-tabs-container">
+            <div class="menu-tabs" id="category-tabs">
+                <div class="tab-slider-indicator"></div>
+                <button class="tab-btn active" onclick="showCategory('bebidas')">
+                    <i class="fas fa-coffee"></i>
+                    <span>Bebidas</span>
+                    <span class="category-count">6</span>
+                </button>
+                <button class="tab-btn" onclick="showCategory('desayunos')">
+                    <i class="fas fa-egg"></i>
+                    <span>Desayunos</span>
+                    <span class="category-count">5</span>
+                </button>
+                <button class="tab-btn" onclick="showCategory('almuerzos')">
+                    <i class="fas fa-hamburger"></i>
+                    <span>Almuerzos</span>
+                    <span class="category-count">5</span>
+                </button>
+                <button class="tab-btn" onclick="showCategory('cenas')">
+                    <i class="fas fa-utensils"></i>
+                    <span>Cenas</span>
+                    <span class="category-count">5</span>
+                </button>
+                <button class="tab-btn" onclick="showCategory('postres')">
+                    <i class="fas fa-cookie-bite"></i>
+                    <span>Postres</span>
+                    <span class="category-count">5</span>
+                </button>
+            </div>
         </div>
         <section id="bebidas" class="menu-section active">
             <div class="product-list-item" data-product="Capuccino">

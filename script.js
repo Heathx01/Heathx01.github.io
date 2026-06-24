@@ -94,6 +94,15 @@ const handleLogout = () => firebase.auth().signOut().then(() => alert("Sesión c
 /**
  * Menu & Cart Logic
  */
+const updateTabIndicator = () => {
+    const activeTab = q('.tab-btn.active');
+    const indicator = q('.tab-slider-indicator');
+    if (activeTab && indicator) {
+        indicator.style.width = `${activeTab.offsetWidth}px`;
+        indicator.style.left = `${activeTab.offsetLeft}px`;
+    }
+};
+
 const showCategory = (cat) => {
     const active = q('.menu-section.active');
     if (active) {
@@ -108,7 +117,11 @@ const showCategory = (cat) => {
         const s = document.getElementById(cat);
         if (s) { s.style.display = 'grid'; s.classList.add('active'); }
     }
+    
     qa('.tab-btn').forEach(b => b.classList.toggle('active', b.getAttribute('onclick').includes(cat)));
+    
+    // Smooth indicator transition
+    setTimeout(updateTabIndicator, 50);
 };
 
 let cart = JSON.parse(localStorage.getItem('cafe_cart') || '[]');
@@ -789,6 +802,10 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // Initialize hero slider if active on page
     initHeroSlider();
+
+    // Initialize menu tabs indicator
+    setTimeout(updateTabIndicator, 200);
+    window.addEventListener('resize', updateTabIndicator);
 
     const style = document.createElement('style');
     style.textContent = `.reveal-init{opacity:0;transform:translateY(20px);transition:all .6s;}.reveal-init.reveal{opacity:1;transform:translateY(0);}`;
