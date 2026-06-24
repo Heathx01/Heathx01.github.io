@@ -786,7 +786,93 @@ const toggleMobileMenu = () => {
 document.addEventListener('DOMContentLoaded', () => {
     ensureLoginModal();
     updateUI(); setupObs(); loadReviews(); updateAllStockUI();
+    
+    // Initialize hero slider if active on page
+    initHeroSlider();
+
     const style = document.createElement('style');
     style.textContent = `.reveal-init{opacity:0;transform:translateY(20px);transition:all .6s;}.reveal-init.reveal{opacity:1;transform:translateY(0);}`;
     document.head.appendChild(style);
 });
+
+/**
+ * Interactive Hero Slider (Dashboard)
+ */
+function initHeroSlider() {
+    const slidesInfo = qa('.slide-info');
+    const phoneSlides = qa('.phone-slide');
+    const floatingCards = qa('.floating-card');
+    const dots = qa('.pag-dot');
+    
+    if (slidesInfo.length === 0) return;
+
+    let currentSlide = 0;
+    let slideInterval;
+    const intervalTime = 5000;
+
+    const showSlide = (index) => {
+        slidesInfo.forEach(el => el.classList.remove('active'));
+        phoneSlides.forEach(el => el.classList.remove('active'));
+        floatingCards.forEach(el => el.classList.remove('active'));
+        dots.forEach(el => el.classList.remove('active'));
+
+        slidesInfo[index].classList.add('active');
+        phoneSlides[index].classList.add('active');
+        floatingCards[index].classList.add('active');
+        dots[index].classList.add('active');
+
+        // Restart cup liquid animation on slide 2
+        if (index === 2) {
+            const liquid = q('.cup-liquid');
+            if (liquid) {
+                liquid.style.animation = 'none';
+                liquid.offsetHeight; // trigger reflow
+                liquid.style.animation = null;
+            }
+        }
+
+        // Scroll active card into view on mobile
+        if (window.innerWidth <= 992) {
+            const activeCard = floatingCards[index];
+            const track = q('.floating-cards-track');
+            if (activeCard && track) {
+                track.scrollTo({
+                    left: activeCard.offsetLeft - (track.clientWidth / 2) + (activeCard.clientWidth / 2),
+                    behavior: 'smooth'
+                });
+            }
+        }
+
+        currentSlide = index;
+    };
+
+    const nextSlide = () => {
+        let next = (currentSlide + 1) % slidesInfo.length;
+        showSlide(next);
+    };
+
+    const startSlideShow = () => {
+        clearInterval(slideInterval);
+        slideInterval = setInterval(nextSlide, intervalTime);
+    };
+
+    const resetSlideShow = () => {
+        startSlideShow();
+    };
+
+    dots.forEach((dot, idx) => {
+        dot.addEventListener('click', () => {
+            showSlide(idx);
+            resetSlideShow();
+        });
+    });
+
+    floatingCards.forEach((card, idx) => {
+        card.addEventListener('click', () => {
+            showSlide(idx);
+            resetSlideShow();
+        });
+    });
+
+    startSlideShow();
+}

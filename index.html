@@ -63,14 +63,180 @@
     </header>
 
     <main>
-        <section class="hero-section reveal">
-            <div class="hero-content">
-                <h1>El Aroma que Enamora</h1>
-                <p>Café artesanal y repostería fina.</p>
-                <div class="hero-btns">
-                    <button class="btn-primary"
-                        onclick="q('#category-tabs').scrollIntoView({behavior:'smooth'})">Menú</button>
-                    <a href="nosotros.html" class="btn-secondary">Historia</a>
+        <section class="interactive-hero">
+            <div class="hero-container">
+                <!-- Columna Izquierda: Información Dinámica -->
+                <div class="hero-info-panel">
+                    <div class="slide-info active" data-slide="0">
+                        <span class="slide-badge">☕ Club de Fidelidad</span>
+                        <h2>Suma Granos y Gana Café Gratis</h2>
+                        <p>Únete a nuestro Club de Fidelidad. Acumula granos de café con cada compra y canjéalos por tus bebidas o postres favoritos. ¡Tu décima taza va por nuestra cuenta!</p>
+                        <div class="hero-actions">
+                            <button class="btn-primary" onclick="toggleLoginModal()">Comenzar Ahora</button>
+                            <button class="btn-secondary-outline" onclick="q('#category-tabs').scrollIntoView({behavior:'smooth'})">Ver Carta</button>
+                        </div>
+                    </div>
+                    <div class="slide-info" data-slide="1">
+                        <span class="slide-badge">🛵 Pedidos en Vivo</span>
+                        <h2>Sigue tu Pedido en Tiempo Real</h2>
+                        <p>Sigue la preparación paso a paso. Desde el tostado y molido de nuestro grano premium Arábica hasta que llega calientito a la puerta de tu hogar.</p>
+                        <div class="hero-actions">
+                            <button class="btn-primary" onclick="q('#category-tabs').scrollIntoView({behavior:'smooth'})">Hacer Pedido</button>
+                            <a href="nosotros.html" class="btn-secondary-outline">Nuestra Historia</a>
+                        </div>
+                    </div>
+                    <div class="slide-info" data-slide="2">
+                        <span class="slide-badge">✨ Personalización</span>
+                        <h2>Tu Café, Exactamente a Tu Gusto</h2>
+                        <p>Ajusta el tipo de grano, la temperatura y selecciona leche de almendra, avena o deslactosada. Dale el toque final con un chorro de jarabe artesanal.</p>
+                        <div class="hero-actions">
+                            <button class="btn-primary" onclick="q('#category-tabs').scrollIntoView({behavior:'smooth'})">Personalizar Café</button>
+                        </div>
+                    </div>
+                    <div class="slide-info" data-slide="3">
+                        <span class="slide-badge">🎁 Cupones y Regalos</span>
+                        <h2>Ofertas y Promos Especiales</h2>
+                        <p>Desbloquea cupones exclusivos del día, postres gratis y nuestro aclamado Happy Hour 2x1 en capuccinos todos los martes y jueves.</p>
+                        <div class="hero-actions">
+                            <button class="btn-primary" onclick="q('#category-tabs').scrollIntoView({behavior:'smooth'})">Ver Promos</button>
+                        </div>
+                    </div>
+
+                    <!-- Indicadores (Paginación) -->
+                    <div class="hero-pagination">
+                        <span class="pag-dot active" data-slide="0"></span>
+                        <span class="pag-dot" data-slide="1"></span>
+                        <span class="pag-dot" data-slide="2"></span>
+                        <span class="pag-dot" data-slide="3"></span>
+                    </div>
+                </div>
+
+                <!-- Columna Derecha: Dashboard con Teléfono & Cartas Flotantes -->
+                <div class="hero-visual-panel">
+                    <!-- Smartphone Wrapper -->
+                    <div class="phone-mockup">
+                        <div class="phone-camera"></div>
+                        <div class="phone-screen">
+                            <div class="phone-header">
+                                <i class="fas fa-signal"></i>
+                                <span>9:41</span>
+                                <i class="fas fa-battery-three-quarters"></i>
+                            </div>
+
+                            <!-- Contenido Dinámico del Celular -->
+                            <div class="phone-body">
+                                <!-- Pantalla 0: Loyalty -->
+                                <div class="phone-slide active" data-slide="0">
+                                    <div class="phone-widget user-widget">
+                                        <div class="avatar">☕</div>
+                                        <div>
+                                            <h5>Hola Coffee Lover</h5>
+                                            <p>Nivel: Barista Gold</p>
+                                        </div>
+                                    </div>
+                                    <div class="loyalty-card">
+                                        <h4>Club Dulce Aroma</h4>
+                                        <div class="grains-container">
+                                            <div class="grain active"><i class="fas fa-coffee"></i></div>
+                                            <div class="grain active"><i class="fas fa-coffee"></i></div>
+                                            <div class="grain active"><i class="fas fa-coffee"></i></div>
+                                            <div class="grain active"><i class="fas fa-coffee"></i></div>
+                                            <div class="grain active"><i class="fas fa-coffee"></i></div>
+                                            <div class="grain active"><i class="fas fa-coffee"></i></div>
+                                            <div class="grain active"><i class="fas fa-coffee"></i></div>
+                                            <div class="grain active"><i class="fas fa-coffee"></i></div>
+                                            <div class="grain"><i class="far fa-coffee"></i></div>
+                                            <div class="grain"><i class="far fa-coffee"></i></div>
+                                        </div>
+                                        <p class="loyalty-desc">¡Te faltan 2 tazas para tu café gratis!</p>
+                                        <div class="progress-bar-wrapper">
+                                            <div class="progress-bar-fill" style="width: 80%;"></div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Pantalla 1: Tracker -->
+                                <div class="phone-slide" data-slide="1">
+                                    <div class="tracker-card">
+                                        <h4>Pedido en Curso #8401</h4>
+                                        <div class="tracker-visual">
+                                            <div class="stepper">
+                                                <div class="step completed"><i class="fas fa-check"></i><span>Recibido</span></div>
+                                                <div class="step active"><i class="fas fa-mug-hot"></i><span>Preparando</span></div>
+                                                <div class="step"><i class="fas fa-motorcycle"></i><span>Envío</span></div>
+                                            </div>
+                                            <div class="timer">
+                                                <span>Tiempo Estimado</span>
+                                                <h3>8:45 Min</h3>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Pantalla 2: Personalización -->
+                                <div class="phone-slide" data-slide="2">
+                                    <div class="customize-widget">
+                                        <h4>Café a tu Gusto</h4>
+                                        <div class="custom-options">
+                                            <div class="opt-row"><i class="fas fa-seedling"></i><span>Arábica Tostado</span></div>
+                                            <div class="opt-row"><i class="fas fa-tint"></i><span>Leche de Almendra</span></div>
+                                            <div class="opt-row"><i class="fas fa-cookie-bite"></i><span>Jarabes de Vainilla</span></div>
+                                        </div>
+                                        <div class="custom-cup">
+                                            <div class="cup-foam"></div>
+                                            <div class="cup-liquid"></div>
+                                            <div class="cup-handle"></div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Pantalla 3: Cupones -->
+                                <div class="phone-slide" data-slide="3">
+                                    <div class="coupon-widget">
+                                        <div class="coupon-tag">DESCUENTO DEL DÍA</div>
+                                        <h3>2x1 Capuccino</h3>
+                                        <p>Código: AROMALOVE</p>
+                                        <div class="qr-code">
+                                            <i class="fas fa-qrcode"></i>
+                                        </div>
+                                        <span class="coupon-expire">Vence hoy 22:00</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Cartas Flotantes Alrededor del Celular -->
+                    <div class="floating-cards-track">
+                        <div class="floating-card active" data-slide="0">
+                            <div class="card-icon"><i class="fas fa-award"></i></div>
+                            <div class="card-text">
+                                <h4>Club Aroma</h4>
+                                <p>Suma granos gratis</p>
+                            </div>
+                        </div>
+                        <div class="floating-card" data-slide="1">
+                            <div class="card-icon"><i class="fas fa-route"></i></div>
+                            <div class="card-text">
+                                <h4>Seguimiento</h4>
+                                <p>Pedido en vivo</p>
+                            </div>
+                        </div>
+                        <div class="floating-card" data-slide="2">
+                            <div class="card-icon"><i class="fas fa-sliders-h"></i></div>
+                            <div class="card-text">
+                                <h4>Mi Receta</h4>
+                                <p>Personaliza tu taza</p>
+                            </div>
+                        </div>
+                        <div class="floating-card" data-slide="3">
+                            <div class="card-icon"><i class="fas fa-gift"></i></div>
+                            <div class="card-text">
+                                <h4>Promociones</h4>
+                                <p>Happy Hour 2x1</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -668,7 +834,8 @@
                 <span id="cartTotal">$0.00</span>
             </div>
             <div class="cart-buttons-container" style="display: flex; gap: 1rem; width: 100%;">
-                <button class="cancel-btn" id="btn-cancel-cart" onclick="cancelOrder()" style="display: none;">Cancelar</button>
+                <button class="cancel-btn" id="btn-cancel-cart" onclick="cancelOrder()"
+                    style="display: none;">Cancelar</button>
                 <button class="checkout-btn" id="btn-checkout-start" onclick="showCheckout()">Finalizar Pedido</button>
             </div>
         </div>
