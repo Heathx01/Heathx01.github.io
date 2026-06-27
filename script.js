@@ -39,6 +39,23 @@ const ensureLoginModal = () => {
 };
 
 if (typeof firebase !== 'undefined') {
+    // Procesar el resultado de la redirección de Google al cargar la página
+    firebase.auth().getRedirectResult().then((result) => {
+        if (result && result.user) {
+            console.log("Sesión iniciada correctamente con Google:", result.user.email);
+            if (typeof showToast === 'function') {
+                showToast("Sesión iniciada con Google");
+            }
+        }
+    }).catch((error) => {
+        console.error("Error en Google Redirect Auth:", error);
+        if (error.code === 'auth/unauthorized-domain') {
+            alert("Error: Este dominio ('" + window.location.hostname + "') no está autorizado en la consola de Firebase. Por favor, añádelo en Authentication -> Settings -> Authorized domains.");
+        } else {
+            alert("Error al iniciar sesión con Google: " + error.message);
+        }
+    });
+
     firebase.auth().onAuthStateChanged((user) => {
         currentUser = user;
         ensureLoginModal();
@@ -76,19 +93,41 @@ const handleLogin = async (e) => {
     e.preventDefault();
     const [em, pw] = e.target.querySelectorAll('input');
     const btn = e.target.querySelector('.submit-btn');
+    const originalText = btn.innerText;
     btn.innerText = "Verificando..."; btn.disabled = true;
     try {
         await firebase.auth().signInWithEmailAndPassword(em.value, pw.value);
         toggleLoginModal();
     } catch (err) {
-        if (err.code === 'auth/user-not-found' && confirm("¿Registrar nueva cuenta?")) {
-            await firebase.auth().createUserWithEmailAndPassword(em.value, pw.value);
-            toggleLoginModal();
-        } else alert(err.message);
-    } finally { btn.innerText = "Entrar"; btn.disabled = false; }
+        console.error("Error al iniciar sesión:", err);
+        // Firebase v9+ y configuraciones seguras devuelven auth/invalid-login-credentials o auth/invalid-credential
+        // en lugar de auth/user-not-found para evitar enumeración de usuarios.
+        if (err.code === 'auth/user-not-found' || err.code === 'auth/invalid-login-credentials' || err.code === 'auth/invalid-credential') {
+            if (confirm("No se encontró el usuario o la contraseña es incorrecta. ¿Deseas registrar una nueva cuenta con este correo y contraseña?")) {
+                try {
+                    btn.innerText = "Registrando...";
+                    await firebase.auth().createUserWithEmailAndPassword(em.value, pw.value);
+                    alert("¡Cuenta registrada e inicio de sesión exitoso!");
+                    toggleLoginModal();
+                } catch (regErr) {
+                    console.error("Error al registrar cuenta:", regErr);
+                    if (regErr.code === 'auth/email-already-in-use') {
+                        alert("El correo ya está registrado con otra contraseña. Por favor, verifica tus datos de ingreso.");
+                    } else {
+                        alert("Error al registrar: " + regErr.message);
+                    }
+                }
+            }
+        } else {
+            alert(err.message);
+        }
+    } finally { btn.innerText = originalText; btn.disabled = false; }
 };
 
-const handleGoogleLogin = () => firebase.auth().signInWithPopup(new firebase.auth.GoogleAuthProvider()).then(toggleLoginModal);
+const handleGoogleLogin = () => {
+    const provider = new firebase.auth.GoogleAuthProvider();
+    firebase.auth().signInWithRedirect(provider);
+};
 const handleLogout = () => firebase.auth().signOut().then(() => alert("Sesión cerrada"));
 
 /**
